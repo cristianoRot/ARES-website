@@ -1,22 +1,52 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ContextAlert from '../components/ContextAlert.astro';
-import Markdown from '../components/Markdown.astro';
 
-const explainer = `
-**ARES** è un videogioco multiplayer innovativo, progettato per offrire un'esperienza immersiva con una grafica realistica senza pari. Ambientato in un mondo futuristico, il gioco unisce strategia e azione, mettendo i giocatori uno contro l'altro in battaglie epiche online.
-
-Con il supporto per macOS e Windows, ARES è il perfetto connubio di gameplay frenetico e ambientazioni mozzafiato, garantendo sessioni di gioco coinvolgenti per tutti i giocatori.
+const heroTitle = "ARES";
+const subTitle = "TI HANNO COSTRETTO A FUGGIRE\nTI DANNO LA CACCIA";
+const description = `
+Mentre l'attenzione del mondo è concentrata sulla Guerra del Golfo, un'oscura forza 
+clandestina si è infiltrata nelle alte sfere della CIA, dichiarando traditore chiunque le si opponga. 
+Esiliato dalla sua agenzia e dal paese che un tempo li considerava eroi, il veterano di Black Ops 
+Frank Woods e il suo team si ritrovano braccati dalla stessa macchina militare che li ha creati.
 `;
 ---
 
-<Layout title="ARES: L'Esperienza Multiplayer Definitiva">
-    <ContextAlert class="mb-4" />
-    <h1 class="mb-10">Benvenuto in ARES</h1>
-    <Markdown content={explainer} class="text-lg mb-10" />
-    <p class="mb-8 text-center">
-        <a href="https://mega.nz/folder/wKNSjSIL#WHzZ_7Pgmai593uLKjvp-A" class="btn btn-lg btn-primary" download>Download For MacOs</a>
-        <a href="https://mega.nz/folder/wKNSjSIL#WHzZ_7Pgmai593uLKjvp-A" class="btn btn-lg btn-primary" download>Download For Windows</a>
-        <a href="https://store.steampowered.com/" class="btn btn-lg btn-tertiary sm:btn-wide">Download on Steam</a>
-    </p>
+<Layout title="ARES">
+    <!-- Header -->
+    <header class="bg-black text-white flex justify-between items-center px-6 py-4">
+        <h1 class="text-lg font-bold flex items-center">
+            <span>ARES</span>
+            <span class="ml-2 text-orange-600">BO6</span>
+        </h1>
+        <a href="#" class="btn btn-primary bg-orange-600 px-4 py-2 text-white font-bold">ACQUISTA BLACK OPS 6</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero bg-cover bg-center text-center text-white relative" style="background-image: url('/path-to-hero-image.jpg'); height: 600px;">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center h-full">
+            <h1 class="text-4xl font-extrabold uppercase">{heroTitle}</h1>
+            <a href="#" class="btn btn-primary bg-orange-600 px-6 py-3 mt-6 text-xl font-bold">ACQUISTA ORA</a>
+        </div>
+    </section>
+
+    <!-- Subsection -->
+    <section class="bg-black text-white py-12 text-center px-6">
+        <h2 class="text-3xl font-extrabold uppercase mb-4">{subTitle}</h2>
+        <p class="text-lg leading-relaxed">{description}</p>
+    </section>
+
+    <!-- Video Section -->
+    <section class="bg-black text-white py-12 px-6">
+        <div class="relative max-w-4xl mx-auto">
+            <img src="/path-to-thumbnail.jpg" alt="Video thumbnail" class="w-full rounded">
+            <a href="#" class="absolute inset-0 flex items-center justify-center">
+                <div class="bg-orange-600 p-4 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-5.197 3.25A1 1 0 018 13.482V6.518a1 1 0 011.555-.832l5.197 3.25a1 1 0 010 1.664z" />
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </section>
 </Layout>
