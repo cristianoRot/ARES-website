@@ -4,26 +4,19 @@ import ContextAlert from '../components/ContextAlert.astro';
 import Markdown from '../components/Markdown.astro';
 
 const explainer = `
-**ARES** è un videogioco che unisce azione e strategia in un universo futuristico dominato da conflitti interstellari.
+**ARES** è un videogioco multiplayer innovativo, progettato per offrire un'esperienza immersiva con una grafica realistica senza pari. Ambientato in un mondo futuristico, il gioco unisce strategia e azione, mettendo i giocatori uno contro l'altro in battaglie epiche online.
 
-Nel gioco, i giocatori assumono il controllo di squadre avanzate di soldati e macchine da guerra, impegnandosi in missioni che richiedono abilità tattiche, decisioni rapide e il massimo della concentrazione. Esplora ambientazioni mozzafiato, personalizza il tuo equipaggiamento e affronta sfide sempre più intense.
-
-**Caratteristiche principali:**
-- **Campagna epica**: vivi una storia coinvolgente che svela i misteri dell'universo di ARES.
-- **Multigiocatore dinamico**: sfida altri giocatori in battaglie strategiche online.
-- **Personalizzazione completa**: costruisci il tuo arsenale e sviluppa il tuo stile di gioco unico.
-- **Grafica di nuova generazione**: immergiti in mondi dettagliati e animazioni mozzafiato.
+Con il supporto per macOS e Windows, ARES è il perfetto connubio di gameplay frenetico e ambientazioni mozzafiato, garantendo sessioni di gioco coinvolgenti per tutti i giocatori.
 `;
 ---
 
-<Layout title="Benvenuto nel mondo di ARES">
+<Layout title="ARES: L'Esperienza Multiplayer Definitiva">
     <ContextAlert class="mb-4" />
-    <h1 class="mb-10">ARES: Il Futuro è Adesso</h1>
+    <h1 class="mb-10">Benvenuto in ARES</h1>
     <Markdown content={explainer} class="text-lg mb-10" />
-    <p class="mb-8">
-        <a href="https://ares-game.com/docs" class="btn btn-lg btn-primary sm:btn-wide">Scopri di più</a>
-    </p>
-    <p class="mb-8">
-        <a href="https://ares-game.com/play" class="btn btn-lg btn-secondary sm:btn-wide">Gioca ora</a>
+    <p class="mb-8 text-center">
+        <a href="https://linkprova" class="btn btn-lg btn-primary sm:btn-wide mr-4">Scarica per macOS</a>
+        <a href="https://linkprova" class="btn btn-lg btn-secondary sm:btn-wide mr-4">Scarica per Windows</a>
+        <a href="https://store.steampowered.com/" class="btn btn-lg btn-tertiary sm:btn-wide">Gioca su Steam</a>
     </p>
 </Layout>
