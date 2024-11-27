@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const heroTitle = "ARES";
+const heroTitle = "CALL OF DUTY BLACK OPS 6";
 const subTitle = "TI HANNO COSTRETTO A FUGGIRE\nTI DANNO LA CACCIA";
 const description = `
 Mentre l'attenzione del mondo è concentrata sulla Guerra del Golfo, un'oscura forza 
@@ -11,35 +11,36 @@ Frank Woods e il suo team si ritrovano braccati dalla stessa macchina militare c
 `;
 ---
 
-<Layout title="ARES">
-    <!-- Header -->
+<Layout title="CALL OF DUTY BLACK OPS 6">
+    <!-- Header Section -->
     <header class="bg-black text-white flex justify-between items-center px-6 py-4">
-        <h1 class="text-lg font-bold flex items-center">
-            <span>ARES</span>
-            <span class="ml-2 text-orange-600">BO6</span>
-        </h1>
-        <a href="#" class="btn btn-primary bg-orange-600 px-4 py-2 text-white font-bold">DOWNLOAD</a>
+        <h1 class="text-lg font-bold">CALL OF DUTY <span class="text-orange-600">BLACK OPS 6</span></h1>
+        <a href="#" class="btn btn-primary bg-orange-600 px-4 py-2 text-white font-bold rounded">
+            ACQUISTA BLACK OPS 6
+        </a>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero bg-cover bg-center text-center text-white relative" style="background-image: url('/path-to-hero-image.jpg'); height: 600px;">
+    <section class="relative bg-cover bg-center text-center text-white" style="background-image: url('/path-to-hero-image.jpg'); height: 600px;">
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
         <div class="relative z-10 flex flex-col items-center justify-center h-full">
-            <h1 class="text-4xl font-extrabold uppercase">{heroTitle}</h1>
-            <a href="#" class="btn btn-primary bg-orange-600 px-6 py-3 mt-6 text-xl font-bold">DOWNLOAD</a>
+            <h1 class="text-5xl font-extrabold uppercase">{heroTitle}</h1>
+            <a href="#" class="btn btn-primary bg-orange-600 px-6 py-3 mt-6 text-xl font-bold rounded">
+                ACQUISTA ORA
+            </a>
         </div>
     </section>
 
     <!-- Subsection -->
-    <section class="bg-black text-white py-12 text-center px-6">
-        <h2 class="text-3xl font-extrabold uppercase mb-4">{subTitle}</h2>
+    <section class="bg-black text-white py-12 px-6 text-center">
+        <h2 class="text-3xl font-extrabold text-orange-600 uppercase mb-4">{subTitle}</h2>
         <p class="text-lg leading-relaxed">{description}</p>
     </section>
 
     <!-- Video Section -->
-    <section class="bg-black text-white py-12 px-6">
+    <section class="bg-black py-12 px-6">
         <div class="relative max-w-4xl mx-auto">
-            <img src="/path-to-thumbnail.jpg" alt="Video thumbnail" class="w-full rounded">
+            <img src="/path-to-thumbnail.jpg" alt="Anteprima del video" class="w-full rounded">
             <a href="#" class="absolute inset-0 flex items-center justify-center">
                 <div class="bg-orange-600 p-4 rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
