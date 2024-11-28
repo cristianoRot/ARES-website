@@ -1,212 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ARES - Official Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-  <style>
-    /* Colors */
-    :root {
-      --primary-color: #DFBD69; /* Gold */
-      --secondary-color: #000000; /* Black */
-      --text-color: #FFFFFF; /* White */
-    }
+---
+import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header e footer, se previsto.
+---
 
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--secondary-color);
-      color: var(--text-color);
-    }
-
-    /* Header */
-    header {
-      background-color: var(--secondary-color);
-      border-bottom: 1px solid #333333;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 900;
-      color: var(--primary-color);
-    }
-
-    nav {
-      display: flex;
-      gap: 20px;
-    }
-
-    nav a {
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--primary-color);
-    }
-
-    /* Main Container */
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Left Section (Thumbnail & Description) */
-    .left-section {
-      flex: 1 1 60%;
-      margin-right: 20px;
-    }
-
-    .thumbnail {
-      width: 100%;
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 20px;
-    }
-
-    .thumbnail img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .description {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #E5E5E5;
-    }
-
-    /* Right Section (Buttons & Info) */
-    .right-section {
-      flex: 1 1 35%;
-      background-color: #111111;
-      border: 1px solid #333333;
-      border-radius: 8px;
-      padding: 20px;
-    }
-
-    .info-section {
-      margin-bottom: 20px;
-    }
-
-    .info-section h2 {
-      font-size: 1.5rem;
-      color: var(--primary-color);
-      margin-bottom: 10px;
-    }
-
-    .info-item {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-
-    .info-item span {
-      font-size: 0.9rem;
-    }
-
-    .info-label {
-      color: var(--primary-color);
-      font-weight: 700;
-    }
-
-    .info-value {
-      color: #E5E5E5;
-    }
-
-    /* Download Buttons */
-    .cta-group {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 15px;
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--secondary-color);
-      background-color: var(--primary-color);
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      text-align: center;
-      transition: background-color 0.3s;
-    }
-
-    .cta img {
-      margin-right: 10px;
-      width: 20px;
-      height: auto;
-    }
-
-    .cta:hover {
-      background-color: #b9954c;
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--secondary-color);
-      border-top: 1px solid #333333;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    footer a {
-      color: var(--primary-color);
-      text-decoration: none;
-      font-weight: 700;
-      transition: color 0.3s;
-    }
-
-    footer a:hover {
-      color: #b9954c;
-    }
-  </style>
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <div class="logo">ARES</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#features">Features</a>
-      <a href="#info">Info</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
+<Layout title="ARES - Official Website">
   <!-- Main Container -->
   <div class="container">
     <!-- Left Section -->
     <div class="left-section">
-      <div class="thumbnail">
-        <img src="images/GameThumbnail.png" alt="Game Thumbnail">
+      <!-- Thumbnail Slider -->
+      <div class="thumbnail-slider">
+        <div class="slider-container">
+          <div class="slider-item">
+            <img src="images/ares_screenshot1.png" alt="Screenshot 1">
+          </div>
+          <div class="slider-item">
+            <img src="images/ares_screenshot2.png" alt="Screenshot 2">
+          </div>
+          <div class="slider-item">
+            <img src="images/ares_screenshot3.png" alt="Screenshot 3">
+          </div>
+        </div>
+        <button class="slider-btn prev-btn">&lt;</button>
+        <button class="slider-btn next-btn">&gt;</button>
       </div>
+      <!-- Description -->
       <div class="description">
         <p>
           Dive into the world of ARES, a futuristic multiplayer game where you explore, customize, and dominate.
@@ -217,6 +34,7 @@
 
     <!-- Right Section -->
     <div class="right-section">
+      <!-- Game Info -->
       <div class="info-section">
         <h2>Game Information</h2>
         <div class="info-item">
@@ -239,6 +57,8 @@
           </span>
         </div>
       </div>
+
+      <!-- Download Buttons -->
       <div class="cta-group">
         <a href="https://drive.google.com/uc?export=download&id=macOS-file-id" class="cta">
           <img src="images/apple_logo.png" alt="Apple Logo"> Download for MacOS
@@ -253,9 +73,152 @@
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    © 2025 ARES. All rights reserved. | <a href="#privacy">Privacy Policy</a>
-  </footer>
-</body>
-</html>
+  <!-- JavaScript for Slider -->
+  <script>
+    const sliderContainer = document.querySelector('.slider-container');
+    const sliderItems = document.querySelectorAll('.slider-item');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    let currentIndex = 0;
+
+    function updateSlider() {
+      const offset = -currentIndex * 100; // Calculate offset for each image
+      sliderContainer.style.transform = `translateX(${offset}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % sliderItems.length; // Loop to first image
+      updateSlider();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + sliderItems.length) % sliderItems.length; // Loop to last image
+      updateSlider();
+    });
+  </script>
+
+  <!-- Styles -->
+  <style>
+    :root {
+      --primary-color: #DFBD69;
+      --secondary-color: #000000;
+      --text-color: #FFFFFF;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .left-section {
+      flex: 1 1 60%;
+      margin-right: 20px;
+    }
+
+    .thumbnail-slider {
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid #333333;
+    }
+
+    .slider-container {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slider-item {
+      min-width: 100%;
+    }
+
+    .slider-item img {
+      width: 100%;
+      display: block;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 100;
+      border-radius: 5px;
+      font-size: 1.2rem;
+    }
+
+    .prev-btn {
+      left: 10px;
+    }
+
+    .next-btn {
+      right: 10px;
+    }
+
+    .description {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .right-section {
+      flex: 1 1 35%;
+      background-color: #111111;
+      border: 1px solid #333333;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .info-section h2 {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 8px;
+    }
+
+    .cta img {
+      margin-right: 10px;
+      height: 20px;
+    }
+  </style>
+</Layout>
