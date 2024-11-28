@@ -56,19 +56,23 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
       <!-- Game Info -->
       <div class="info-section">
         <div class="info-item">
-          <label class="info-label">Developer:</label>
+          <span class="info-label">Developer</span>
           <span class="info-value">Cristiano Rotunno</span>
         </div>
         <div class="info-item">
-          <label class="info-label">Distributor:</label>
+          <span class="info-label">Distributor</span>
           <span class="info-value">ARES Studio</span>
         </div>
         <div class="info-item">
-          <label class="info-label">Release Date:</label>
+          <span class="info-label">Release Date</span>
           <span class="info-value">2025</span>
         </div>
         <div class="info-item">
-          <label class="info-label">Platforms:</label>
+          <span class="info-label">Initial Release</span>
+          <span class="info-value">2025</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Platforms</span>
           <span class="info-value">
             <img src="https://img.icons8.com/windows/32/null/windows-10.png" alt="Windows">
             <img src="https://img.icons8.com/ios/32/null/mac-os.png" alt="MacOS">
@@ -209,22 +213,41 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
       margin-bottom: 10px;
     }
 
-    p, .info-value {
+    .info-section {
+      background-color: #0f1116; /* Sfondo scuro */
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #333333;
+    }
+
+    .info-value {
       font-size: 1rem;
-      font-weight: 300; /* Font più sottile */
-      color: #E5E5E5;
-      letter-spacing: 0.5px; /* Spaziatura tra le lettere per migliorare il design */
+      font-weight: 400;
+      color: #FFFFFF;
+      text-align: right;
+    }
+
+    .info-value img {
+      margin-left: 5px;
+      vertical-align: middle;
     }
 
     .info-item {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 10px;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #333333; /* Separatore tra le righe */
+    }
+
+    .info-item:last-child {
+      border-bottom: none; /* Rimuove la linea per l'ultima voce */
     }
 
     .info-label {
-      font-weight: 400; /* Font più leggero */
-      color: var(--primary-color);
+      font-size: 1rem;
+      font-weight: 400;
+      color: #E5E5E5;
     }
 
     .cta-group {
