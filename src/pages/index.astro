@@ -96,21 +96,62 @@
     }
 
     /* Info Section */
-    .info {
-      padding: 50px 20px;
-      text-align: center;
-      background-color: var(--secondary-color);
-    }
-    .info h2 {
-      font-size: 2rem;
-      color: var(--primary-color);
-      margin-bottom: 20px;
-    }
-    .info p {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-      color: #E5E5E5;
-    }
+      .features-box {
+        background-color: #000000;
+        color: #FFFFFF;
+        font-family: 'Inter', sans-serif;
+        border: 1px solid #DFBD69; /* Gold border */
+        border-radius: 8px;
+        padding: 20px;
+        max-width: 400px;
+        margin: 20px auto;
+      }
+    
+      .feature-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #333333;
+        padding-bottom: 8px;
+      }
+    
+      .feature-label {
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: #DFBD69; /* Gold */
+      }
+    
+      .feature-value {
+        font-size: 0.9rem;
+        text-align: right;
+      }
+    
+      .feature-value img {
+        margin-left: 5px;
+        vertical-align: middle;
+      }
+    
+      .action-buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+    
+      .btn {
+        background-color: #DFBD69;
+        color: #000000;
+        border: none;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+    
+      .btn:hover {
+        background-color: #b9954c;
+      }
 
     /* Footer */
     footer {
@@ -156,12 +197,31 @@
   </section>
 
   <!-- Info Section -->
-  <section id="info" class="info">
-    <h2>Game Information</h2>
-    <p><strong>Developer:</strong> Cristiano Rotunno</p>
-    <p><strong>Release Date:</strong> 2025</p>
-    <p><strong>Platform:</strong> Windows, MacOS</p>
-  </section>
+  <section class="features-box">
+  <div class="feature-item">
+    <span class="feature-label">Developer</span>
+    <span class="feature-value">Cristiano Rotunno</span>
+  </div>
+  <div class="feature-item">
+    <span class="feature-label">Distributor</span>
+    <span class="feature-value">ARES Studio</span>
+  </div>
+  <div class="feature-item">
+    <span class="feature-label">Release Date</span>
+    <span class="feature-value">2025</span>
+  </div>
+  <div class="feature-item">
+    <span class="feature-label">Platforms</span>
+    <span class="feature-value">
+      <img src="https://img.icons8.com/windows/32/null/windows-10.png" alt="Windows">
+      <img src="https://img.icons8.com/ios/32/null/mac-os.png" alt="MacOS">
+    </span>
+  </div>
+  <div class="action-buttons">
+    <button class="btn">Share</button>
+    <button class="btn">Report</button>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
