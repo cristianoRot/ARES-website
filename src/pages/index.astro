@@ -1,171 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ARES - Official Website</title>
+  <title>ARES - Sito Ufficiale</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
-    /* Colors */
     :root {
-      --primary-color: #DFBD69; /* Gold */
-      --secondary-color: #000000; /* Black */
-      --text-color: #FFFFFF; /* White */
+      --primary-color: #DFBD69; /* Oro */
+      --secondary-color: #000000; /* Nero */
+      --text-color: #FFFFFF; /* Bianco */
     }
 
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* Body */
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
       background-color: var(--secondary-color);
       color: var(--text-color);
     }
 
-    /* Header */
     header {
-      background: var(--secondary-color);
+      background-color: var(--secondary-color);
       padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+
     .logo {
       font-size: 1.5rem;
       font-weight: 900;
       color: var(--primary-color);
     }
-    .nav-links {
-      display: flex;
-      gap: 15px;
-    }
-    .nav-links a {
+
+    nav a {
       color: var(--text-color);
       text-decoration: none;
+      margin-left: 20px;
       font-weight: 700;
-      transition: color 0.3s;
     }
-    .nav-links a:hover {
+
+    nav a:hover {
       color: var(--primary-color);
     }
 
-    /* Hero Section */
     .hero {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), var(--secondary-color)), url('images/GameIcon2.png') center/cover no-repeat;
       text-align: center;
       padding: 100px 20px;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), var(--secondary-color)), url('images/GameIcon2.png') center/cover no-repeat;
     }
+
     .hero h1 {
       font-size: 3rem;
       font-weight: 900;
-      margin-bottom: 20px;
       color: var(--primary-color);
     }
+
     .hero p {
       font-size: 1.2rem;
-      margin-bottom: 30px;
-      line-height: 1.6;
-      color: #E5E5E5;
+      margin: 20px 0;
     }
-    .hero .cta-group {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
+
+    .download-buttons {
       margin-top: 30px;
     }
-    .hero .cta {
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--secondary-color);
+
+    .download-buttons a {
       background-color: var(--primary-color);
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
+      color: var(--secondary-color);
+      padding: 15px 30px;
+      margin: 0 10px;
       text-decoration: none;
-      display: inline-block;
-    }
-    .hero .cta:hover {
-      background-color: #b9954c; /* Darker gold */
+      font-weight: 700;
+      border-radius: 5px;
+      transition: background-color 0.3s;
     }
 
-    /* Info Section */
-    .info {
+    .download-buttons a:hover {
+      background-color: #b9954c; /* Oro più scuro */
+    }
+
+    .info-section {
+      background-color: var(--secondary-color);
       padding: 50px 20px;
       text-align: center;
-      background-color: var(--secondary-color);
-    }
-    .info h2 {
-      font-size: 2rem;
-      color: var(--primary-color);
-      margin-bottom: 20px;
-    }
-    .info p {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-      color: #E5E5E5;
     }
 
-    /* Footer */
+    .info-section h2 {
+      font-size: 2rem;
+      color: var(--primary-color);
+    }
+
+    .info-section p {
+      font-size: 1.1rem;
+      margin: 10px 0;
+    }
+
     footer {
-      background: var(--secondary-color);
+      background-color: var(--secondary-color);
       text-align: center;
       padding: 20px;
-      color: #777;
       font-size: 0.9rem;
+      color: #777;
     }
+
     footer a {
       color: var(--primary-color);
       text-decoration: none;
-      transition: color 0.3s;
     }
+
     footer a:hover {
       color: #b9954c;
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
     <div class="logo">ARES</div>
-    <nav class="nav-links">
+    <nav>
       <a href="#">Home</a>
-      <a href="#features">Features</a>
-      <a href="#info">Info</a>
-      <a href="#contact">Contact</a>
+      <a href="#info">Informazioni</a>
+      <a href="#download">Download</a>
+      <a href="#contact">Contatti</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
-    <h1>Welcome to ARES</h1>
-    <p>
-      Discover the future of multiplayer gaming. Explore, customize, fight, and dominate in a futuristic universe with breathtaking graphics.
-    </p>
-    <div class="cta-group">
-      <a href="https://drive.google.com/uc?export=download&id=macOS-file-id" class="cta">Download for MacOS</a>
-      <a href="https://drive.google.com/uc?export=download&id=windows-file-id" class="cta">Download for Windows</a>
-      <a href="https://store.steampowered.com/" class="cta">Get it on Steam</a>
+    <h1>Benvenuto in ARES</h1>
+    <p>Scopri il futuro del gaming multiplayer. Esplora, personalizza, combatti e domina in un universo futuristico con una grafica mozzafiato.</p>
+    <div class="download-buttons" id="download">
+      <a href="https://drive.google.com/uc?export=download&id=macOS-file-id">Scarica per MacOS</a>
+      <a href="https://drive.google.com/uc?export=download&id=windows-file-id">Scarica per Windows</a>
+      <a href="https://store.steampowered.com/">Disponibile su Steam</a>
     </div>
   </section>
 
-  <!-- Info Section -->
-  <section id="info" class="info">
-    <h2>Game Information</h2>
-    <p><strong>Developer:</strong> Cristiano Rotunno</p>
-    <p><strong>Release Date:</strong> 2025</p>
-    <p><strong>Platform:</strong> Windows, MacOS</p>
+  <section class="info-section" id="info">
+    <h2>Informazioni sul Gioco</h2>
+    <p><strong>Sviluppatore:</strong> Cristiano Rotunno</p>
+    <p><strong>Data di Uscita:</strong> 2025</p>
+    <p><strong>Piattaforme:</strong> Windows, MacOS</p>
   </section>
 
-  <!-- Footer -->
   <footer>
-    © 2025 ARES. All rights reserved.
+    © 2025 ARES. Tutti i diritti riservati.
   </footer>
 </body>
 </html>
