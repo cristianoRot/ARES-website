@@ -26,6 +26,39 @@
       color: var(--text-color);
     }
 
+    /* Header */
+    header {
+      background-color: var(--secondary-color);
+      border-bottom: 1px solid #333333;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--primary-color);
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+    }
+
     /* Main Container */
     .container {
       display: flex;
@@ -132,9 +165,42 @@
     .cta:hover {
       background-color: #b9954c;
     }
+
+    /* Footer */
+    footer {
+      background-color: var(--secondary-color);
+      border-top: 1px solid #333333;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #b9954c;
+    }
   </style>
 </head>
 <body>
+  <!-- Header -->
+  <header>
+    <div class="logo">ARES</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#features">Features</a>
+      <a href="#info">Info</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
   <div class="container">
     <!-- Left Section -->
     <div class="left-section">
@@ -186,5 +252,10 @@
       </div>
     </div>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 ARES. All rights reserved. | <a href="#privacy">Privacy Policy</a>
+  </footer>
 </body>
 </html>
