@@ -196,6 +196,14 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
       gap: 10px;
     }
 
+    .thumbnail-slider .thumbnails {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 10px 0;
+    }
+
     .thumbnails img.active {
       border: 2px solid var(--primary-color); /* Evidenzia la miniatura selezionata */
       opacity: 1; /* Assicura visibilità piena */
