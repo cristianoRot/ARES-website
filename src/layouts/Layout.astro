@@ -1,34 +1,106 @@
----
-import '../../src/styles/globals.css';
-import '@fontsource/inter/400.css';
-import '@fontsource/inter/800.css';
-import interFont400 from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
-import interFont800 from '@fontsource/inter/files/inter-latin-800-normal.woff2?url';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{Astro.props.title || "ARES - Official Website"}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #DFBD69; /* Gold */
+      --secondary-color: #000000; /* Black */
+      --text-color: #FFFFFF; /* White */
+    }
 
-import Header from '../components/Header.astro';
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-interface Props {
-    title: string;
-}
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+      margin: 0;
+    }
 
-const { title } = Astro.props;
----
+    /* Header */
+    header {
+      background-color: var(--secondary-color);
+      border-bottom: 1px solid #333333;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-<!doctype html>
-<html lang="it">
-    <head>
-        <meta charset="UTF-8" />
-        <title>{title}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content={Astro.generator} />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="preload" as="font" type="font/woff2" href={interFont400} crossorigin />
-        <link rel="preload" as="font" type="font/woff2" href={interFont800} crossorigin />
-    </head>
-    <body class="antialiased text-white bg-black">
-        <div class="flex flex-col min-h-screen">
-            <Header />
-            <main class="grow"><slot /></main>
-        </div>
-    </body>
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--primary-color);
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: color 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--secondary-color);
+      border-top: 1px solid #333333;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.3s ease-in-out;
+    }
+
+    footer a:hover {
+      color: #b9954c; /* Darker gold */
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">ARES</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="#features">Features</a>
+      <a href="#info">Info</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ARES. All rights reserved. | <a href="#privacy">Privacy Policy</a></p>
+  </footer>
+</body>
 </html>
