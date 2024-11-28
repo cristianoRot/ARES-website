@@ -98,34 +98,50 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
 
   <!-- JavaScript for Slider -->
   <script>
-    const sliderContainer = document.querySelector('.slider-container');
-    const sliderItems = document.querySelectorAll('.slider-item');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
+    // Seleziona gli elementi principali
+    const sliderContainer = document.querySelector('.thumbnail-slider .thumbnails');
     const thumbnails = document.querySelectorAll('.thumbnail-slider .thumbnails img');
     const mainImage = document.getElementById('main-image');
-
-    let currentIndex = 0;
-
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+  
+    // Variabile per la posizione dello slider
+    let scrollAmount = 0;
+    const scrollStep = 100; // Distanza di scroll in pixel
+  
+    // Funzione per aggiornare l'immagine principale
+    function updateMainImage(src) {
+      mainImage.src = src;
+    }
+  
+    // Event Listener per le miniature
     thumbnails.forEach((thumbnail) => {
       thumbnail.addEventListener('click', (e) => {
-        mainImage.src = e.target.getAttribute('data-src');
+        const newSrc = e.target.getAttribute('data-src');
+        updateMainImage(newSrc);
+  
+        // Rimuovi la classe attiva da tutte le miniature
+        thumbnails.forEach((thumb) => thumb.classList.remove('active'));
+        // Aggiungi la classe attiva alla miniatura cliccata
+        e.target.classList.add('active');
       });
     });
-
-    function updateSlider() {
-      const offset = -currentIndex * 100; // Calculate offset for each image
-      sliderContainer.style.transform = `translateX(${offset}%)`;
-    }
-
+  
+    // Event Listener per il pulsante "Next"
     nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % sliderItems.length; // Loop to first image
-      updateSlider();
+      // Scorri in avanti
+      sliderContainer.scrollBy({ left: scrollStep, behavior: 'smooth' });
     });
-
+  
+    // Event Listener per il pulsante "Prev"
     prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + sliderItems.length) % sliderItems.length; // Loop to last image
-      updateSlider();
+      // Scorri indietro
+      sliderContainer.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+    });
+  
+    // Imposta la prima immagine come attiva all'avvio
+    window.addEventListener('DOMContentLoaded', () => {
+      thumbnails[0].classList.add('active');
     });
   </script>
 
@@ -220,7 +236,7 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
       justify-content: center;
       width: 40px;
       height: 40px;
-      background-color: rgba(0, 0, 0, 0.6); /* Sfondo semi-trasparente */
+      background-color: var(--tertiary-color);
       color: var(--primary-color); /* Colore principale */
       border: none;
       border-radius: 50%; /* Forma circolare */
