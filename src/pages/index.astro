@@ -263,7 +263,7 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
       border: none;
       border-radius: 50%; /* Forma circolare */
       cursor: pointer;
-      font-size: 1.5rem;
+      font-size: 1rem;
       transition: background-color 0.3s, transform 0.2s;
       z-index: 10; /* Sopra le miniature */
     }
@@ -413,6 +413,16 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
 
       .right-section {
         margin-top: 20px;
+      }
+
+      .features {
+        flex-direction: column; /* Disposizione verticale */
+        align-items: center; /* Centra le card verticalmente */
+        gap: 20px; /* Spazio tra le card */
+      }
+  
+      .features .feature {
+        max-width: 100%; /* La card occupa tutta la larghezza */
       }
     }
   </style>
