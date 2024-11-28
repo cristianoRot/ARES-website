@@ -262,11 +262,23 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
       align-items: center;
       justify-content: center;
       padding: 10px 15px;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 400; /* Font per i pulsanti */
+      border: 1px solid var(--primary-color);
+    }
+
+    .cta:hover {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
       background-color: var(--primary-color);
       color: var(--secondary-color);
       text-decoration: none;
-      font-weight: 700; /* Font per i pulsanti */
-      border-radius: 8px;
+      font-weight: 400; /* Font per i pulsanti */
+      border: 1px solid var(--secondary-color);
     }
 
     .cta img {
