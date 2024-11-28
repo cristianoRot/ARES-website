@@ -7,25 +7,26 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
   <div class="container">
     <!-- Left Section -->
     <div class="left-section">
+      <!-- Thumbnail Preview -->
+      <div class="main-thumbnail">
+        <img id="main-image" src="images/ares_screenshot1.png" alt="Main Screenshot">
+        <div class="play-button">
+          <button>▶</button>
+        </div>
+      </div>
+
       <!-- Thumbnail Slider -->
       <div class="thumbnail-slider">
-        <div class="slider-container">
-          <div class="slider-item">
-            <img src="images/ares_screenshot1.png" alt="Screenshot 1">
-          </div>
-          <div class="slider-item">
-            <img src="images/ares_screenshot2.png" alt="Screenshot 2">
-          </div>
-          <div class="slider-item">
-            <img src="images/ares_screenshot3.png" alt="Screenshot 3">
-          </div>
-          <div class="slider-item">
-            <img src="images/ares_screenshot4.png" alt="Screenshot 4">
-          </div>
-        </div>
         <button class="slider-btn prev-btn">&lt;</button>
+        <div class="thumbnails">
+          <img src="images/ares_screenshot1.png" alt="Thumbnail 1" data-src="images/ares_screenshot1.png">
+          <img src="images/ares_screenshot2.png" alt="Thumbnail 2" data-src="images/ares_screenshot2.png">
+          <img src="images/ares_screenshot3.png" alt="Thumbnail 3" data-src="images/ares_screenshot3.png">
+          <img src="images/ares_screenshot4.png" alt="Thumbnail 4" data-src="images/ares_screenshot4.png">
+        </div>
         <button class="slider-btn next-btn">&gt;</button>
       </div>
+
       <!-- Description -->
       <div class="description">
         <p>
@@ -104,8 +105,16 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
     const sliderItems = document.querySelectorAll('.slider-item');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
+    const thumbnails = document.querySelectorAll('.thumbnail-slider .thumbnails img');
+    const mainImage = document.getElementById('main-image');
 
     let currentIndex = 0;
+
+    thumbnails.forEach((thumbnail) => {
+      thumbnail.addEventListener('click', (e) => {
+        mainImage.src = e.target.getAttribute('data-src');
+      });
+    });
 
     function updateSlider() {
       const offset = -currentIndex * 100; // Calculate offset for each image
@@ -128,7 +137,7 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
     :root {
       --primary-color: #926F34;
       --secondary-color: #0f1116;
-      --tertiary-color: #202024
+      --tertiary-color: #202024;
       --text-color: #FFFFFF;
     }
 
@@ -155,13 +164,68 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
       flex: 2;
     }
 
-    .thumbnail-slider {
+    .main-thumbnail {
       position: relative;
       max-width: 100%;
-      overflow: hidden;
       margin-bottom: 20px;
+    }
+
+    .main-thumbnail img {
+      width: 100%;
       border-radius: 8px;
       border: 1px solid #333333;
+      display: block;
+    }
+
+    .main-thumbnail .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.6);
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .main-thumbnail .play-button button {
+      font-size: 1.5rem;
+      color: var(--text-color);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .thumbnail-slider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .thumbnail-slider .thumbnails {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 10px 0;
+    }
+  
+    .thumbnail-slider .thumbnails img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: border 0.3s;
+    }
+
+    .thumbnail-slider .thumbnails img:hover {
+      border: 2px solid var(--primary-color);
     }
 
     .slider-container {
@@ -175,30 +239,20 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
       display: block;
     }
 
-    .slider-item {
-      min-width: 100%;
-    }
-
     .slider-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: var(--primary-color);
-      color: var(--secondary-color);
-      border: none;
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
+      border: 1px solid var(--primary-color);
+      border-radius: 5px;
       padding: 10px;
       cursor: pointer;
-      z-index: 100;
-      border-radius: 5px;
-      font-size: 1.2rem;
+      font-size: 1rem;
+      transition: background-color 0.3s;
     }
 
-    .prev-btn {
-      left: 10px;
-    }
-
-    .next-btn {
-      right: 10px;
+    .slider-btn:hover {
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
     }
 
     .right-section {
