@@ -128,6 +128,7 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
     :root {
       --primary-color: #926F34;
       --secondary-color: #0f1116;
+      --tertiary-color: #202024
       --text-color: #FFFFFF;
     }
 
@@ -309,7 +310,7 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
     .features .feature {
       flex: 1;
       max-width: 300px;
-      background: #2A2A3F;
+      background: var(--tertiary-color);
       padding: 20px;
       border-radius: 10px;
       transition: transform 0.3s;
