@@ -119,6 +119,21 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
       thumbnails[index].classList.add('active');
     }
   
+    // Funzione per cliccare su una miniatura
+    function handleThumbnailClick(event) {
+      // Trova l'indice della miniatura cliccata
+      const clickedThumbnail = Array.from(thumbnails).indexOf(event.target);
+      if (clickedThumbnail !== -1) {
+        currentIndex = clickedThumbnail; // Aggiorna l'indice corrente
+        updateMainImage(currentIndex); // Aggiorna l'immagine principale
+      }
+    }
+  
+    // Event Listener per ogni miniatura
+    thumbnails.forEach((thumbnail) => {
+      thumbnail.addEventListener('click', handleThumbnailClick);
+    });
+  
     // Event Listener per il pulsante "Previous"
     prevBtn.addEventListener('click', () => {
       currentIndex--; // Passa all'immagine precedente
