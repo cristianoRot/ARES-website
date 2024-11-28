@@ -20,89 +20,107 @@
       box-sizing: border-box;
     }
 
-    /* Body */
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--secondary-color);
       color: var(--text-color);
     }
 
-    /* Header */
-    header {
-      background: var(--secondary-color);
-      padding: 20px;
+    /* Main Container */
+    .container {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
-      align-items: center;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: var(--primary-color);
+    /* Left Section (Thumbnail & Description) */
+    .left-section {
+      flex: 1 1 60%;
+      margin-right: 20px;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 15px;
-    }
-
-    .nav-links a {
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: 700;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary-color);
-    }
-
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), var(--secondary-color)), url('images/GameIcon2.png') center/cover no-repeat;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 900;
+    .thumbnail {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
       margin-bottom: 20px;
-      color: var(--primary-color);
     }
 
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
+    .thumbnail img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .description {
+      font-size: 1rem;
       line-height: 1.6;
       color: #E5E5E5;
     }
 
-    /* Download Buttons (Vertical Layout) */
+    /* Right Section (Buttons & Info) */
+    .right-section {
+      flex: 1 1 35%;
+      background-color: #111111;
+      border: 1px solid #333333;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .info-section {
+      margin-bottom: 20px;
+    }
+
+    .info-section h2 {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .info-item span {
+      font-size: 0.9rem;
+    }
+
+    .info-label {
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+
+    .info-value {
+      color: #E5E5E5;
+    }
+
+    /* Download Buttons */
     .cta-group {
       display: flex;
       flex-direction: column;
-      align-items: center;
       gap: 15px;
-      margin-top: 30px;
     }
 
     .cta {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 15px 20px;
-      width: 250px;
-      font-size: 1.1rem;
+      padding: 15px;
+      font-size: 1rem;
       font-weight: 700;
       color: var(--secondary-color);
       background-color: var(--primary-color);
       border: none;
-      border-radius: 0px; /* Square corners */
+      border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s;
       text-decoration: none;
+      text-align: center;
+      transition: background-color 0.3s;
     }
 
     .cta img {
@@ -112,143 +130,61 @@
     }
 
     .cta:hover {
-      background-color: #b9954c; /* Darker gold */
-    }
-
-    /* Info Section */
-    .features-box {
-      padding: 20px;
-      max-width: 400px;
-      margin: 20px auto;
-    }
-
-    .feature-item {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 15px;
-      border-bottom: 1px solid #333333;
-      padding-bottom: 8px;
-    }
-
-    .feature-label {
-      font-weight: 700;
-      font-size: 0.9rem;
-      color: var(--primary-color);
-    }
-
-    .feature-value {
-      font-size: 0.9rem;
-      text-align: right;
-    }
-
-    .feature-value img {
-      margin-left: 5px;
-      vertical-align: middle;
-    }
-
-    .action-buttons {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 20px;
-    }
-
-    .btn {
-      background-color: var(--primary-color);
-      color: var(--secondary-color);
-      border: none;
-      padding: 10px 20px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
       background-color: #b9954c;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--secondary-color);
-      text-align: center;
-      padding: 20px;
-      color: #777;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: var(--primary-color);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    footer a:hover {
-      color: #b9954c;
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="logo">ARES</div>
-    <nav class="nav-links">
-      <a href="#">Home</a>
-      <a href="#features">Features</a>
-      <a href="#info">Info</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <div class="container">
+    <!-- Left Section -->
+    <div class="left-section">
+      <div class="thumbnail">
+        <img src="images/GameThumbnail.png" alt="Game Thumbnail">
+      </div>
+      <div class="description">
+        <p>
+          Dive into the world of ARES, a futuristic multiplayer game where you explore, customize, and dominate.
+          With stunning graphics and an immersive storyline, ARES promises an unparalleled gaming experience.
+        </p>
+      </div>
+    </div>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Welcome to ARES</h1>
-    <p>
-      Discover the future of multiplayer gaming. Explore, customize, fight, and dominate in a futuristic universe with breathtaking graphics.
-    </p>
-    <div class="cta-group">
-      <a href="https://drive.google.com/uc?export=download&id=macOS-file-id" class="cta">
-        <img src="images/apple_logo.png" alt="Apple Logo"> Download for MacOS
-      </a>
-      <a href="https://drive.google.com/uc?export=download&id=windows-file-id" class="cta">
-        <img src="images/win11_logo.png" alt="Windows Logo"> Download for Windows
-      </a>
-      <a href="https://store.steampowered.com/" class="cta">
-        <img src="images/steam_logo.png" alt="Steam Logo"> Get it on Steam
-      </a>
+    <!-- Right Section -->
+    <div class="right-section">
+      <div class="info-section">
+        <h2>Game Information</h2>
+        <div class="info-item">
+          <span class="info-label">Developer:</span>
+          <span class="info-value">Cristiano Rotunno</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Distributor:</span>
+          <span class="info-value">ARES Studio</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Release Date:</span>
+          <span class="info-value">2025</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Platforms:</span>
+          <span class="info-value">
+            <img src="https://img.icons8.com/windows/32/null/windows-10.png" alt="Windows">
+            <img src="https://img.icons8.com/ios/32/null/mac-os.png" alt="MacOS">
+          </span>
+        </div>
+      </div>
+      <div class="cta-group">
+        <a href="https://drive.google.com/uc?export=download&id=macOS-file-id" class="cta">
+          <img src="images/apple_logo.png" alt="Apple Logo"> Download for MacOS
+        </a>
+        <a href="https://drive.google.com/uc?export=download&id=windows-file-id" class="cta">
+          <img src="images/win11_logo.png" alt="Windows Logo"> Download for Windows
+        </a>
+        <a href="https://store.steampowered.com/" class="cta">
+          <img src="images/steam_logo.png" alt="Steam Logo"> Get it on Steam
+        </a>
+      </div>
     </div>
-  </section>
-
-  <!-- Info Section -->
-  <section class="features-box">
-    <div class="feature-item">
-      <span class="feature-label">Developer</span>
-      <span class="feature-value">Cristiano Rotunno</span>
-    </div>
-    <div class="feature-item">
-      <span class="feature-label">Distributor</span>
-      <span class="feature-value">ARES Studio</span>
-    </div>
-    <div class="feature-item">
-      <span class="feature-label">Release Date</span>
-      <span class="feature-value">2025</span>
-    </div>
-    <div class="feature-item">
-      <span class="feature-label">Platforms</span>
-      <span class="feature-value">
-        <img src="https://img.icons8.com/windows/32/null/windows-10.png" alt="Windows">
-        <img src="https://img.icons8.com/ios/32/null/mac-os.png" alt="MacOS">
-      </span>
-    </div>
-    <div class="action-buttons">
-      <button class="btn">Share</button>
-      <button class="btn">Report</button>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    © 2025 ARES. All rights reserved.
-  </footer>
+  </div>
 </body>
 </html>
