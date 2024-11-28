@@ -98,72 +98,51 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
 
   <!-- JavaScript for Slider -->
   <script>
-  // Seleziona gli elementi principali
-  const mainImage = document.getElementById('main-image'); // Immagine principale
-  const thumbnails = document.querySelectorAll('.thumbnails img'); // Tutte le miniature
-  const sliderContainer = document.querySelector('.thumbnails'); // Contenitore delle miniature
-  const prevBtn = document.querySelector('.prev-btn'); // Pulsante Previous
-  const nextBtn = document.querySelector('.next-btn'); // Pulsante Next
-
-  // Variabile per tracciare lo stato corrente dello slider
-  let currentScrollPosition = 0;
-  const thumbnailWidth = 80; // Larghezza approssimativa di una miniatura (incluso margine)
-  const visibleThumbnails = 5; // Numero di miniature visibili contemporaneamente
-
-  // Funzione per aggiornare l'immagine principale
-  function updateMainImage(src) {
-    mainImage.src = src;
-  }
-
-  // Event Listener per aggiornare l'immagine principale quando si clicca su una miniatura
-  thumbnails.forEach((thumbnail) => {
-    thumbnail.addEventListener('click', () => {
-      updateMainImage(thumbnail.dataset.src);
-
+    // Seleziona gli elementi principali
+    const mainImage = document.getElementById('main-image'); // Immagine principale
+    const thumbnails = document.querySelectorAll('.thumbnails img'); // Tutte le miniature
+    const prevBtn = document.querySelector('.prev-btn'); // Pulsante Previous
+    const nextBtn = document.querySelector('.next-btn'); // Pulsante Next
+  
+    // Variabile per tenere traccia dell'immagine corrente
+    let currentIndex = 0;
+  
+    // Funzione per aggiornare l'immagine principale
+    function updateMainImage(index) {
+      // Aggiorna l'immagine principale
+      mainImage.src = thumbnails[index].dataset.src;
+  
       // Rimuovi la classe attiva da tutte le miniature
       thumbnails.forEach((thumb) => thumb.classList.remove('active'));
-
-      // Aggiungi la classe attiva alla miniatura cliccata
-      thumbnail.classList.add('active');
-    });
-  });
-
-  // Funzione per scorrere il contenitore delle miniature a sinistra
-  function scrollLeft() {
-    currentScrollPosition -= thumbnailWidth * visibleThumbnails;
-    if (currentScrollPosition < 0) {
-      currentScrollPosition = 0; // Evita di scorrere oltre il limite sinistro
+  
+      // Aggiungi la classe attiva alla miniatura corrente
+      thumbnails[index].classList.add('active');
     }
-    sliderContainer.scrollTo({
-      left: currentScrollPosition,
-      behavior: 'smooth',
+  
+    // Event Listener per il pulsante "Previous"
+    prevBtn.addEventListener('click', () => {
+      currentIndex--; // Passa all'immagine precedente
+      if (currentIndex < 0) {
+        currentIndex = thumbnails.length - 1; // Torna all'ultima immagine se si supera il limite sinistro
+      }
+      updateMainImage(currentIndex);
     });
-  }
-
-  // Funzione per scorrere il contenitore delle miniature a destra
-  function scrollRight() {
-    currentScrollPosition += thumbnailWidth * visibleThumbnails;
-    const maxScrollPosition =
-      sliderContainer.scrollWidth - sliderContainer.clientWidth;
-    if (currentScrollPosition > maxScrollPosition) {
-      currentScrollPosition = maxScrollPosition; // Evita di scorrere oltre il limite destro
-    }
-    sliderContainer.scrollTo({
-      left: currentScrollPosition,
-      behavior: 'smooth',
+  
+    // Event Listener per il pulsante "Next"
+    nextBtn.addEventListener('click', () => {
+      currentIndex++; // Passa all'immagine successiva
+      if (currentIndex >= thumbnails.length) {
+        currentIndex = 0; // Torna alla prima immagine se si supera il limite destro
+      }
+      updateMainImage(currentIndex);
     });
-  }
+  
+    // Imposta la prima immagine come attiva all'avvio
+    window.addEventListener('DOMContentLoaded', () => {
+      updateMainImage(currentIndex);
+    });
+  </script>
 
-  // Aggiungi Event Listener ai pulsanti
-  prevBtn.addEventListener('click', scrollLeft);
-  nextBtn.addEventListener('click', scrollRight);
-
-  // Imposta la prima miniatura come attiva all'avvio
-  window.addEventListener('DOMContentLoaded', () => {
-    thumbnails[0].classList.add('active'); // Prima miniatura attiva
-    updateMainImage(thumbnails[0].dataset.src); // Imposta l'immagine principale
-  });
-</script>
 
   <!-- Styles -->
   <style>
