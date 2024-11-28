@@ -196,26 +196,18 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
       gap: 10px;
     }
 
-    .thumbnail-slider .thumbnails {
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding: 10px 0;
+    .thumbnails img.active {
+      border: 2px solid var(--primary-color); /* Evidenzia la miniatura selezionata */
+      opacity: 1; /* Assicura visibilità piena */
     }
   
-    .thumbnail-slider .thumbnails img {
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      border-radius: 8px;
-      border: 2px solid transparent;
-      cursor: pointer;
-      transition: border 0.3s;
+    .thumbnails img {
+      opacity: 0.7; /* Miniature meno evidenti per default */
+      transition: opacity 0.3s, border 0.3s;
     }
-
-    .thumbnail-slider .thumbnails img:hover {
-      border: 2px solid var(--primary-color);
+  
+    .thumbnails img:hover {
+      opacity: 1; /* Migliora visibilità al passaggio del mouse */
     }
 
     .slider-container {
