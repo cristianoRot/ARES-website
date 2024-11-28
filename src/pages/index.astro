@@ -5,7 +5,6 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
 <Layout title="ARES - Official Website">
   <!-- Main Container -->
   <div class="container">
-
     <!-- Left Section -->
     <div class="left-section">
       <!-- Thumbnail Slider -->
@@ -38,6 +37,22 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
 
     <!-- Right Section -->
     <div class="right-section">
+      <!-- Title -->
+      <h1 class="game-title">ARES</h1>
+
+      <!-- Download Buttons -->
+      <div class="cta-group">
+        <a href="https://drive.google.com/uc?export=download&id=macOS-file-id" class="cta">
+          <img src="images/apple_logo.png" alt="Apple Logo"> Download for MacOS
+        </a>
+        <a href="https://drive.google.com/uc?export=download&id=windows-file-id" class="cta">
+          <img src="images/win11_logo.png" alt="Windows Logo"> Download for Windows
+        </a>
+        <a href="https://store.steampowered.com/" class="cta">
+          <img src="images/steam_logo.png" alt="Steam Logo"> Get it on Steam
+        </a>
+      </div>
+
       <!-- Game Info -->
       <div class="info-section">
         <h2>Game Information</h2>
@@ -60,19 +75,6 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
             <img src="https://img.icons8.com/ios/32/null/mac-os.png" alt="MacOS">
           </span>
         </div>
-      </div>
-
-      <!-- Download Buttons -->
-      <div class="cta-group">
-        <a href="https://drive.google.com/uc?export=download&id=macOS-file-id" class="cta">
-          <img src="images/apple_logo.png" alt="Apple Logo"> Download for MacOS
-        </a>
-        <a href="https://drive.google.com/uc?export=download&id=windows-file-id" class="cta">
-          <img src="images/win11_logo.png" alt="Windows Logo"> Download for Windows
-        </a>
-        <a href="https://store.steampowered.com/" class="cta">
-          <img src="images/steam_logo.png" alt="Steam Logo"> Get it on Steam
-        </a>
       </div>
     </div>
   </div>
@@ -103,15 +105,13 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
   </script>
 
   <!-- Styles -->
-
-
   <style>
     :root {
       --primary-color: #DFBD69;
       --secondary-color: #0f1116;
       --text-color: #FFFFFF;
     }
-  
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -119,7 +119,7 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
       color: var(--text-color);
       line-height: 1.6; /* Spaziatura tra le righe per migliorare la leggibilità */
     }
-  
+
     .container {
       display: flex;
       justify-content: space-between;
@@ -130,7 +130,7 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
       padding: 20px;
       gap: 20px;
     }
-  
+
     .left-section {
       flex: 2;
     }
@@ -180,53 +180,61 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
     .next-btn {
       right: 10px;
     }
-  
+
     .right-section {
       flex: 1;
       background-color: #0f1116;
-      border: 1px solid #333333;
+      border: none;
       border-radius: 8px;
       padding: 20px;
       max-width: 400px;
+    }
+
+    .game-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 20px;
     }
 
     .description {
       font-size: 1rem;
       line-height: 1.6;
     }
-  
+
     h2 {
       font-size: 1.8rem;
       font-weight: 400; /* Font più leggero */
       color: var(--primary-color);
       margin-bottom: 10px;
     }
-  
+
     p, .info-value {
       font-size: 1rem;
       font-weight: 300; /* Font più sottile */
       color: #E5E5E5;
       letter-spacing: 0.5px; /* Spaziatura tra le lettere per migliorare il design */
     }
-  
+
     .info-item {
       display: flex;
       justify-content: space-between;
       margin-bottom: 10px;
     }
-  
+
     .info-label {
       font-weight: 400; /* Font più leggero */
       color: var(--primary-color);
     }
-  
+
     .cta-group {
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-top: 20px;
+      margin-bottom: 20px; /* Spaziatura tra pulsanti e info box */
     }
-  
+
     .cta {
       display: flex;
       align-items: center;
@@ -235,27 +243,26 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
       background-color: var(--primary-color);
       color: var(--secondary-color);
       text-decoration: none;
-      font-weight: 400; /* Font leggero per i pulsanti */
+      font-weight: 700; /* Font per i pulsanti */
       border-radius: 8px;
     }
-  
+
     .cta img {
       margin-right: 10px;
       height: 20px;
     }
-  
-  
+
     @media screen and (max-width: 768px) {
       .container {
         flex-wrap: wrap;
       }
-  
+
       .left-section,
       .right-section {
         flex: 1 1 100%;
         max-width: 100%;
       }
-  
+
       .right-section {
         margin-top: 20px;
       }
