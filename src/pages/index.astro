@@ -1,53 +1,151 @@
----
-import Layout from '../layouts/Layout.astro';
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARES - Sito Ufficiale</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1E1E2F;
+      color: #FFFFFF;
+    }
+    header {
+      background: #111827;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #E11D48;
+    }
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+    .nav-links a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #E11D48;
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(30,30,47,1)), url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      color: #E5E5E5;
+    }
+    .hero .cta {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      background-color: #E11D48;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .hero .cta:hover {
+      background-color: #BE123C;
+    }
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .features .feature {
+      flex: 1;
+      max-width: 300px;
+      background: #2A2A3F;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .features .feature:hover {
+      transform: translateY(-10px);
+    }
+    .features .feature h3 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .features .feature p {
+      color: #E5E5E5;
+    }
+    footer {
+      background: #111827;
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">ARES</div>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">Download</a>
+      <a href="#">Contatti</a>
+    </nav>
+  </header>
 
-const heroTitle = "ARES";
-const subTitle = "TI HANNO COSTRETTO A FUGGIRE\nTI DANNO LA CACCIA";
-const description = `
-Mentre l'attenzione del mondo è concentrata sulla Guerra del Golfo, un'oscura forza 
-clandestina si è infiltrata nelle alte sfere della CIA, dichiarando traditore chiunque le si opponga. 
-Esiliato dalla sua agenzia e dal paese che un tempo li considerava eroi, il veterano di Black Ops 
-Frank Woods e il suo team si ritrovano braccati dalla stessa macchina militare che li ha creati.
-`;
----
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Benvenuto in ARES</h1>
+    <p>
+      Scopri il futuro del gaming multiplayer. Esplora, personalizza, combatti e domina in un universo futuristico con una grafica mozzafiato.
+    </p>
+    <button class="cta">Gioca ora</button>
+  </section>
 
-<Layout title="ARES">
-    <!-- Header Section -->
-    <header class="bg-black text-white flex justify-between items-center px-6 py-4">
-        <h1 class="text-lg font-bold"ARES <span class="text-orange-600">ARES</span></h1>
-        <a href="#" class="btn btn-primary bg-orange-600 px-4 py-2 text-white font-bold rounded">
-            DOWNLOAD
-        </a>
-    </header>
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature">
+      <h3>Grafica Realistica</h3>
+      <p>Immergiti in un mondo con dettagli grafici di nuova generazione.</p>
+    </div>
+    <div class="feature">
+      <h3>Multiplayer Dinamico</h3>
+      <p>Affronta sfide epiche in modalità multiplayer avanzata.</p>
+    </div>
+    <div class="feature">
+      <h3>Personalizzazione Totale</h3>
+      <p>Crea il tuo stile unico con equipaggiamenti personalizzabili.</p>
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section class="relative bg-cover bg-center text-center text-white" style="background-image: url('/images/GameIcon2.png'); height: 600px;">
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div class="relative z-10 flex flex-col items-center justify-center h-full">
-            <h1 class="text-5xl font-extrabold uppercase">{heroTitle}</h1>
-            <a href="#" class="btn btn-primary bg-orange-600 px-6 py-3 mt-6 text-xl font-bold rounded">
-                DOWNLOAD NOW
-            </a>
-        </div>
-    </section>
-
-    <!-- Subsection -->
-    <section class="bg-black text-white py-12 px-6 text-center">
-        <h2 class="text-3xl font-extrabold text-orange-600 uppercase mb-4">{subTitle}</h2>
-        <p class="text-lg leading-relaxed">{description}</p>
-    </section>
-
-    <!-- Video Section -->
-    <section class="bg-black py-12 px-6">
-        <div class="relative max-w-4xl mx-auto">
-            <img src="/path-to-thumbnail.jpg" alt="Anteprima del video" class="w-full rounded">
-            <a href="#" class="absolute inset-0 flex items-center justify-center">
-                <div class="bg-orange-600 p-4 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-5.197 3.25A1 1 0 018 13.482V6.518a1 1 0 011.555-.832l5.197 3.25a1 1 0 010 1.664z" />
-                    </svg>
-                </div>
-            </a>
-        </div>
-    </section>
-</Layout>
+  <!-- Footer -->
+  <footer>
+    © 2024 ARES. Tutti i diritti riservati.
+  </footer>
+</body>
+</html>
