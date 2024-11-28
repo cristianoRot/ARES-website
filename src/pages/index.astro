@@ -143,10 +143,16 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
 
     .slider-item {
       min-width: 100%;
+      display: flex;
+      justify-content: center; /* Center the image */
+      align-items: center;
     }
 
     .slider-item img {
-      width: 100%;
+      width: 90%; /* Fix the width to a percentage of the container */
+      max-width: 500px; /* Maximum width for larger screens */
+      height: auto; /* Maintain aspect ratio */
+      object-fit: contain; /* Ensure the image fits within the given dimensions */
       display: block;
     }
 
