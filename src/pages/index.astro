@@ -44,7 +44,7 @@
     .hero {
       text-align: center;
       padding: 100px 20px;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(30,30,47,1)), url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(30,30,47,1)), url('images/GameIcon2.png') center/cover no-repeat;
     }
     .hero h1 {
       font-size: 3rem;
@@ -67,6 +67,8 @@
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
     }
     .hero .cta:hover {
       background-color: #BE123C;
@@ -112,9 +114,9 @@
     <div class="logo">ARES</div>
     <nav class="nav-links">
       <a href="#">Home</a>
-      <a href="#">Features</a>
-      <a href="#">Download</a>
-      <a href="#">Contatti</a>
+      <a href="#features">Features</a>
+      <a href="#download">Download</a>
+      <a href="#contact">Contatti</a>
     </nav>
   </header>
 
@@ -124,11 +126,11 @@
     <p>
       Scopri il futuro del gaming multiplayer. Esplora, personalizza, combatti e domina in un universo futuristico con una grafica mozzafiato.
     </p>
-    <button class="cta">Gioca ora</button>
+    <a href="https://drive.google.com/file/d/1Ura5AsfKrdLX5VxPNr0w5H4vP91zE1Ge/view?usp=share_link" class="cta" target="_blank">Scarica Ora</a>
   </section>
 
   <!-- Features Section -->
-  <section class="features">
+  <section id="features" class="features">
     <div class="feature">
       <h3>Grafica Realistica</h3>
       <p>Immergiti in un mondo con dettagli grafici di nuova generazione.</p>
