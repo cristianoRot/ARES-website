@@ -35,21 +35,25 @@
       justify-content: space-between;
       align-items: center;
     }
+
     .logo {
       font-size: 1.5rem;
       font-weight: 900;
       color: var(--primary-color);
     }
+
     .nav-links {
       display: flex;
       gap: 15px;
     }
+
     .nav-links a {
       color: var(--text-color);
       text-decoration: none;
       font-weight: 700;
       transition: color 0.3s;
     }
+
     .nav-links a:hover {
       color: var(--primary-color);
     }
@@ -60,94 +64,109 @@
       padding: 100px 20px;
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), var(--secondary-color)), url('images/GameIcon2.png') center/cover no-repeat;
     }
+
     .hero h1 {
       font-size: 3rem;
       font-weight: 900;
       margin-bottom: 20px;
       color: var(--primary-color);
     }
+
     .hero p {
       font-size: 1.2rem;
       margin-bottom: 30px;
       line-height: 1.6;
       color: #E5E5E5;
     }
-    .hero .cta-group {
+
+    /* Download Buttons (Vertical Layout) */
+    .cta-group {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       gap: 15px;
       margin-top: 30px;
     }
-    .hero .cta {
-      padding: 15px 30px;
-      font-size: 1.2rem;
+
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 20px;
+      width: 250px;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--secondary-color);
       background-color: var(--primary-color);
       border: none;
-      border-radius: 5px;
+      border-radius: 0px; /* Square corners */
       cursor: pointer;
       transition: background-color 0.3s;
       text-decoration: none;
-      display: inline-block;
     }
-    .hero .cta:hover {
+
+    .cta img {
+      margin-right: 10px;
+      width: 20px;
+      height: auto;
+    }
+
+    .cta:hover {
       background-color: #b9954c; /* Darker gold */
     }
 
     /* Info Section */
+    .features-box {
+      padding: 20px;
+      max-width: 400px;
+      margin: 20px auto;
+    }
 
-      .features-box {
-        padding: 20px;
-        max-width: 400px;
-        margin: 20px auto;
-      }
+    .feature-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #333333;
+      padding-bottom: 8px;
+    }
 
-      .feature-item {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 15px;
-        border-bottom: 1px solid #333333;
-        padding-bottom: 8px;
-      }
-    
-      .feature-label {
-        font-weight: 700;
-        font-size: 0.9rem;
-        color: #DFBD69; /* Gold */
-      }
-    
-      .feature-value {
-        font-size: 0.9rem;
-        text-align: right;
-      }
-    
-      .feature-value img {
-        margin-left: 5px;
-        vertical-align: middle;
-      }
-    
-      .action-buttons {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 20px;
-      }
-    
-      .btn {
-        background-color: #DFBD69;
-        color: #000000;
-        border: none;
-        padding: 10px 20px;
-        font-size: 0.9rem;
-        font-weight: 700;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-    
-      .btn:hover {
-        background-color: #b9954c;
-      }
+    .feature-label {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--primary-color);
+    }
+
+    .feature-value {
+      font-size: 0.9rem;
+      text-align: right;
+    }
+
+    .feature-value img {
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .btn {
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      border: none;
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #b9954c;
+    }
 
     /* Footer */
     footer {
@@ -157,11 +176,13 @@
       color: #777;
       font-size: 0.9rem;
     }
+
     footer a {
       color: var(--primary-color);
       text-decoration: none;
       transition: color 0.3s;
     }
+
     footer a:hover {
       color: #b9954c;
     }
@@ -186,37 +207,43 @@
       Discover the future of multiplayer gaming. Explore, customize, fight, and dominate in a futuristic universe with breathtaking graphics.
     </p>
     <div class="cta-group">
-      <a href="https://drive.google.com/uc?export=download&id=macOS-file-id" class="cta">Download for MacOS</a>
-      <a href="https://drive.google.com/uc?export=download&id=windows-file-id" class="cta">Download for Windows</a>
-      <a href="https://store.steampowered.com/" class="cta">Get it on Steam</a>
+      <a href="https://drive.google.com/uc?export=download&id=macOS-file-id" class="cta">
+        <img src="images/apple_logo.png" alt="Apple Logo"> Download for MacOS
+      </a>
+      <a href="https://drive.google.com/uc?export=download&id=windows-file-id" class="cta">
+        <img src="images/win11_logo.png" alt="Windows Logo"> Download for Windows
+      </a>
+      <a href="https://store.steampowered.com/" class="cta">
+        <img src="images/steam_logo.png" alt="Steam Logo"> Get it on Steam
+      </a>
     </div>
   </section>
 
   <!-- Info Section -->
   <section class="features-box">
-  <div class="feature-item">
-    <span class="feature-label">Developer</span>
-    <span class="feature-value">Cristiano Rotunno</span>
-  </div>
-  <div class="feature-item">
-    <span class="feature-label">Distributor</span>
-    <span class="feature-value">ARES Studio</span>
-  </div>
-  <div class="feature-item">
-    <span class="feature-label">Release Date</span>
-    <span class="feature-value">2025</span>
-  </div>
-  <div class="feature-item">
-    <span class="feature-label">Platforms</span>
-    <span class="feature-value">
-      <img src="https://img.icons8.com/windows/32/null/windows-10.png" alt="Windows">
-      <img src="https://img.icons8.com/ios/32/null/mac-os.png" alt="MacOS">
-    </span>
-  </div>
-  <div class="action-buttons">
-    <button class="btn">Share</button>
-    <button class="btn">Report</button>
-  </div>
+    <div class="feature-item">
+      <span class="feature-label">Developer</span>
+      <span class="feature-value">Cristiano Rotunno</span>
+    </div>
+    <div class="feature-item">
+      <span class="feature-label">Distributor</span>
+      <span class="feature-value">ARES Studio</span>
+    </div>
+    <div class="feature-item">
+      <span class="feature-label">Release Date</span>
+      <span class="feature-value">2025</span>
+    </div>
+    <div class="feature-item">
+      <span class="feature-label">Platforms</span>
+      <span class="feature-value">
+        <img src="https://img.icons8.com/windows/32/null/windows-10.png" alt="Windows">
+        <img src="https://img.icons8.com/ios/32/null/mac-os.png" alt="MacOS">
+      </span>
+    </div>
+    <div class="action-buttons">
+      <button class="btn">Share</button>
+      <button class="btn">Report</button>
+    </div>
   </section>
 
   <!-- Footer -->
