@@ -1,435 +1,210 @@
 ---
-import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header e footer, se previsto.
+import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="ARES - Official Website">
-  <!-- Main Container -->
-  <div class="container">
-    
-  <!-- Left Section -->
-  <div class="left-section">	
-        <!-- Thumbnail Preview -->
-      <div class="main-thumbnail">
-	<img id="main-image" src="images/ares_screenshot1.png" alt="Main Screenshot">
-      </div>
-
-      <!-- Thumbnail Slider -->
-      <div class="thumbnail-slider">
-        <button class="slider-btn prev-btn">&lt;</button>
-        <div class="thumbnails">
-          <img src="images/ares_screenshot1.png" alt="Thumbnail 1" data-src="images/ares_screenshot1.png">
-          <img src="images/ares_screenshot2.png" alt="Thumbnail 2" data-src="images/ares_screenshot2.png">
-          <img src="images/ares_screenshot3.png" alt="Thumbnail 3" data-src="images/ares_screenshot3.png">
-          <img src="images/ares_screenshot4.png" alt="Thumbnail 4" data-src="images/ares_screenshot4.png">
-        </div>
-        <button class="slider-btn next-btn">&gt;</button>
-      </div>
-</div>
-
-    <!-- Right Section -->
-    <div class="right-section">
-      <!-- Description -->
-      <div class="game-description">
-	<p>
-    	  Step into the world of <strong>ARES</strong>, the ultimate <strong>multiplayer</strong> experience! Challenge your friends or team up with them in epic battles featuring thrilling game modes like <strong>Deathmatch</strong>, <strong>Domain</strong>, and <strong>Survival</strong>. Explore breathtaking <strong>realistic graphics</strong> and immerse yourself in an action-packed journey. Customize your <strong>weapons</strong> to match your unique playstyle and get ready to dominate the battlefield. The fun begins now!
-	</p>
-      </div>
-
-      <!-- Download Buttons -->
-      <div class="cta-group">
-	<a href="https://drive.google.com/uc?export=download&id=160IGTRySZGvH-4v-Rvhp_8WRKjlbgIQu" class="cta">
-  		<img src="images/apple_logo.png" alt="Apple Logo"> Download for MacOS
-	</a>
-        <a href="https://drive.google.com/uc?export=download&id=windows-file-id" class="cta">
-          <img src="images/win11_logo.png" alt="Windows Logo"> Download for Windows
-        </a>
-        <a href="https://store.steampowered.com/" class="cta">
-          <img src="images/steam_logo.png" alt="Steam Logo"> Get it on Steam
-        </a>
-      </div>
-
-      <!-- Game Info -->
-      <div class="info-section">
-        <div class="info-item">
-          <span class="info-label">Developer</span>
-          <span class="info-value">Cristiano Rotunno</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Distributor</span>
-          <span class="info-value">ARES Studio</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Release Date</span>
-          <span class="info-value">2025</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Initial Release</span>
-          <span class="info-value">2025</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Platforms</span>
-          <span class="info-value">
-            <img src="images/win11_logo.png" alt="Windows">
-            <img src="images/apple_logo.png" alt="MacOS">
-          </span>
-        </div>
-      </div>
-    </div>
+  <!-- Static Background with Slideshow -->
+  <div class="background-slideshow">
+    <img class="background-image" src="images/ares_screenshot1.png" alt="Background 1">
+    <img class="background-image" src="images/ares_screenshot2.png" alt="Background 2">
+    <img class="background-image" src="images/ares_screenshot3.png" alt="Background 3">
+    <img class="background-image" src="images/ares_screenshot4.png" alt="Background 4">
   </div>
 
-  <!-- Features Section -->
-  <section class="features">
-    <div class="feature">
-      <h3>Realistic Graphics</h3>
-      <p>Immerse yourself in a world with next-generation graphic details.</p>
-    </div>
-    <div class="feature">
-      <h3>Dynamic Multiplayer</h3>
-      <p>Take on epic challenges in advanced multiplayer mode.</p>
-    </div>
-    <div class="feature">
-      <h3>Total Customization</h3>
-      <p>Create your own unique style with customizable gear.</p>
-    </div>
-  </section>
+  <!-- Foreground Content -->
+  <div class="content">
+    <!-- Title -->
+    <h1 class="game-title">ARES</h1>
 
-  <!-- JavaScript for Slider -->
+    <!-- Download Buttons -->
+    <div class="cta-group">
+      <a href="https://drive.google.com/uc?export=download&id=macOS-file-id" class="cta">
+        <img src="images/apple_logo.png" alt="Apple Logo"> Download for MacOS
+      </a>
+      <a href="https://drive.google.com/uc?export=download&id=windows-file-id" class="cta">
+        <img src="images/win11_logo.png" alt="Windows Logo"> Download for Windows
+      </a>
+      <a href="https://store.steampowered.com/" class="cta">
+        <img src="images/steam_logo.png" alt="Steam Logo"> Get it on Steam
+      </a>
+    </div>
+
+    <!-- Description -->
+    <div class="game-description">
+      <p>
+        Step into the world of <strong>ARES</strong>, the ultimate <strong>multiplayer</strong> experience! Challenge your friends or team up with them in epic battles featuring thrilling game modes like <strong>Deathmatch</strong>, <strong>Domain</strong>, and <strong>Survival</strong>. Explore breathtaking <strong>realistic graphics</strong> and immerse yourself in an action-packed journey. Customize your <strong>weapons</strong> to match your unique playstyle and get ready to dominate the battlefield. The fun begins now!
+      </p>
+    </div>
+
+    <!-- Game Info -->
+    <div class="info-section">
+      <div class="info-item">
+        <span class="info-label">Developer</span>
+        <span class="info-value">Cristiano Rotunno</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Distributor</span>
+        <span class="info-value">ARES Studio</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Release Date</span>
+        <span class="info-value">2025</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Platforms</span>
+        <span class="info-value">
+          <img src="images/win11_logo.png" alt="Windows">
+          <img src="images/apple_logo.png" alt="MacOS">
+        </span>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="feature">
+        <h3>Realistic Graphics</h3>
+        <p>Immerse yourself in a world with next-generation graphic details.</p>
+      </div>
+      <div class="feature">
+        <h3>Dynamic Multiplayer</h3>
+        <p>Take on epic challenges in advanced multiplayer mode.</p>
+      </div>
+      <div class="feature">
+        <h3>Total Customization</h3>
+        <p>Create your own unique style with customizable gear.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- JavaScript for Background Slideshow -->
   <script>
-    // Seleziona gli elementi principali
-    const mainImage = document.getElementById('main-image'); // Immagine principale
-    const thumbnails = document.querySelectorAll('.thumbnails img'); // Tutte le miniature
-    const prevBtn = document.querySelector('.prev-btn'); // Pulsante Previous
-    const nextBtn = document.querySelector('.next-btn'); // Pulsante Next
-  
-    // Variabile per tenere traccia dell'immagine corrente
+    const images = document.querySelectorAll('.background-image');
     let currentIndex = 0;
-  
-    // Funzione per aggiornare l'immagine principale
-    function updateMainImage(index) {
-      // Aggiorna l'immagine principale
-      mainImage.src = thumbnails[index].dataset.src;
-  
-      // Rimuovi la classe attiva da tutte le miniature
-      thumbnails.forEach((thumb) => thumb.classList.remove('active'));
-  
-      // Aggiungi la classe attiva alla miniatura corrente
-      thumbnails[index].classList.add('active');
+
+    function changeBackground() {
+      images[currentIndex].classList.remove('visible');
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add('visible');
     }
-  
-    // Funzione per cliccare su una miniatura
-    function handleThumbnailClick(event) {
-      // Trova l'indice della miniatura cliccata
-      const clickedThumbnail = Array.from(thumbnails).indexOf(event.target);
-      if (clickedThumbnail !== -1) {
-        currentIndex = clickedThumbnail; // Aggiorna l'indice corrente
-        updateMainImage(currentIndex); // Aggiorna l'immagine principale
-      }
-    }
-  
-    // Event Listener per ogni miniatura
-    thumbnails.forEach((thumbnail) => {
-      thumbnail.addEventListener('click', handleThumbnailClick);
-    });
-  
-    // Event Listener per il pulsante "Previous"
-    prevBtn.addEventListener('click', () => {
-      currentIndex--; // Passa all'immagine precedente
-      if (currentIndex < 0) {
-        currentIndex = thumbnails.length - 1; // Torna all'ultima immagine se si supera il limite sinistro
-      }
-      updateMainImage(currentIndex);
-    });
-  
-    // Event Listener per il pulsante "Next"
-    nextBtn.addEventListener('click', () => {
-      currentIndex++; // Passa all'immagine successiva
-      if (currentIndex >= thumbnails.length) {
-        currentIndex = 0; // Torna alla prima immagine se si supera il limite destro
-      }
-      updateMainImage(currentIndex);
-    });
-  
-    // Imposta la prima immagine come attiva all'avvio
-    window.addEventListener('DOMContentLoaded', () => {
-      updateMainImage(currentIndex);
-    });
+
+    setInterval(changeBackground, 5000); // Cambia immagine ogni 5 secondi
   </script>
-
-
-  <!-- Styles -->
-  <style>
-    :root {
-      --primary-color: #926F34;
-      --secondary-color: #0f1116;
-      --tertiary-color: #202024;
-      --text-color: #FFFFFF;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: var(--secondary-color);
-      color: var(--text-color);
-      line-height: 1.6; /* Spaziatura tra le righe per migliorare la leggibilità */
-    }
-
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: nowrap;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-      gap: 20px;
-    }
-
-    .game-description {
-	font-size: 1rem;
-	line-height: 1.6;
-	font-weight: 400;
-	color: var(--color-text);
-	text-align: left;
-    }
-
-    .game-description strong {
-	color: var(--primary-color);
-	font-weight: bold;
-     }
-
-    .left-section {
-      flex: 2;
-    }
-
-    .main-thumbnail {
-      position: relative;
-      max-width: 100%;
-      margin-bottom: 20px;
-    }
-
-    .main-thumbnail img {
-      width: 100%;
-      border-radius: 8px;
-      border: 1px solid #333333;
-      display: block;
-    }
-
-    .thumbnail-slider {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .thumbnail-slider .thumbnails {
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding: 10px 0;
-    }
-
-    .thumbnail-slider .thumbnails img.active {
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      border-radius: 8px;
-      border: 2px solid var(--primary-color); /* Evidenzia la miniatura selezionata */
-      opacity: 1; /* Assicura visibilità piena */
-    }
-  
-    .thumbnail-slider .thumbnails img {
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      border-radius: 8px;
-      opacity: 0.7; /* Miniature meno evidenti per default */
-      transition: opacity 0.3s, border 0.3s;
-    }
-  
-    .thumbnail-slider .thumbnails img:hover {
-      opacity: 1; /* Migliora visibilità al passaggio del mouse */
-    }
-
-    .slider-container {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .slider-item img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .slider-btn {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background-color: var(--tertiary-color);
-      color: var(--primary-color); /* Colore principale */
-      border: none;
-      border-radius: 50%; /* Forma circolare */
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background-color 0.3s, transform 0.2s;
-      z-index: 10; /* Sopra le miniature */
-    }
-  
-    .slider-btn:hover {
-      background-color: var(--primary-color); /* Cambia sfondo al passaggio del mouse */
-      color: var(--secondary-color); /* Cambia il colore dell'icona */
-      transform: scale(1.1); /* Effetto di ingrandimento */
-    }
-
-    .right-section {
-      flex: 1;
-      background-color: #0f1116;
-      border: none;
-      border-radius: 8px;
-      max-width: 400px;
-    }
-
-    .game-title {
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: var(--text-color);
-      text-align: left;
-      margin-bottom: 20px;
-	margin-left: 20px;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      font-weight: 400; /* Font più leggero */
-      color: var(--primary-color);
-      margin-bottom: 10px;
-    }
-
-    .info-section {
-      background-color: #0f1116; /* Sfondo scuro */
-      padding: 20px;
-      border-radius: 8px;
-    }
-
-    .info-value {
-      font-size: 1rem;
-      font-weight: 400;
-      color: #FFFFFF;
-      text-align: right;
-    }
-
-    .info-value img {
-      height: 20px;
-    }
-
-    .info-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid #333333; /* Separatore tra le righe */
-    }
-
-    .info-item:last-child {
-      border-bottom: none; /* Rimuove la linea per l'ultima voce */
-    }
-
-    .info-label {
-      font-size: 1rem;
-      font-weight: 400;
-      color: #777;
-    }
-
-    .cta-group {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 20px; /* Spaziatura tra pulsanti e info box */
-    }
-
-    .cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 15px;
-      background-color: var(--secondary-color);
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: 400; /* Font per i pulsanti */
-      border: 1px solid var(--primary-color);
-    }
-
-    .cta:hover {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 15px;
-      background-color: var(--primary-color);
-      color: var(--secondary-color);
-      text-decoration: none;
-      font-weight: 400; /* Font per i pulsanti */
-      border: 1px solid var(--secondary-color);
-    }
-
-    .cta img {
-      margin-right: 10px;
-      height: 20px;
-    }
-
-    .features {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 50px 20px;
-      text-align: center;
-    }
-    .features .feature {
-      flex: 1;
-      max-width: 300px;
-      background: var(--tertiary-color);
-      padding: 20px;
-      border-radius: 10px;
-      transition: transform 0.3s;
-    }
-    .features .feature:hover {
-      transform: translateY(-10px);
-    }
-    .features .feature h3 {
-      margin-bottom: 10px;
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-    .features .feature p {
-      color: #E5E5E5;
-    }
-
-    @media screen and (max-width: 768px) {
-      .container {
-        flex-wrap: wrap;
-      }
-
-      .left-section,
-      .right-section {
-        flex: 1 1 100%;
-        max-width: 100%;
-      }
-
-      .right-section {
-        margin-top: 20px;
-      }
-
-      .features {
-        flex-direction: column; /* Disposizione verticale */
-        align-items: center; /* Centra le card verticalmente */
-        gap: 20px; /* Spazio tra le card */
-      }
-  
-      .features .feature {
-        max-width: 100%; /* La card occupa tutta la larghezza */
-      }
-    }
-  </style>
 </Layout>
+
+<style>
+  :root {
+    --primary-color: #926F34;
+    --secondary-color: rgba(0, 0, 0, 0.8);
+    --text-color: #FFFFFF;
+    --overlay-color: rgba(0, 0, 0, 0.5);
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+  }
+
+  .background-slideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+
+  .background-image.visible {
+    opacity: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    background-color: var(--overlay-color);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+  }
+
+  .game-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+  }
+
+  .cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+  }
+
+  .cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .cta:hover {
+    background-color: #71592a;
+  }
+
+  .game-description {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+
+  .info-section {
+    margin: 20px 0;
+    text-align: left;
+    font-size: 1rem;
+  }
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .features .feature {
+    background-color: var(--secondary-color);
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .features .feature h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+  }
+
+  .features .feature p {
+    color: var(--text-color);
+  }
+</style>
