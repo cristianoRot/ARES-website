@@ -7,6 +7,9 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
   <div class="container">
     <!-- Left Section -->
     <div class="left-section">
+      <!-- Title -->
+      <h1 class="game-title">ARES</h1>
+
       <!-- Thumbnail Preview -->
       <div class="main-thumbnail">
         <img id="main-image" src="images/ares_screenshot1.png" alt="Main Screenshot">
@@ -23,7 +26,10 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
         </div>
         <button class="slider-btn next-btn">&gt;</button>
       </div>
+    </div>
 
+    <!-- Right Section -->
+    <div class="right-section">
       <!-- Description -->
       <div class="description">
         <p>
@@ -31,13 +37,6 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
           With stunning graphics and an immersive storyline, ARES promises an unparalleled gaming experience.
         </p>
       </div>
-    </div>
-
-    <!-- Right Section -->
-    <div class="right-section">
-      <!-- Title -->
-      <h1 class="game-title">ARES</h1>
-
 
       <!-- Download Buttons -->
       <div class="cta-group">
@@ -286,7 +285,7 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
     .game-title {
       font-size: 2.5rem;
       font-weight: 900;
-      color: var(--primary-color);
+      color: var(--text-color);
       text-align: center;
       margin-bottom: 20px;
     }
