@@ -3,9 +3,6 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
 ---
 
 <Layout title="ARES - Official Website">
-  <!-- Title -->
-  <h1 class="game-title">ARES</h1>
-
   <!-- Main Container -->
   <div class="container">
     
@@ -188,15 +185,15 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
     }
 
     .game-description {
-	font-size: 1.2rem;
+	font-size: 1rem;
 	line-height: 1.6;
-	color: #E5E5E5;
-	margin: 20px 0;
-	text-align: center;
+	font-weight: 400;
+	color: var(--color-text);
+	text-align: left;
     }
 
     .game-description strong {
-	color: #DFBD69; /* Gold color for keywords */
+	color: var(--primary-color);
 	font-weight: bold;
      }
 
@@ -299,13 +296,9 @@ import Layout from '../layouts/Layout.astro'; // Layout per riutilizzare header 
       font-size: 2.5rem;
       font-weight: 900;
       color: var(--text-color);
-      text-align: center;
+      text-align: left;
       margin-bottom: 20px;
-    }
-
-    .description {
-      font-size: 1rem;
-      line-height: 1.6;
+	margin-left: 20px;
     }
 
     h2 {
