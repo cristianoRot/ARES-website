@@ -198,12 +198,113 @@
     .game-description {
       display: flex;
       flex-direction: column;
-      margin: 0 auto;
       margin-top: 50px;
-      font-size: 1.2rem;
-      line-height: 1.8;
       width: 70%;
       max-width: 500px;
+      border-radius: 10px;
+      padding: 1px;
+      background: radial-gradient(circle 230px at 0% 0%, #ffffff, #0c0d0d);
+      position: relative;
+    }
+    
+    .game-description .dot {
+      width: 5px;
+      aspect-ratio: 1;
+      position: absolute;
+      background-color: #fff;
+      box-shadow: 0 0 10px #ffffff;
+      border-radius: 100px;
+      z-index: 2;
+      right: 10%;
+      top: 10%;
+      animation: moveDot 6s linear infinite;
+    }
+    
+    @keyframes moveDot {
+      0%,
+      100% {
+        top: 10%;
+        right: 10%;
+      }
+      25% {
+        top: 10%;
+        right: calc(100% - 35px);
+      }
+      50% {
+        top: calc(100% - 30px);
+        right: calc(100% - 35px);
+      }
+      75% {
+        top: calc(100% - 30px);
+        right: 10%;
+      }
+    }
+    
+    .game-description .card {
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border-radius: 9px;
+      border: solid 1px #202222;
+      background-size: 20px 20px;
+      background: radial-gradient(circle 280px at 0% 0%, #444444, #0c0d0d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      flex-direction: column;
+      color: #fff;
+    }
+    .game-description .card .ray {
+      width: 220px;
+      height: 45px;
+      border-radius: 100px;
+      position: absolute;
+      background-color: #c7c7c7;
+      opacity: 0.4;
+      box-shadow: 0 0 50px #fff;
+      filter: blur(10px);
+      transform-origin: 10%;
+      top: 0%;
+      left: 0;
+      transform: rotate(40deg);
+    }
+    
+    .card .text {
+      font-weight: bolder;
+      font-size: 1rem;
+      background: linear-gradient(45deg, #000000 4%, #fff, #000);
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .game-description .card .line {
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      background-color: #2c2c2c;
+    }
+
+    .topl {
+      top: 10%;
+      background: linear-gradient(90deg, #888888 30%, #1d1f1f 70%);
+    }
+
+    .bottoml {
+      bottom: 10%;
+    }
+
+    .leftl {
+      left: 10%;
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(180deg, #747474 30%, #222424 70%);
+    }
+
+    .rightl {
+      right: 10%;
+      width: 1px;
+      height: 100%;
     }
 
     .info-section {
@@ -252,39 +353,39 @@
       text-align: center;
     }
 
-  .features .feature {
-    position: relative;
-    width: 12rem; /* 48px in rem */
-    height: 16rem; /* 64px in rem */
-    overflow: hidden;
-    border-radius: 1rem; /* per un effetto arrotondato */
-    background-color: #3d3c3d;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
-  }
-
-  .features .feature .inner {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    z-index: 1;
-    opacity: 0.9;
-    border-radius: 1rem;
-    inset: 0.125rem; /* equivalente di 0.5px */
-    background-color: #323132;
-  }
-
-  .features .feature .blur-effect {
-    position: absolute;
-    width: 14rem; /* 56px in rem */
-    height: 12rem; /* 48px in rem */
-    background-color: white;
-    filter: blur(50px);
-    left: -50%; /* centrato orizzontalmente con offset */
-    top: -50%; /* centrato verticalmente con offset */
-  }
+    .features .feature {
+      position: relative;
+      width: 12rem; /* 48px in rem */
+      height: 16rem; /* 64px in rem */
+      overflow: hidden;
+      border-radius: 1rem; /* per un effetto arrotondato */
+      background-color: #3d3c3d;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+  
+    .features .feature .inner {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      z-index: 1;
+      opacity: 0.9;
+      border-radius: 1rem;
+      inset: 0.125rem; /* equivalente di 0.5px */
+      background-color: #323132;
+    }
+  
+    .features .feature .blur-effect {
+      position: absolute;
+      width: 14rem; /* 56px in rem */
+      height: 12rem; /* 48px in rem */
+      background-color: white;
+      filter: blur(50px);
+      left: -50%; /* centrato orizzontalmente con offset */
+      top: -50%; /* centrato verticalmente con offset */
+    }
 
     .features .feature:hover {
       transform: translateY(-10px);
@@ -351,6 +452,21 @@
     </div>
 
     <div class="container">
+
+      <div class="game-description">
+        <div class="dot"></div>
+        <div class="card">
+          <div class="ray"></div>
+          <div class="text">
+             Step into the world of <strong>ARES</strong>, the ultimate <strong>multiplayer</strong> experience! Challenge your friends or team up with them in epic battles featuring thrilling game modes like <strong>Deathmatch</strong>, <strong>Domain</strong>, and <strong>Survival</strong>. Explore breathtaking <strong>realistic graphics</strong> and immerse yourself in an action-packed journey. Customize your <strong>weapons</strong> to match your unique playstyle and get ready to dominate the battlefield. The fun begins now!
+          </div>
+          <div class="line topl"></div>
+          <div class="line leftl"></div>
+          <div class="line bottoml"></div>
+          <div class="line rightl"></div>
+        </div>
+      </div>
+
       <div class="game-description">
         <p>
           Step into the world of <strong>ARES</strong>, the ultimate <strong>multiplayer</strong> experience! Challenge your friends or team up with them in epic battles featuring thrilling game modes like <strong>Deathmatch</strong>, <strong>Domain</strong>, and <strong>Survival</strong>. Explore breathtaking <strong>realistic graphics</strong> and immerse yourself in an action-packed journey. Customize your <strong>weapons</strong> to match your unique playstyle and get ready to dominate the battlefield. The fun begins now!
