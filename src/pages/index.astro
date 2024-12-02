@@ -201,27 +201,42 @@
       text-align: center;
     }
 
-    .features .feature {
-      flex: 1;
-      max-width: 300px;
-      background: var(--tertiary-color);
-      padding: 20px;
-      border-radius: 10px;
-      transition: transform 0.3s;
-    }
+  .features .feature {
+    position: relative;
+    width: 12rem; /* 48px in rem */
+    height: 16rem; /* 64px in rem */
+    overflow: hidden;
+    border-radius: 1rem; /* per un effetto arrotondato */
+    background-color: #3d3c3d;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+
+  .features .feature .inner {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    opacity: 0.9;
+    border-radius: 1rem;
+    inset: 0.125rem; /* equivalente di 0.5px */
+    background-color: #323132;
+  }
+
+  .features .feature .blur-effect {
+    position: absolute;
+    width: 14rem; /* 56px in rem */
+    height: 12rem; /* 48px in rem */
+    background-color: white;
+    filter: blur(50px);
+    left: -50%; /* centrato orizzontalmente con offset */
+    top: -50%; /* centrato verticalmente con offset */
+  }
 
     .features .feature:hover {
       transform: translateY(-10px);
-    }
-
-    .features .feature h3 {
-      margin-bottom: 10px;
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-
-    .features .feature p {
-      color: #E5E5E5;
     }
 
     .container {
@@ -300,6 +315,10 @@
       </div>
   
       <section class="features">
+        <div class="feature">
+          <div class="inner">CARD</div>
+          <div class="blur-effect"></div>
+        </div>
         <div class="feature">
           <h3>Realistic Graphics</h3>
           <p>Immerse yourself in a world with next-generation graphic details.</p>
