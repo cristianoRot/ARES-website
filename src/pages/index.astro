@@ -218,28 +218,28 @@
       box-shadow: 0 0 10px #ffffff;
       border-radius: 100px;
       z-index: 2;
-      right: 10%;
-      top: 10%;
+      right: 10px;
+      top: 10px;
       animation: moveDot 6s linear infinite;
     }
     
     @keyframes moveDot {
       0%,
       100% {
-        top: 10%;
-        right: 10%;
+        top: 10px;
+        right: 10px;
       }
       25% {
-        top: 10%;
-        right: calc(100% - 35px);
+        top: 10px;
+        right: calc(100% - 10px);
       }
       50% {
-        top: calc(100% - 30px);
-        right: calc(100% - 35px);
+        top: calc(100% - 10px);
+        right: calc(100% - 10px);
       }
       75% {
-        top: calc(100% - 30px);
-        right: 10%;
+        top: calc(100% - 10px);
+        right: 10px;
       }
     }
     
@@ -276,7 +276,7 @@
     .card .text {
       font-weight: bolder;
       font-size: 1rem;
-      padding: 20px;
+      padding: 70px;
       background: linear-gradient(45deg, #000000 4%, #fff, #000);
       background-clip: text;
       color: transparent;
@@ -289,7 +289,7 @@
     }
 
     .line.topl {
-      top: 10%;
+      top: 10px;
       left: 0;
       right: 0;
       height: 1px;
@@ -297,7 +297,7 @@
     }
 
     .line.bottoml {
-      bottom: 10%;
+      bottom: 10px;
       left: 0;
       right: 0;
       height: 1px;
@@ -306,7 +306,7 @@
     .line.leftl {
       top: 0;
       bottom: 0;
-      left: 10%;
+      left: 10px;
       width: 1px;
       background: linear-gradient(180deg, #747474 30%, #222424 70%);
     }
@@ -314,7 +314,7 @@
     .line.rightl {
       top: 0;
       bottom: 0;
-      right: 10%;
+      right: 10px;
       width: 1px;
     }  
 
