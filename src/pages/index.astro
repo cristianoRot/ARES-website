@@ -124,27 +124,66 @@
       margin: 0 auto;
     }
 
-    .cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 15px;
-      background-color: var(--secondary-color);
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: 400;
-      border: 1px solid var(--primary-color);
+    .button {
+      cursor: pointer;
+      font-size: 1.4rem;
+      border-radius: 16px;
+      border: none;
+      padding: 2px;
+      background: radial-gradient(circle 80px at 80% -10%, #ffffff, #181b1b);
+      position: relative;
     }
 
-    .cta:hover {
-      background-color: var(--primary-color);
-      color: var(--secondary-color);
-      border: 1px solid var(--secondary-color);
+    .button::after {
+      content: "";
+      position: absolute;
+      width: 65%;
+      height: 60%;
+      border-radius: 120px;
+      top: 0;
+      right: 0;
+      box-shadow: 0 0 20px #ffffff38;
+      z-index: -1;
     }
-
-    .cta img {
-      margin-right: 10px;
-      height: 20px;
+    
+    .blob1 {
+      position: absolute;
+      width: 70px;
+      height: 100%;
+      border-radius: 16px;
+      bottom: 0;
+      left: 0;
+      background: radial-gradient(
+        circle 60px at 0% 100%,
+        #3fe9ff,
+        #0000ff80,
+        transparent
+      );
+      box-shadow: -10px 10px 30px #0051ff2d;
+    }
+    
+    .inner {
+      padding: 14px 25px;
+      border-radius: 14px;
+      color: #fff;
+      z-index: 3;
+      position: relative;
+      background: radial-gradient(circle 80px at 80% -50%, #777777, #0f1111);
+    }
+    .inner::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      border-radius: 14px;
+      background: radial-gradient(
+        circle 60px at 0% 100%,
+        #00e1ff1a,
+        #0000ff11,
+        transparent
+      );
+      position: absolute;
     }
 
     .game-description {
@@ -275,15 +314,29 @@
     <h1 class="game-title">ARES</h1>
 
     <div class="cta-group">
-      <a href="https://drive.google.com/uc?export=download&id=macOS-file-id" class="cta">
-        <img src="images/apple_logo.png" alt="Apple Logo"> Download for MacOS
-      </a>
-      <a href="https://drive.google.com/uc?export=download&id=windows-file-id" class="cta">
-        <img src="images/win11_logo.png" alt="Windows Logo"> Download for Windows
-      </a>
-      <a href="https://store.steampowered.com/" class="cta">
-        <img src="images/steam_logo.png" alt="Steam Logo"> Get it on Steam
-      </a>
+      <button href="https://drive.google.com/uc?export=download&id=macOS-file-id" class="button">
+        <div class="blob1"></div>
+        <div class="blob2"></div>
+        <div class="inner">
+          <img src="images/apple_logo.png" alt="Apple Logo"> Download for MacOS
+        </div>
+      </button>
+
+      <button href="https://drive.google.com/uc?export=download&id=macOS-file-id" class="button">
+        <div class="blob1"></div>
+        <div class="blob2"></div>
+        <div class="inner">
+          <img src="images/win11_logo.png" alt="Windows Logo"> Download for Windows
+        </div>
+      </button>
+
+      <button href="https://drive.google.com/uc?export=download&id=macOS-file-id" class="button">
+        <div class="blob1"></div>
+        <div class="blob2"></div>
+        <div class="inner">
+          <img src="images/steam_logo.png" alt="Steam Logo"> Get it on Steam
+        </div>
+      </button>
     </div>
 
     <dic class="container">
