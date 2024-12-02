@@ -296,7 +296,8 @@
     }
     
     .card .container {
-      display: inline;
+      display: flex;
+      justify-content: space-between;
       font-size: 1rem;
       padding: 30px;
       background: linear-gradient(45deg, #000000 4%, #fff, #000);
@@ -341,7 +342,6 @@
     }  
 
     .info-section {
-      background-color: #0f1116;
       border-radius: 8px;
       width: 70%;
       max-width: 500px;
@@ -485,16 +485,18 @@
         <div class="card">
           <div class="ray"></div>
             <div class="container">
-              Step into the world of <strong>ARES</strong>, the ultimate <strong>multiplayer</strong> experience! Challenge your friends or team up with them in epic battles featuring thrilling game modes like:
-              <ul>
-                <li><strong>Deathmatch</strong></li>
-                <li><strong>Domain</strong></li>
-                <li><strong>Survival</strong></li>
-              </ul>
-              <p>
-                Explore breathtaking <strong>realistic graphics</strong> and immerse yourself in an action-packed journey. Customize your <strong>weapons</strong> to match your unique playstyle and get ready to dominate the battlefield.
-              </p>
-              <p>The fun begins now!</p>
+              <div class="description">
+                Step into the world of <strong>ARES</strong>, the ultimate <strong>multiplayer</strong> experience! Challenge your friends or team up with them in epic battles featuring thrilling game modes like:
+                <ul>
+                  <li><strong>Deathmatch</strong></li>
+                  <li><strong>Domain</strong></li>
+                  <li><strong>Survival</strong></li>
+                </ul>
+                <p>
+                  Explore breathtaking <strong>realistic graphics</strong> and immerse yourself in an action-packed journey. Customize your <strong>weapons</strong> to match your unique playstyle and get ready to dominate the battlefield.
+                </p>
+                <p>The fun begins now!</p>
+              </div>
 
               <div class="info-section">
                 <div class="info-item">
