@@ -21,14 +21,15 @@
     }
 
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 80px;
-      background-color: var(--secondary-color);
-      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
+      position: realtive;
+      top: 0;
+      width: auto;
+      height: 80px;
+      margin: 20px;
+      background-color: var(--secondary-color);
+      padding: 10px 20px;
       align-items: center;
       z-index: 2;
     }
@@ -357,6 +358,8 @@
   </style>
 </head>
 <body>
+  <img class="panel" src="images/panel.png" alt="Background 1">
+
   <header>
     <div class="logo">ARES</div>
     <nav>
@@ -365,8 +368,6 @@
       <a href="#downloads">Download</a>
     </nav>
   </header>
-
-  <img class="panel" src="images/panel.png" alt="Background 1">
 
   <!--
   <div class="background-slideshow">
@@ -469,6 +470,7 @@
   </div>
 
   <script>
+    <!--
     const images = document.querySelectorAll('.background-image');
     let currentIndex = 0;
 
@@ -479,6 +481,7 @@
     }
 
     setInterval(changeBackground, 5000);
+    -->
   </script>
 </body>
 </html>
