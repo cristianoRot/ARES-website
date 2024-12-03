@@ -81,7 +81,8 @@
     }
  
     .container {
-      padding: 20px;
+      display: inline-grid;
+      width: 100%;
       --s: 200px; /* control the size */
       --c1: #000000;
       --c2: #0c0c0c;
@@ -324,7 +325,7 @@
 
     .card {
       display: inline-block;
-      margin: 20px;
+      margin: 20px auto;
       border-radius: 30px;
       background: #212121;
     }
@@ -361,6 +362,10 @@
 
       .game-description {
         width: 90%;
+      }
+
+      .card {
+        margin: 20px;
       }
           
       .card .container .description {
