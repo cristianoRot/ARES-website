@@ -7,7 +7,7 @@
   <style>
     @font-face {
       font-family: 'Jura'; /* Nome del font */
-      src: url('font/Jura-VariableFont_wght.ttf') format('truetype'); /* Percorso e formato */
+      src: url('/font/Jura-VariableFont_wght.ttf') format('truetype'); /* Percorso assoluto */
       font-weight: normal; /* Peso del font */
       font-style: normal; /* Stile del font */
     }
@@ -18,11 +18,12 @@
       --text-color: #FFFFFF;
       --overlay-color: rgba(0, 0, 0, 0.5);
       --tertiary-color: #202024;
+      --font-family: 'Jura', sans-serif; /* Definisci la variabile font */
     }
-
+  
     body {
       margin: 0;
-      font-family: var(--font-family);
+      font-family: var(--font-family); /* Applica il font Jura */
       background-color: var(--secondary-color);
       color: var(--text-color);
     }
@@ -489,7 +490,7 @@
   </div>
 
   <script>
-    <!--
+    /*
     const images = document.querySelectorAll('.background-image');
     let currentIndex = 0;
 
@@ -500,7 +501,7 @@
     }
 
     setInterval(changeBackground, 5000);
-    -->
+    */
   </script>
 </body>
 </html>
