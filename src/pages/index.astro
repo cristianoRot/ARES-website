@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARES - Official Website</title>
   <style>
+    @font-face {
+      font-family: 'Slabo'; /* Nome del font */
+      src: url('font/slabo-regular.ttf') format('truetype'); /* Percorso e formato */
+      font-weight: normal; /* Peso del font */
+      font-style: normal; /* Stile del font */
+    }
+    
     :root {
       --primary-color: #926F34;
       --secondary-color: rgba(0, 0, 0);
@@ -15,7 +22,7 @@
 
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
+      font-family: var(--font-family); /* Applica il font Slabo */
       background-color: var(--secondary-color);
       color: var(--text-color);
     }
