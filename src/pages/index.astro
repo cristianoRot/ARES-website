@@ -1,520 +1,515 @@
-  <!DOCTYPE html>
+/* Ciao */
+
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ARES - Official Website</title>
-  <style>
-    @font-face {
-      font-family: 'Jura'; /* Nome del font */
-      src: url('/font/Jura-VariableFont_wght.ttf') format('truetype'); /* Percorso assoluto */
-      font-weight: normal; /* Peso del font */
-      font-style: normal; /* Stile del font */
-    }
-    
-    :root {
-      --primary-color: #926F34;
-      --secondary-color: rgba(0, 0, 0);
-      --text-color: #FFFFFF;
-      --overlay-color: rgba(0, 0, 0, 0.5);
-      --tertiary-color: #202024;
-      --font-family: 'Jura', sans-serif; /* Definisci la variabile font */
-    }
-  
-    body {
-      margin: 0;
-      font-family: var(--font-family); /* Applica il font Jura */
-      background-color: var(--secondary-color);
-      color: var(--text-color);
-    }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ARES - Official Website</title>
+        <style>
+            @font-face {
+                font-family: 'Jura'; /* Nome del font */
+                src: url('/font/Jura-VariableFont_wght.ttf') format('truetype'); /* Percorso assoluto */
+                font-weight: normal; /* Peso del font */
+                font-style: normal; /* Stile del font */
+            }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      top: 0;
-      padding: 10px 20px;
-      align-items: center;
-      background: black
-    }
+            :root {
+                --primary-color: #926f34;
+                --secondary-color: rgba(0, 0, 0);
+                --text-color: #ffffff;
+                --overlay-color: rgba(0, 0, 0, 0.5);
+                --tertiary-color: #202024;
+                --font-family: 'Jura', sans-serif; /* Definisci la variabile font */
+            }
 
-    header .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: var(--text-color);
-    }
+            body {
+                margin: 0;
+                font-family: var(--font-family); /* Applica il font Jura */
+                background-color: var(--secondary-color);
+                color: var(--text-color);
+            }
 
-    header nav {
-      display: flex;
-      gap: 15px;
-    }
+            header {
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                top: 0;
+                padding: 10px 20px;
+                align-items: center;
+                background: black;
+            }
 
-    header nav a {
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
+            header .logo {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: var(--text-color);
+            }
 
-    header nav a:hover {
-      color: var(--primary-color);
-    }
- 
-    .container {
-      display: inline-grid;
-      width: 100%;
-      background: linear-gradient(to top, black 90%, transparent 100%);
-    }
+            header nav {
+                display: flex;
+                gap: 15px;
+            }
 
-    .game-title {
-      font-size: 100px;
-      font-weight: 700;
-      margin-top: 80px;
-      margin-bottom: 0px;
-      color: white;
-      text-shadow: 
-        0 0 5px #c7c7c7,
-        0 0 10px #c7c7c7,
-        0 0 20px #c7c7c7,
-        0 0 40px #c7c7c7,
-        0 0 80px #c7c7c7,
-        0 0 90px #c7c7c7;  
-    }
+            header nav a {
+                color: var(--text-color);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
 
-    .subtitle {
-      font-size: 50px;
-      font-weight: 700;
-      margin-top: 0px;
-      margin-bottom: 100px;
-      color: white;
-      text-shadow: 
-        0 0 5px #3fe9ff,
-        0 0 10px #3fe9ff,
-        0 0 20px #3fe9ff,
-        0 0 40px #3fe9ff,
-        0 0 80px #3fe9ff,
-        0 0 90px #3fe9ff;  
-    }
+            header nav a:hover {
+                color: var(--primary-color);
+            }
 
-    footer {
-      margin-top: 50px;
-      color: #777;
-      text-align: center;
-      padding: 10px 0;
-      font-size: 0.9rem;
-    }
+            .container {
+                display: inline-grid;
+                width: 100%;
+                background: linear-gradient(to top, black 90%, transparent 100%);
+            }
 
-    footer a {
-      color: var(--primary-color);
-      text-decoration: none;
-    }
+            .game-title {
+                font-size: 100px;
+                font-weight: 700;
+                margin-top: 80px;
+                margin-bottom: 0px;
+                color: white;
+                text-shadow:
+                    0 0 5px #c7c7c7,
+                    0 0 10px #c7c7c7,
+                    0 0 20px #c7c7c7,
+                    0 0 40px #c7c7c7,
+                    0 0 80px #c7c7c7,
+                    0 0 90px #c7c7c7;
+            }
 
-    footer a:hover {
-      color: #71592a;
-    }
+            .subtitle {
+                font-size: 50px;
+                font-weight: 700;
+                margin-top: 0px;
+                margin-bottom: 100px;
+                color: white;
+                text-shadow:
+                    0 0 5px #3fe9ff,
+                    0 0 10px #3fe9ff,
+                    0 0 20px #3fe9ff,
+                    0 0 40px #3fe9ff,
+                    0 0 80px #3fe9ff,
+                    0 0 90px #3fe9ff;
+            }
 
-    .background-slideshow {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: -1;
-    }
+            footer {
+                margin-top: 50px;
+                color: #777;
+                text-align: center;
+                padding: 10px 0;
+                font-size: 0.9rem;
+            }
 
-    .background-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 1s;
-    }
+            footer a {
+                color: var(--primary-color);
+                text-decoration: none;
+            }
 
-    .background-image.visible {
-      opacity: 1;
-    }
+            footer a:hover {
+                color: #71592a;
+            }
 
-    .panel {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top;
-    }
+            .background-slideshow {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                z-index: -1;
+            }
 
-    .content {
-      position: absolute;
-      z-index: 1;
-      background-color: var(--overlay-color);
-      width: 100%;
-      text-align: center;
-    }
+            .background-image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0;
+                transition: opacity 1s;
+            }
 
-    .cta-group {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 20px;
-      width: 300px;
-      margin-top: 0px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 80px;
-    }
+            .background-image.visible {
+                opacity: 1;
+            }
 
-    .button {
-      cursor: pointer;
-      font-size: 1rem;
-      border-radius: 16px;
-      border: none;
-      padding: 2px;
-      background: radial-gradient(circle 80px at 80% -10%, #ffffff, #181b1b);
-      position: relative;
-      transition: background 0.4s ease;
-    }
+            .panel {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top;
+            }
 
-    .button:hover {
-      background: radial-gradient(circle 150px at 80% -10%, #ffffff, #181b1b);
-    }
+            .content {
+                position: absolute;
+                z-index: 1;
+                background-color: var(--overlay-color);
+                width: 100%;
+                text-align: center;
+            }
 
-    .button::after {
-      content: "";
-      position: absolute;
-      width: 65%;
-      height: 60%;
-      border-radius: 120px;
-      top: 0;
-      right: 0;
-      box-shadow: 0 0 20px #ffffff38;
-      z-index: -1;
-    }
-    
-    .blob1 {
-      position: absolute;
-      width: 70px;
-      height: 100%;
-      border-radius: 16px;
-      bottom: 0;
-      left: 0;
-      background: radial-gradient(
-        circle 60px at 0% 100%,
-        #3fe9ff,
-        #0000ff80,
-        transparent
-      );
-      box-shadow: -10px 10px 30px #0051ff2d;
-    }
-    
-    .button .inner {
-      display: flex;
-      padding: 14px 25px;
-      border-radius: 14px;
-      color: #fff;
-      z-index: 3;
-      position: relative;
-      background: radial-gradient(circle 80px at 80% -50%, #777777, #0f1111);
-      justify-content: center;
-      align-items: center;
-    }
+            .cta-group {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 20px;
+                width: 300px;
+                margin-top: 0px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 80px;
+            }
 
-    .button .inner::before {
-      content: "";
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0;
-      border-radius: 14px;
-      background: radial-gradient(
-        circle 60px at 0% 100%,
-        #00e1ff1a,
-        #0000ff11,
-        transparent
-      );
-      position: absolute;
-    }
+            .button {
+                cursor: pointer;
+                font-size: 1rem;
+                border-radius: 16px;
+                border: none;
+                padding: 2px;
+                background: radial-gradient(circle 80px at 80% -10%, #ffffff, #181b1b);
+                position: relative;
+                transition: background 0.4s ease;
+            }
 
-    .button .inner img {
-      height: 30px;
-      padding-right: 10px;
-    } 
+            .button:hover {
+                background: radial-gradient(circle 150px at 80% -10%, #ffffff, #181b1b);
+            }
 
-    .info-section {
-      border-radius: 8px;
-      width: 400px;
-      margin: 80px auto;
-    }
+            .button::after {
+                content: '';
+                position: absolute;
+                width: 65%;
+                height: 60%;
+                border-radius: 120px;
+                top: 0;
+                right: 0;
+                box-shadow: 0 0 20px #ffffff38;
+                z-index: -1;
+            }
 
-    .info-value {
-      font-size: 1rem;
-      font-weight: 400;
-      color: #FFFFFF;
-      text-align: right;
-    }
+            .blob1 {
+                position: absolute;
+                width: 70px;
+                height: 100%;
+                border-radius: 16px;
+                bottom: 0;
+                left: 0;
+                background: radial-gradient(circle 60px at 0% 100%, #3fe9ff, #0000ff80, transparent);
+                box-shadow: -10px 10px 30px #0051ff2d;
+            }
 
-    .info-value img {
-      height: 20px;
-    }
+            .button .inner {
+                display: flex;
+                padding: 14px 25px;
+                border-radius: 14px;
+                color: #fff;
+                z-index: 3;
+                position: relative;
+                background: radial-gradient(circle 80px at 80% -50%, #777777, #0f1111);
+                justify-content: center;
+                align-items: center;
+            }
 
-    .info-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      border-bottom: 1px solid #333333;
-    }
+            .button .inner::before {
+                content: '';
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                border-radius: 14px;
+                background: radial-gradient(circle 60px at 0% 100%, #00e1ff1a, #0000ff11, transparent);
+                position: absolute;
+            }
 
-    .info-item:last-child {
-      border-bottom: none;
-    }
+            .button .inner img {
+                height: 30px;
+                padding-right: 10px;
+            }
 
-    .info-label {
-      font-size: 1rem;
-      font-weight: 400;
-      color: #777;
-    }
+            .info-section {
+                border-radius: 8px;
+                width: 400px;
+                margin: 80px auto;
+            }
 
-    .features {
-      display: inline-block;
-      padding: 50px 20px;
-      text-align: center;
-    }
+            .info-value {
+                font-size: 1rem;
+                font-weight: 400;
+                color: #ffffff;
+                text-align: right;
+            }
 
-    .card {
-      display: inline-block;
-      margin: 20px auto;
-    }
+            .info-value img {
+                height: 20px;
+            }
 
-    .card .inner {
-      display: inline-grid;
-      padding: 20px;
-    }
+            .info-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                border-bottom: 1px solid #333333;
+            }
 
-    .card-container {
-      display: flex;
-      justify-content: flex-start;
-    }
+            .info-item:last-child {
+                border-bottom: none;
+            }
 
-    .card-container .description {
-      font-weight: 100;
-      text-align: left;
-      margin: 20px 20px;
-      width: 600px;
-    }
+            .info-label {
+                font-size: 1rem;
+                font-weight: 400;
+                color: #777;
+            }
 
-    @media screen and (max-width: 1200px) {
-      .game-title {
-        font-size: 50px;
-      }
-  
-      .subtitle {
-        font-size: 25px;
-      }
+            .features {
+                display: inline-block;
+                padding: 50px 20px;
+                text-align: center;
+            }
 
-      .panel {
-        object-position: 35% center; /* Sposta verso destra ma mantiene la parte sinistra visibile */
-      }
+            .card {
+                display: inline-block;
+                margin: 20px auto;
+            }
 
-      .game-description {
-        width: 90%;
-      }
+            .card .inner {
+                display: inline-grid;
+                padding: 20px;
+            }
 
-      .card {
-        margin: 20px;
-      }
-          
-      .card .container .description {
-        margin: 0px 0px;
-        width: auto;
-      }
+            .card-container {
+                display: flex;
+                justify-content: flex-start;
+            }
 
-      .info-section {
-        border-radius: 8px;
-        margin: 0px 0px;
-        width: auto;
-      }
+            .card-container .description {
+                font-weight: 100;
+                text-align: left;
+                margin: 20px 20px;
+                width: 600px;
+            }
 
-      .card-container {
-        flex-direction: column;
-        gap: 20px;
-      }
+            @media screen and (max-width: 1200px) {
+                .game-title {
+                    font-size: 50px;
+                }
 
-      .card-container .description {
-        text-align: left;
-        margin: 20px 20px;
-        width: auto;
-      }
-    }
-  </style>
-</head>
-<body>
-  <img class="panel" src="images/characters_image.webp" alt="Background 1">
+                .subtitle {
+                    font-size: 25px;
+                }
 
-  <div class="content">
+                .panel {
+                    object-position: 35% center; /* Sposta verso destra ma mantiene la parte sinistra visibile */
+                }
 
-    <header>
-      <div class="logo">ARES</div>
-      <nav>
-        <a href="#features">Features</a>
-        <a href="#info">Info</a>
-        <a href="#downloads">Download</a>
-      </nav>
-    </header>
+                .game-description {
+                    width: 90%;
+                }
 
-    <h1 class="game-title">ARES</h1>
-    <h1 class="subtitle">COMING SOON IN 2025</h1>
+                .card {
+                    margin: 20px;
+                }
 
-    <div class="cta-group">
-      <button onclick="window.location.href='https://drive.google.com/uc?export=download&id=1nbGSCMPPZQQEWyWFOSMkdY_Mo4tQmhuu'" class="button">
-        <div class="blob1"></div>
-        <div class="blob2"></div>
-        <div class="inner">
-          <img src="images/apple_logo.png" alt="Apple Logo"> Download for MacOS
+                .card .container .description {
+                    margin: 0px 0px;
+                    width: auto;
+                }
+
+                .info-section {
+                    border-radius: 8px;
+                    margin: 0px 0px;
+                    width: auto;
+                }
+
+                .card-container {
+                    flex-direction: column;
+                    gap: 20px;
+                }
+
+                .card-container .description {
+                    text-align: left;
+                    margin: 20px 20px;
+                    width: auto;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <img class="panel" src="images/characters_image.webp" alt="Background 1" />
+
+        <div class="content">
+            <header>
+                <div class="logo">ARES</div>
+                <nav>
+                    <a href="#features">Features</a>
+                    <a href="#info">Info</a>
+                    <a href="#downloads">Download</a>
+                </nav>
+            </header>
+
+            <h1 class="game-title">ARES</h1>
+            <h1 class="subtitle">COMING SOON IN 2025</h1>
+
+            <div class="cta-group">
+                <button onclick="window.location.href='https://drive.google.com/uc?export=download&id=1nbGSCMPPZQQEWyWFOSMkdY_Mo4tQmhuu'" class="button">
+                    <div class="blob1"></div>
+                    <div class="blob2"></div>
+                    <div class="inner">
+                        <img src="images/apple_logo.png" alt="Apple Logo" /> Download for MacOS
+                    </div>
+                </button>
+
+                <button onclick="window.location.href='https://drive.google.com/uc?export=download&id=10X7GWk-BV9RvidmQMM9roacFdYjhBkhC'" class="button">
+                    <div class="blob1"></div>
+                    <div class="blob2"></div>
+                    <div class="inner">
+                        <img src="images/win11_logo.png" alt="Windows Logo" /> Download for Windows
+                    </div>
+                </button>
+
+                <button onclick="window.location.href='https://drive.google.com/uc?export=download&id=macOS-file-id'" class="button">
+                    <div class="blob1"></div>
+                    <div class="blob2"></div>
+                    <div class="inner">
+                        <img src="images/steam_logo.png" alt="Steam Logo" /> Get it on Steam
+                    </div>
+                </button>
+            </div>
+
+            <div class="container">
+                <div class="description" style="max-width: 700px; margin: auto;">
+                    <p>
+                        Experience the thrill of ARES, where stunning graphics and exciting game modes bring every battle to life. Team up with friends or
+                        challenge them in intense matches that push your skills to the limit.
+                    </p>
+                    <p>The fun begins now!</p>
+                </div>
+
+                <div class="info-section">
+                    <div class="info-item">
+                        <span class="info-label">Developer</span>
+                        <span class="info-value">Cristiano Rotunno</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Distributor</span>
+                        <span class="info-value">ARES Studio</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Release Date</span>
+                        <span class="info-value">2025</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Platforms</span>
+                        <span class="info-value">
+                            <img src="images/win11_logo.png" alt="Windows" />
+                            <img src="images/apple_logo.png" alt="MacOS" />
+                        </span>
+                    </div>
+                </div>
+
+                <section
+                    style="display: flex; align-items: center; justify-content: center; padding: 50px; background-color: var(--secondary-color); color: var(--text-color); max-width: 1500px; margin: auto;"
+                >
+                    <!-- Image Section -->
+                    <div style="flex: 1; padding: 20px; text-align: right;">
+                        <img src="images/characters_image.webp" alt="Map Image" style="max-width: 100%;" />
+                    </div>
+                    <!-- Information Section -->
+                    <div style="flex: 1; padding: 20px; max-width: 600px; text-align: left;">
+                        <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;">CHARACTERS</h2>
+                        <p style="margin-bottom: 20px;">
+                            Discover an incredible selection of skins designed to showcase your personality on the battlefield. With Ares, every style choice is
+                            a unique opportunity to stand out and conquer every battle with unmatched flair.
+                        </p>
+                        <button style="cursor: pointer; padding: 10px 20px; border: none; background-color: white; color: black;"> Learn more </button>
+                    </div>
+                </section>
+
+                <section
+                    style="display: flex; align-items: center; justify-content: center; padding: 50px; background-color: var(--secondary-color); color: var(--text-color); max-width: 1500px; margin: auto;"
+                >
+                    <!-- Information Section -->
+                    <div style="flex: 1; padding: 20px; max-width: 600px; text-align: left;">
+                        <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;">MAPS</h2>
+                        <p style="margin-bottom: 20px;">
+                            Discover the breathtaking universe of <strong>ARES</strong>, where realistic maps redefine the way battles unfold. Dive into
+                            stunningly detailed environments and dynamic visuals that push the boundaries of immersion and excitement.
+                        </p>
+                        <button style="cursor: pointer; padding: 10px 20px; border: none; background-color: white; color: black;"> Learn more </button>
+                    </div>
+                    <!-- Image Section -->
+                    <div style="flex: 1; padding: 20px; text-align: right;">
+                        <img src="images/map_image0.jpg" alt="Map Image" style="max-width: 100%;" />
+                    </div>
+                </section>
+
+                <section
+                    style="display: flex; align-items: center; justify-content: center; padding: 50px; background-color: var(--secondary-color); color: var(--text-color); max-width: 1500px; margin: auto;"
+                >
+                    <!-- Image Section -->
+                    <div style="flex: 1; padding: 20px; text-align: right;">
+                        <img src="images/GunCustomization.jpg" alt="Map Image" style="max-width: 100%;" />
+                    </div>
+                    <!-- Information Section -->
+                    <div style="flex: 1; padding: 20px; max-width: 600px; text-align: left;">
+                        <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;">WEAPON CUSTOMIZATION</h2>
+                        <p style="margin-bottom: 20px;">
+                            Customize your arsenal to match your playstyle. From tactical upgrades to unique designs, create weapons that are as powerful as
+                            they are personal. Your battlefield, your rules!
+                        </p>
+                        <button style="cursor: pointer; padding: 10px 20px; border: none; background-color: white; color: black;"> Learn more </button>
+                    </div>
+                </section>
+
+                <section class="features">
+                    <div
+                        class="card"
+                        style="display: inline-flex; flex-direction: column; justify-content: center; align-items: center; width: 200px; text-align: center;"
+                    >
+                        <div class="inner">
+                            <span style="font-size: 1rem; font-weight: bold; margin-bottom: 10px; display: block;"> Realistic Graphics </span>
+                            <img src="images/graphics.png" alt="Graphics" style="width: 200px;" />
+                        </div>
+                    </div>
+
+                    <div
+                        class="card"
+                        style="display: inline-flex; flex-direction: column; justify-content: center; align-items: center; width: 200px; text-align: center;"
+                    >
+                        <div class="inner">
+                            <span style="font-size: 1rem; font-weight: bold; margin-bottom: 10px; display: block;"> Dynamic Multiplayer </span>
+                            <img src="images/multiplayer-icon.png" alt="Muliplayer" style="width: 200px;" />
+                        </div>
+                    </div>
+
+                    <div
+                        class="card"
+                        style="display: inline-flex; flex-direction: column; justify-content: center; align-items: center; width: 200px; text-align: center;"
+                    >
+                        <div class="inner">
+                            <span style="font-size: 1rem; font-weight: bold; margin-bottom: 10px; display: block;"> Total Customization </span>
+                            <img src="images/gun_customization.png" alt="Customization" style="width: 200px;" />
+                        </div>
+                    </div>
+                </section>
+
+                <footer>
+                    <p>© 2025 ARES. All rights reserved. <a href="#privacy">Privacy Policy</a></p>
+                </footer>
+            </div>
         </div>
-      </button>
 
-      <button onclick="window.location.href='https://drive.google.com/uc?export=download&id=10X7GWk-BV9RvidmQMM9roacFdYjhBkhC'" class="button">
-        <div class="blob1"></div>
-        <div class="blob2"></div>
-        <div class="inner">
-          <img src="images/win11_logo.png" alt="Windows Logo"> Download for Windows
-        </div>
-      </button>
-
-      <button onclick="window.location.href='https://drive.google.com/uc?export=download&id=macOS-file-id'" class="button">
-        <div class="blob1"></div>
-        <div class="blob2"></div>
-        <div class="inner">
-          <img src="images/steam_logo.png" alt="Steam Logo"> Get it on Steam
-        </div>
-      </button>
-    </div>
-
-    <div class="container">
-
-      <div class="description" style="max-width: 700px; margin: auto;">
-        <p>
-          Experience the thrill of ARES, where stunning graphics and exciting game modes bring every battle to life. Team up with friends or challenge them in intense matches that push your skills to the limit.
-        </p>
-        <p>The fun begins now!</p>
-      </div>
-
-      <div class="info-section">
-        <div class="info-item">
-          <span class="info-label">Developer</span>
-          <span class="info-value">Cristiano Rotunno</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Distributor</span>
-          <span class="info-value">ARES Studio</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Release Date</span>
-          <span class="info-value">2025</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Platforms</span>
-          <span class="info-value">
-            <img src="images/win11_logo.png" alt="Windows">
-            <img src="images/apple_logo.png" alt="MacOS">
-          </span>
-        </div>
-      </div>
-
-      <section style="display: flex; align-items: center; justify-content: center; padding: 50px; background-color: var(--secondary-color); color: var(--text-color); max-width: 1500px; margin: auto;">
-        <!-- Image Section -->
-        <div style="flex: 1; padding: 20px; text-align: right;">
-          <img src="images/characters_image.webp" alt="Map Image" style="max-width: 100%;">
-        </div>
-        <!-- Information Section -->
-        <div style="flex: 1; padding: 20px; max-width: 600px; text-align: left;">
-          <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;">CHARACTERS</h2>
-          <p style="margin-bottom: 20px;">
-            Discover an incredible selection of skins designed to showcase your personality on the battlefield. With Ares, every style choice is a unique opportunity to stand out and conquer every battle with unmatched flair.
-          </p>
-          <button style="cursor: pointer; padding: 10px 20px; border: none; background-color: white; color: black;">
-            Learn more
-          </button>
-        </div>
-      </section>
-
-      <section style="display: flex; align-items: center; justify-content: center; padding: 50px; background-color: var(--secondary-color); color: var(--text-color); max-width: 1500px; margin: auto;">
-        <!-- Information Section -->
-        <div style="flex: 1; padding: 20px; max-width: 600px; text-align: left;">
-          <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;">MAPS</h2>
-          <p style="margin-bottom: 20px;">
-            Discover the breathtaking universe of <strong>ARES</strong>, where realistic maps redefine the way battles unfold. 
-            Dive into stunningly detailed environments and dynamic visuals that push the boundaries of immersion and excitement.
-          </p>
-          <button style="cursor: pointer; padding: 10px 20px; border: none; background-color: white; color: black;">
-            Learn more
-          </button>
-        </div>
-        <!-- Image Section -->
-        <div style="flex: 1; padding: 20px; text-align: right;">
-          <img src="images/map_image0.jpg" alt="Map Image" style="max-width: 100%;">
-        </div>
-      </section>
-
-      <section style="display: flex; align-items: center; justify-content: center; padding: 50px; background-color: var(--secondary-color); color: var(--text-color); max-width: 1500px; margin: auto;">
-        <!-- Image Section -->
-        <div style="flex: 1; padding: 20px; text-align: right;">
-          <img src="images/GunCustomization.jpg" alt="Map Image" style="max-width: 100%;">
-        </div>
-        <!-- Information Section -->
-        <div style="flex: 1; padding: 20px; max-width: 600px; text-align: left;">
-          <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;">WEAPON CUSTOMIZATION</h2>
-          <p style="margin-bottom: 20px;">
-            Customize your arsenal to match your playstyle. From tactical upgrades to unique designs, create weapons that are as powerful as they are personal. Your battlefield, your rules!
-          </p>
-          <button style="cursor: pointer; padding: 10px 20px; border: none; background-color: white; color: black;">
-            Learn more
-          </button>
-        </div>
-      </section>
-  
-      <section class="features">
-        <div class="card" style="display: inline-flex; flex-direction: column; justify-content: center; align-items: center; width: 200px; text-align: center;">
-          <div class="inner">
-              <span style="font-size: 1rem; font-weight: bold; margin-bottom: 10px; display: block;">
-                Realistic Graphics
-              </span>
-              <img src="images/graphics.png" alt="Graphics" style="width: 200px;">
-          </div>
-        </div>
-
-        <div class="card" style="display: inline-flex; flex-direction: column; justify-content: center; align-items: center; width: 200px; text-align: center;">
-          <div class="inner">
-              <span style="font-size: 1rem; font-weight: bold; margin-bottom: 10px; display: block;">
-                Dynamic Multiplayer
-              </span>
-            <img src="images/multiplayer-icon.png" alt="Muliplayer" style="width: 200px;">
-          </div>
-        </div>
-
-        <div class="card" style="display: inline-flex; flex-direction: column; justify-content: center; align-items: center; width: 200px; text-align: center;">
-          <div class="inner">
-              <span style="font-size: 1rem; font-weight: bold; margin-bottom: 10px; display: block;">
-                Total Customization
-              </span>
-            <img src="images/gun_customization.png" alt="Customization" style="width: 200px;">
-          </div>
-        </div>
-      </section>
-
-      <footer>
-        <p>© 2025 ARES. All rights reserved. <a href="#privacy">Privacy Policy</a></p>
-      </footer>
-    </div>
-  </div>
-
-  <script>
-    /*
+        <script>
+            /*
     const images = document.querySelectorAll('.background-image');
     let currentIndex = 0;
 
@@ -526,6 +521,6 @@
 
     setInterval(changeBackground, 5000);
     */
-  </script>
-</body>
+        </script>
+    </body>
 </html>
