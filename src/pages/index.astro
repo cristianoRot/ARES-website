@@ -269,7 +269,17 @@
                 color: #777;
             }
 
-            .card-container {
+            .card-container-1 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: var(--secondary-color);
+                color: var(--text-color);
+                width: 100%;
+                margin: auto;
+            }
+
+            .card-container-2 {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -324,8 +334,14 @@
                     width: auto;
                 }
 
-                .card-container {
+                .card-container-1 {
                     flex-direction: column;
+                    padding: 0px;
+                    gap: 20px;
+                }
+
+                .card-container-2 {
+                    flex-direction: column-reverse;
                     padding: 0px;
                     gap: 20px;
                 }
@@ -418,7 +434,7 @@
                     </div>
                 </div>
 
-                <div class="card-container">
+                <div class="card-container-1">
                     <!-- Image Section -->
                     <div class="card-container-image">
                         <img src="images/characters_image.jpg" alt="Map Image" style="max-width: 100%;" />
@@ -434,7 +450,7 @@
                     </div>
                 </div>
 
-                <div class="card-container">
+                <div class="card-container-2">
                     <!-- Information Section -->
                     <div class="card-container-description">
                         <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;">MAPS</h2>
@@ -450,7 +466,7 @@
                     </div>
                 </div>
 
-                <div class="card-container">
+                <div class="card-container-1">
                     <!-- Image Section -->
                     <div class="card-container-image">
                         <img src="images/GunCustomization.jpg" alt="Map Image" style="max-width: 100%;" />
