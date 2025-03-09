@@ -273,11 +273,17 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                padding: 50px;
                 background-color: var(--secondary-color);
                 color: var(--text-color);
-                max-width: 1500px;
+                width: 100%;
                 margin: auto;
+            }
+
+            .card-container-description {
+                style=flex: 1;
+                padding: 20px;
+                width: 50%;
+                text-align: left;
             }
 
             @media screen and (max-width: 1200px) {
@@ -399,7 +405,7 @@
                         <img src="images/characters_image.jpg" alt="Map Image" style="max-width: 100%;" />
                     </div>
                     <!-- Information Section -->
-                    <div style="flex: 1; padding: 20px; max-width: 600px; text-align: left;">
+                    <div class="card-container-description">
                         <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;">CHARACTERS</h2>
                         <p style="margin-bottom: 20px;">
                             Discover an incredible selection of skins designed to showcase your personality on the battlefield. With Ares, every style choice is
@@ -411,7 +417,7 @@
 
                 <div class="card-container">
                     <!-- Information Section -->
-                    <div style="flex: 1; padding: 20px; max-width: 600px; text-align: left;">
+                    <div class="card-container-description">
                         <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;">MAPS</h2>
                         <p style="margin-bottom: 20px;">
                             Discover the breathtaking universe of <strong>ARES</strong>, where realistic maps redefine the way battles unfold. Dive into
@@ -431,7 +437,7 @@
                         <img src="images/GunCustomization.jpg" alt="Map Image" style="max-width: 100%;" />
                     </div>
                     <!-- Information Section -->
-                    <div style="flex: 1; padding: 20px; max-width: 600px; text-align: left;">
+                    <div class="card-container-description">
                         <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;">WEAPON CUSTOMIZATION</h2>
                         <p style="margin-bottom: 20px;">
                             Customize your arsenal to match your playstyle. From tactical upgrades to unique designs, create weapons that are as powerful as
