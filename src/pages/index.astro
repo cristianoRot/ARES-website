@@ -36,6 +36,7 @@
             }
 
             header {
+                font-family: 'Dirtyoldtown', sans-serif;
                 display: flex;
                 justify-content: space-between;
                 position: relative;
@@ -52,6 +53,7 @@
             }
 
             header nav {
+                font-family: 'Dirtyoldtown', sans-serif;
                 display: flex;
                 gap: 15px;
             }
@@ -320,6 +322,10 @@
             @media screen and (max-width: 1200px) {
                 .game-title {
                     font-size: 50px;
+                    text-shadow:
+                        0 0 3px #c7c7c7,
+                        0 0 6px #c7c7c7,
+                        0 0 12px #c7c7c7;
                 }
 
                 .subtitle {
@@ -350,13 +356,13 @@
                 }
 
                 .card-container-1 {
-                    flex-direction: column-reverse;
+                    flex-direction: column;
                     padding: 0px;
                     gap: 20px;
                 }
 
                 .card-container-2 {
-                    flex-direction: column;
+                    flex-direction: column-reverse;
                     padding: 0px;
                     gap: 20px;
                 }
@@ -365,7 +371,7 @@
                     style=flex: 1;
                     width: 90%;
                     margin-inline: 5%;
-                    margin-top: 25px;
+                    margin-bottom: 25px;
                     text-align: center;
                 }
 
