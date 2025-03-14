@@ -364,6 +364,55 @@
                     text-align: center;
                 }
             }
+
+            /* Popup CSS */
+            .popup-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                visibility: hidden;
+                opacity: 0;
+                transition:
+                    opacity 0.3s ease,
+                    visibility 0.3s;
+            }
+
+            .popup-overlay.active {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .card {
+                width: 240px;
+                height: 280px;
+                padding: 20px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 12px;
+                background: #111;
+                border-radius: 20px;
+                position: relative;
+            }
+
+            .close-popup {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: transparent;
+                border: none;
+                color: white;
+                font-size: 18px;
+                cursor: pointer;
+            }
         </style>
     </head>
     <body>
@@ -383,7 +432,7 @@
             <h1 class="subtitle">COMING SOON IN 2026</h1>
 
             <div class="cta-group">
-                <button onclick="window.location.href='https://drive.google.com/uc?export=download&id=1nbGSCMPPZQQEWyWFOSMkdY_Mo4tQmhuu'" class="button">
+                <button onclick="openPopup()" class="button">
                     <div class="blob1"></div>
                     <div class="blob2"></div>
                     <div class="inner">
@@ -392,7 +441,7 @@
                     </div>
                 </button>
 
-                <button onclick="window.location.href='https://drive.google.com/uc?export=download&id=10X7GWk-BV9RvidmQMM9roacFdYjhBkhC'" class="button">
+                <button onclick="openPopup()" class="button">
                     <div class="blob1"></div>
                     <div class="blob2"></div>
                     <div class="inner">
@@ -401,7 +450,7 @@
                     </div>
                 </button>
 
-                <button onclick="window.location.href='https://drive.google.com/uc?export=download&id=macOS-file-id'" class="button">
+                <button onclick="openPopup()" class="button">
                     <div class="blob1"></div>
                     <div class="blob2"></div>
                     <div class="inner">
@@ -496,6 +545,18 @@
             </div>
         </div>
 
+        <div id="newsletter-popup" class="popup-overlay">
+            <div class="card">
+                <span class="card__title">Subscribe</span>
+                <p class="card__content">Get fresh web design resources delivered straight to your inbox every week.</p>
+                <div class="card__form">
+                    <input id="newsletter-email" placeholder="Your Email" type="text" />
+                    <button class="sign-up" onclick="submitNewsletter()">Sign up</button>
+                </div>
+                <button class="close-popup" onclick="closePopup()">✖</button>
+            </div>
+        </div>
+
         <script>
             /*
     const images = document.querySelectorAll('.background-image');
@@ -509,6 +570,24 @@
 
     setInterval(changeBackground, 5000);
     */
+
+            function openPopup() {
+                document.getElementById('newsletter-popup').classList.add('active');
+            }
+
+            function closePopup() {
+                document.getElementById('newsletter-popup').classList.remove('active');
+            }
+
+            function submitNewsletter() {
+                let email = (document.getElementById('newsletter-email') as HTMLInputElement).value;
+                if (email) {
+                    alert('Thank you for subscribing with: ' + email);
+                    closePopup();
+                } else {
+                    alert('Please enter a valid email.');
+                }
+            }
         </script>
     </body>
 </html>
