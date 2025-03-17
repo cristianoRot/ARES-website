@@ -389,8 +389,7 @@
             }
 
             .card {
-                width: 240px;
-                height: 280px;
+                width: 300px;
                 padding: 20px;
                 text-align: center;
                 display: flex;
@@ -580,12 +579,20 @@
             }
 
             function submitNewsletter() {
-                let email = (document.getElementById('newsletter-email') as HTMLInputElement).value;
-                if (email) {
-                    alert('Thank you for subscribing with: ' + email);
-                    closePopup();
+                let emailInput = document.getElementById('newsletter-email');
+
+                if (emailInput instanceof HTMLInputElement) {
+                    let email = emailInput.value.trim();
+
+                    if (email !== '') {
+                        alert('Thank you for subscribing with: ' + email);
+                        emailInput.value = ''; // Pulisce il campo email dopo l'invio
+                        closePopup();
+                    } else {
+                        alert('Please enter a valid email.');
+                    }
                 } else {
-                    alert('Please enter a valid email.');
+                    console.error('Elemento non trovato o non è un input!');
                 }
             }
         </script>
