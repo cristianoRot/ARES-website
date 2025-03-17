@@ -415,6 +415,18 @@
         </style>
     </head>
     <body>
+        <div id="newsletter-popup" class="popup-overlay">
+            <div class="card">
+                <span class="card__title">Subscribe</span>
+                <p class="card__content">Get fresh web design resources delivered straight to your inbox every week.</p>
+                <div class="card__form">
+                    <input id="newsletter-email" placeholder="Your Email" type="text" />
+                    <button class="sign-up" onclick="submitNewsletter()">Sign up</button>
+                </div>
+                <button class="close-popup" onclick="closePopup()">✖</button>
+            </div>
+        </div>
+
         <img class="panel" src="images/characters_image.jpg" alt="Background 1" />
 
         <div class="content">
@@ -544,32 +556,7 @@
             </div>
         </div>
 
-        <div id="newsletter-popup" class="popup-overlay">
-            <div class="card">
-                <span class="card__title">Subscribe</span>
-                <p class="card__content">Get fresh web design resources delivered straight to your inbox every week.</p>
-                <div class="card__form">
-                    <input id="newsletter-email" placeholder="Your Email" type="text" />
-                    <button class="sign-up" onclick="submitNewsletter()">Sign up</button>
-                </div>
-                <button class="close-popup" onclick="closePopup()">✖</button>
-            </div>
-        </div>
-
-        <script>
-            /*
-    const images = document.querySelectorAll('.background-image');
-    let currentIndex = 0;
-
-    function changeBackground() {
-      images[currentIndex].classList.remove('visible');
-      currentIndex = (currentIndex + 1) % images.length;
-      images[currentIndex].classList.add('visible');
-    }
-
-    setInterval(changeBackground, 5000);
-    */
-
+        <script defer>
             function openPopup() {
                 document.getElementById('newsletter-popup').classList.add('active');
             }
