@@ -415,18 +415,6 @@
         </style>
     </head>
     <body>
-        <div id="newsletter-popup" class="popup-overlay">
-            <div class="card">
-                <span class="card__title">Subscribe</span>
-                <p class="card__content">Get fresh web design resources delivered straight to your inbox every week.</p>
-                <div class="card__form">
-                    <input id="newsletter-email" placeholder="Your Email" type="text" />
-                    <button class="sign-up" onclick="submitNewsletter()">Sign up</button>
-                </div>
-                <button class="close-popup" onclick="closePopup()">✖</button>
-            </div>
-        </div>
-
         <img class="panel" src="images/characters_image.jpg" alt="Background 1" />
 
         <div class="content">
@@ -554,6 +542,17 @@
                     <p>© 2025 ARES. All rights reserved. <a href="#privacy">Privacy Policy</a></p>
                 </footer>
             </div>
+				<div id="newsletter-popup" class="popup-overlay">
+            	<div class="card">
+             	   <span class="card__title">Subscribe</span>
+            		<p class="card__content">Get fresh web design resources delivered straight to your inbox every week.</p>
+                	<div class="card__form">
+                 	   <input id="newsletter-email" placeholder="Your Email" type="text" />
+                  	  <button class="sign-up" onclick="submitNewsletter()">Sign up</button>
+                	</div>
+                	<button class="close-popup" onclick="closePopup()">✖</button>
+            	</div>
+        </div>
         </div>
 
         <script defer>
