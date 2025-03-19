@@ -1,13 +1,13 @@
-        @font-face {
-            font-family: 'Dirtyoldtown';
-            /* Nome del font */
-            src: url('/public//font/dirtyoldtown.ttf') format('truetype');
-            /* Percorso assoluto */
-            font-weight: normal;
-            /* Peso del font */
-            font-style: normal;
-            /* Stile del font */
-        }
+@font-face {
+    font-family: 'Dirtyoldtown';
+    /* Nome del font */
+    src: url('/public//font/dirtyoldtown.ttf') format('truetype');
+    /* Percorso assoluto */
+    font-weight: normal;
+    /* Peso del font */
+    font-style: normal;
+    /* Stile del font */
+}
 
         @font-face {
             font-family: 'Jura';
