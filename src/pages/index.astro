@@ -154,7 +154,6 @@
 
             .content {
                 position: absolute;
-                z-index: 1;
                 background-color: var(--overlay-color);
                 width: 100%;
                 text-align: center;
@@ -566,30 +565,31 @@
                 <footer>
                     <p>© 2025 ARES. All rights reserved. <a href="#privacy">Privacy Policy</a></p>
                 </footer>
-
-                <form class="popup">
-                    <span class="popup-heading">TAKE 10% OFF.</span>
-                    <p class="popup-subheading">Here is your discount! The promo code will be sent to your email.</p>
-                    <div class="inputContainer">
-                        <input placeholder="Enter your email" type="email" name="email" id="email-address" />
-                        <button type="submit" class="submitButton">Get it!</button>
-                    </div>
-                    <button class="exitBtn">×</button>
-                </form>
             </div>
         </div>
 
+        <form class="popup" id="discountForm" onsubmit="submitNewsletter(event)">
+            <span class="popup-heading">TAKE 10% OFF.</span>
+            <p class="popup-subheading">Here is your discount! The promo code will be sent to your email.</p>
+            <div class="inputContainer">
+                <input placeholder="Enter your email" type="email" name="email" id="email-address" />
+                <button type="submit" class="submitButton">Get it!</button>
+            </div>
+            <button type="button" class="exitBtn" onclick="closePopup()">×</button>
+        </form>
+
         <script defer>
             function openPopup() {
-                document.getElementById('discountForm').classList.add('active');
+                document.querySelector('.popup').classList.add('active');
             }
 
             function closePopup() {
-                document.getElementById('discountForm').classList.remove('active');
+                document.querySelector('.popup').classList.remove('active');
             }
 
-            function submitNewsletter() {
-                let emailInput = document.getElementById('newsletter-email');
+            function submitNewsletter(event) {
+                event.preventDefault();
+                let emailInput = document.getElementById('email-address');
 
                 if (emailInput instanceof HTMLInputElement) {
                     let email = emailInput.value.trim();
