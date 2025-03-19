@@ -239,15 +239,19 @@
         }
 
         function popupReset() {
+            let popup = document.getElementById('popup');
+            let popupSuccess = document.getElementById('popup-success');
+            let popupFailed = document.getElementById('popup-failed');
             let emailInput = document.getElementById('email');
             let nameInput = document.getElementById('name');
             let loader = document.getElementById('loader-bar');
-            let registrationMessage = document.getElementById('popup-success');
             let submitButton = document.getElementById('submitButton');
 
+            popup.style.display = 'block'
+            popupSuccess.style.display = 'none'
+            popupFailed.style.display = 'none'
             emailInput.style.display = 'block'
             nameInput.style.display = 'block'
-            registrationMessage.style.display = 'none';
             loader.style.display = 'none';
             submitButton.style.display = 'block'; 
         }
@@ -256,12 +260,10 @@
             let emailInput = document.getElementById('email');
             let nameInput = document.getElementById('name');
             let loader = document.getElementById('loader-bar');
-            let registrationMessage = document.getElementById('popup-success');
             let submitButton = document.getElementById('submitButton');
 
             emailInput.style.display = 'none'
             nameInput.style.display = 'none'
-            registrationMessage.style.display = 'none';
             loader.style.display = 'block';
             submitButton.style.display = 'none';  
         }

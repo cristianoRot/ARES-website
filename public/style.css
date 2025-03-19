@@ -527,6 +527,8 @@ footer a:hover {
     font-size: 0.8em;
     color: hsl(40, 18%, 97%, 1);
     text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 @media screen and (max-width: 1200px) {
