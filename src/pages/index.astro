@@ -214,7 +214,6 @@
                 padding: 5px;
                 border-radius: 14px;
                 color: #fff;
-                z-index: 3;
                 position: relative;
                 background: radial-gradient(circle 80px at 80% -50%, #777777, #0f1111);
                 justify-content: center;
@@ -305,67 +304,12 @@
                 text-align: right;
             }
 
-            @media screen and (max-width: 1200px) {
-                .game-title {
-                    font-size: 50px;
-                }
-
-                .subtitle {
-                    font-size: 25px;
-                }
-
-                .panel {
-                    object-position: 35% center; /* Sposta verso destra ma mantiene la parte sinistra visibile */
-                }
-
-                .game-description {
-                    width: 90%;
-                }
-
-                .card {
-                    margin: 20px;
-                }
-
-                .card .container .description {
-                    margin: 0px 0px;
-                    width: auto;
-                }
-
-                .info-section {
-                    border-radius: 8px;
-                    margin: 0px 0px;
-                    width: auto;
-                }
-
-                .card-container-1 {
-                    flex-direction: column;
-                    padding: 0px;
-                    gap: 20px;
-                }
-
-                .card-container-2 {
-                    flex-direction: column-reverse;
-                    padding: 0px;
-                    gap: 20px;
-                }
-
-                .card-container-description {
-                    style=flex: 1;
-                    width: 90%;
-                    margin-inline: 5%;
-                    margin-bottom: 25px;
-                    text-align: center;
-                }
-
-                .card-container-image {
-                    style=flex: 1;
-                    width: 100%;
-                    text-align: center;
-                }
+            .popup-view {
+                position: relative;
             }
 
-            /* From Uiverse.io by vinodjangid07 */
             .popup {
+                margin: auto;
                 width: 250px;
                 height: 300px;
                 background-color: rgb(255, 255, 255);
@@ -375,7 +319,6 @@
                 justify-content: center;
                 padding: 20px 30px;
                 gap: 20px;
-                position: relative;
                 box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.082);
             }
 
@@ -435,6 +378,65 @@
                 color: black;
                 font-size: 1.1em;
                 cursor: pointer;
+            }
+
+            @media screen and (max-width: 1200px) {
+                .game-title {
+                    font-size: 50px;
+                }
+
+                .subtitle {
+                    font-size: 25px;
+                }
+
+                .panel {
+                    object-position: 35% center; /* Sposta verso destra ma mantiene la parte sinistra visibile */
+                }
+
+                .game-description {
+                    width: 90%;
+                }
+
+                .card {
+                    margin: 20px;
+                }
+
+                .card .container .description {
+                    margin: 0px 0px;
+                    width: auto;
+                }
+
+                .info-section {
+                    border-radius: 8px;
+                    margin: 0px 0px;
+                    width: auto;
+                }
+
+                .card-container-1 {
+                    flex-direction: column;
+                    padding: 0px;
+                    gap: 20px;
+                }
+
+                .card-container-2 {
+                    flex-direction: column-reverse;
+                    padding: 0px;
+                    gap: 20px;
+                }
+
+                .card-container-description {
+                    style=flex: 1;
+                    width: 90%;
+                    margin-inline: 5%;
+                    margin-bottom: 25px;
+                    text-align: center;
+                }
+
+                .card-container-image {
+                    style=flex: 1;
+                    width: 100%;
+                    text-align: center;
+                }
             }
         </style>
     </head>
@@ -568,23 +570,25 @@
             </div>
         </div>
 
-        <form class="popup" id="discountForm" onsubmit="submitNewsletter(event)">
-            <span class="popup-heading">TAKE 10% OFF.</span>
-            <p class="popup-subheading">Here is your discount! The promo code will be sent to your email.</p>
-            <div class="inputContainer">
-                <input placeholder="Enter your email" type="email" name="email" id="email-address" />
-                <button type="submit" class="submitButton">Get it!</button>
-            </div>
-            <button type="button" class="exitBtn" onclick="closePopup()">×</button>
-        </form>
+        <div class="popup-view">
+            <form class="popup">
+                <span class="popup-heading">TAKE 10% OFF.</span>
+                <p class="popup-subheading">Here is your discount! The promo code will be sent to your email.</p>
+                <div class="inputContainer">
+                    <input placeholder="Enter your email" type="email" name="email" id="email-address" />
+                    <button type="submit" class="submitButton">Get it!</button>
+                </div>
+                <button type="button" class="exitBtn" onclick="closePopup()">×</button>
+            </form>
+        </div>
 
         <script defer>
             function openPopup() {
-                document.querySelector('.popup').classList.add('active');
+                document.querySelector('.popup-view').classList.add('active');
             }
 
             function closePopup() {
-                document.querySelector('.popup').classList.remove('active');
+                document.querySelector('.popup-view').classList.remove('active');
             }
 
             function submitNewsletter(event) {
