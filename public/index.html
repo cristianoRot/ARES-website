@@ -155,7 +155,8 @@
             <span class="popup-heading">BETA ACCESS.</span>
             <p class="popup-subheading">By entering your email, you will be added to the queue for the Ares test. We will send you an email with instructions on how to try the game.</p>
             <div class="inputContainer">
-                <input placeholder="Enter your email" type="email" name="email" id="email-address" />
+                <input placeholder="Enter your name" type="text" name="name" id="name" />
+                <input placeholder="Enter your email" type="email" name="email" id="email" />
                 <button type="submit" class="submitButton" onclick="submitEmail(event)">SIGN UP</button>
             </div>
         </form>
@@ -171,37 +172,49 @@
         }
 
         function submitEmail(event) {
-            event.preventDefault();
-            let emailInput = document.getElementById('email-address');
+    event.preventDefault(); // Previene il comportamento di default del form
 
-            if (emailInput instanceof HTMLInputElement) {
-                let email = emailInput.value.trim();
+    let emailInput = document.getElementById('email');
+    let nameInput = document.getElementById('name');
 
-                if (email !== '') {
-                    fetch("https://script.google.com/macros/s/AKfycbx0Eg0isE_9XEyUtMI3m8F2aaOMYbm2X-cNjiII1x_L-Y5eyTf06YZuwNw1nTi-fr4/exec", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/x-www-form-urlencoded"
-                        },
-                        body: `email=${encodeURIComponent(email)}`
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        alert('Thank you for subscribing with: ' + email);
-                        emailInput.value = '';
-                        closePopup();
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('There was an error submitting your email. Please try again.');
-                    });
+    if (emailInput instanceof HTMLInputElement && nameInput instanceof HTMLInputElement) {
+        let email = emailInput.value.trim();
+        let name = nameInput.value.trim();
+
+        if (email !== '' && name !== '') {
+            // Costruisci il corpo della richiesta
+            let body = `email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`;
+
+            // Invia la richiesta al Google Apps Script
+            fetch("https://script.google.com/macros/s/AKfycbxsTqfu0lC-zAvNDaNOozp4kTVXdOCzEj86b9HGRfrSPToq8Y0J3GucDP3lck5yScIc/exec", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: body  // Passa il corpo correttamente
+            })
+            .then(response => response.json())  // Aspetta la risposta in formato JSON
+            .then(data => {
+                if (data.result === "success") {
+                    alert('Thank you for subscribing with: ' + email);
+                    emailInput.value = '';  // Pulisci il campo email dopo l'invio
+                    nameInput.value = '';   // Pulisci il campo nome dopo l'invio
+                    closePopup();           // Chiudi il popup
                 } else {
-                    alert('Please enter a valid email.');
+                    alert('There was an error submitting your email. Please try again.');
                 }
-            } else {
-                console.error('Elemento non trovato o non è un input!');
-            }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting your email. Please try again.');
+            });
+        } else {
+            alert('Please enter both a valid name and email.');
         }
+    } else {
+        console.error('Elemento non trovato o non è un input!');
+    }
+}
     </script>
 </body>
 
