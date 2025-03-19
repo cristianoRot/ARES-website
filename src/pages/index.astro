@@ -365,53 +365,79 @@
                 }
             }
 
-            /* Popup CSS */
-            .popup-overlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                visibility: hidden;
-                opacity: 0;
-                transition:
-                    opacity 0.3s ease,
-                    visibility 0.3s;
-            }
+/* From Uiverse.io by vinodjangid07 */ 
+.discountForm {
+  width: 250px;
+  height: 300px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px;
+  gap: 20px;
+  position: relative;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.082);
+}
 
-            .popup-overlay.active {
-                visibility: visible;
-                opacity: 1;
-            }
+.DiscountHeading {
+  font-size: 1.5em;
+  color: rgb(15, 15, 15);
+  font-weight: 700;
+}
 
-            .popip-card {
-                width: 300px;
-                padding: 20px;
-                text-align: center;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                gap: 12px;
-                background: #111;
-                border-radius: 20px;
-                position: relative;
-            }
+.DiscountSubheading {
+  font-size: 0.8em;
+  color: black;
+  text-align: center;
+}
 
-            .close-popup {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                background: transparent;
-                border: none;
-                color: white;
-                font-size: 18px;
-                cursor: pointer;
-            }
+.inputContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#email-address {
+  height: 30px;
+  width: 100%;
+  border: 1px solid rgb(228, 228, 228);
+  background-color: white;
+  padding: 0px 10px;
+  outline: none;
+  text-align: center;
+}
+
+.submitButton {
+  width: 100%;
+  height: 30px;
+  border: none;
+  background-color: rgb(15, 15, 15);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: rgb(36, 36, 36);
+}
+
+.exitBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.171);
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  border: none;
+  color: black;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
         </style>
     </head>
     <body>
@@ -542,17 +568,17 @@
                     <p>© 2025 ARES. All rights reserved. <a href="#privacy">Privacy Policy</a></p>
                 </footer>
             </div>
-				<div id="newsletter-popup" class="popup-overlay">
-            	<div class="popup-card">
-             	   <span class="card__title">Subscribe</span>
-            		<p class="card__content">Get fresh web design resources delivered straight to your inbox every week.</p>
-                	<div class="card__form">
-                 	   <input id="newsletter-email" placeholder="Your Email" type="text" />
-                  	  <button class="sign-up" onclick="submitNewsletter()">Sign up</button>
-                	</div>
-                	<button class="close-popup" onclick="closePopup()">✖</button>
-            	</div>
-        </div>
+			<!-- From Uiverse.io by vinodjangid07 --> 
+<form class="discountForm">
+ 
+  <span class="DiscountHeading">TAKE 10% OFF.</span>
+  <p class="DiscountSubheading">Here is your discount! The promo code will be sent to your email.</p>
+  <div class="inputContainer">
+    <input placeholder="Enter your email" type="email" name="email" id="email-address">
+    <button type="submit" class="submitButton">Get it!</button>
+  </div>
+     <button class="exitBtn">×</button>
+</form>
         </div>
 
         <script defer>
