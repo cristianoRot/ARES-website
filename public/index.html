@@ -201,7 +201,7 @@
                     nameInput.value = '';   // Pulisci il campo nome dopo l'invio
                     closePopup();           // Chiudi il popup
                 } else {
-                    alert('There was an error submitting your email. Please try again.');
+                    alert('There was an error submitting your email. Please try again.' + data.error);
                 }
             })
             .catch(error => {
