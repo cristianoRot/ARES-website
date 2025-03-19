@@ -358,7 +358,17 @@ footer a:hover {
     gap: 10px;
 }
 
-#email-address {
+#name {
+    width: auto;
+    height: 30px;
+    border: none;
+    background-color: hsl(40, 18%, 97%, 1);
+    padding: 0px 10px;
+    outline: none;
+    text-align: center;
+}
+
+#email {
     width: auto;
     height: 30px;
     border: none;
