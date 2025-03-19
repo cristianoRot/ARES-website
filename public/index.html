@@ -193,15 +193,16 @@
                 },
                 body: body  // Passa il corpo correttamente
             })
-            .then(response => response.json())  // Aspetta la risposta in formato JSON
+            .then(response => response.json())
             .then(data => {
                 if (data.result === "success") {
                     alert('Thank you for subscribing with: ' + email);
-                    emailInput.value = '';  // Pulisci il campo email dopo l'invio
-                    nameInput.value = '';   // Pulisci il campo nome dopo l'invio
+                    emailInput.value = '';  // Pulisce il campo email dopo l'invio
+                    nameInput.value = '';   // Pulisce il campo nome dopo l'invio
                     closePopup();           // Chiudi il popup
                 } else {
-                    alert('There was an error submitting your email. Please try again.' + data.error);
+                    console.error('Error:', data.error); // Mostra l'errore nel console log
+                    alert('Error: ' + data.error); // Mostra un messaggio di errore
                 }
             })
             .catch(error => {
