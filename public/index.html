@@ -152,7 +152,7 @@
     <div class="popup-view">
         <form class="popup" id="popup">
             <button type="button" class="exitBtn" onclick="closePopup()">×</button>
-            <span class="popup-heading">BETA ACCESS.</span>
+            <div class="popup-heading">BETA ACCESS.</div>
             <p class="popup-subheading">By entering your email, you will be added to the queue for the Ares test. We will send you an email with instructions on how to try the game.</p>
             <div class="inputContainer">
                 <input placeholder="Enter your name" type="text" name="name" id="name" />
@@ -220,7 +220,7 @@
                     .then(response => response.json())
                     .then(data => {
                         if (data.result === "success") {
-                            popupSuccess();
+                            //popupSuccess();
                             emailInput.value = '';
                             nameInput.value = '';
                         } else {
