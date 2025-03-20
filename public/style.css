@@ -78,19 +78,16 @@ header nav a:hover {
     background: linear-gradient(to top, black 90%, transparent 100%);
 }
 
+.container .description {
+    width: 700px;
+}
+
 .game-title {
     font-family: 'PrimaryFont', sans-serif;
     font-size: 150px;
     margin-top: 80px;
     margin-bottom: 0px;
     color: white;
-}
-
-.title {
-    font-family: 'PrimaryFont', sans-serif;
-    font-size: 100px;
-    font-weight: 900;
-    margin: 0px;
 }
 
 .subtitle {
@@ -298,6 +295,13 @@ footer a:hover {
     width: 30%;
     margin-inline: 10%;
     text-align: left;
+}
+
+.card-container-description .title {
+    font-family: 'PrimaryFont', sans-serif;
+    font-size: 100px;
+    font-weight: 900;
+    margin: 0px;
 }
 
 .card-container-image {
@@ -549,6 +553,12 @@ footer a:hover {
         width: 90%;
     }
 
+    .container .description {
+        width: auto;
+        margin-inline: 20px;
+    }
+    
+
     .card {
         margin: 20px;
     }
@@ -582,6 +592,10 @@ footer a:hover {
         margin-inline: 5%;
         margin-bottom: 25px;
         text-align: center;
+    }
+
+    .card-container-description .title {
+        font-size: 50px;
     }
 
     .card-container-image {
