@@ -413,6 +413,7 @@ footer a:hover {
     width: 200px;
     height: 60px;
     padding-bottom: 50px;
+    margin: auto;
     z-index: 1;
   }
   
