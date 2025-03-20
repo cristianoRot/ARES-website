@@ -1,7 +1,7 @@
 @font-face {
-    font-family: 'Dirtyoldtown';
+    font-family: 'PrimaryFont';
     /* Nome del font */
-    src: url('font/dirtyoldtown.ttf') format('truetype');
+    src: url('font/geoform/Geoform-Heavy.otf') format('truetype');
     /* Percorso assoluto */
     font-weight: normal;
     /* Peso del font */
@@ -39,7 +39,7 @@ body {
 }
 
 header {
-    font-family: 'Dirtyoldtown', sans-serif;
+    font-family: 'PrimaryFont', sans-serif;
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -56,7 +56,7 @@ header .logo {
 }
 
 header nav {
-    font-family: 'Dirtyoldtown', sans-serif;
+    font-family: 'PrimaryFont', sans-serif;
     display: flex;
     gap: 15px;
 }
@@ -79,23 +79,22 @@ header nav a:hover {
 }
 
 .game-title {
-    font-family: 'Dirtyoldtown', sans-serif;
-    font-size: 100px;
-    font-weight: 700;
+    font-family: 'PrimaryFont', sans-serif;
+    font-size: 150px;
     margin-top: 80px;
     margin-bottom: 0px;
     color: white;
 }
 
 .title {
-    font-family: 'Dirtyoldtown', sans-serif;
-    font-size: 2.5rem;
+    font-family: 'PrimaryFont', sans-serif;
+    font-size: 100px;
     font-weight: 900;
     margin: 0px;
 }
 
 .subtitle {
-    font-family: 'Dirtyoldtown', sans-serif;
+    font-family: 'PrimaryFont', sans-serif;
     font-size: 50px;
     font-weight: 700;
     margin-top: 0px;
@@ -338,7 +337,7 @@ footer a:hover {
 }
 
 .popup-heading {
-    font-family: 'Dirtyoldtown';
+    font-family: 'PrimaryFont';
     font-size: 1.5em;
     text-align: center;
     color: hsl(40, 18%, 97%, 1);
@@ -517,7 +516,7 @@ footer a:hover {
 }
 
 .popup-message .title {
-    font-family: 'Dirtyoldtown';
+    font-family: 'PrimaryFont';
     font-size: 1.5em;
     text-align: center;
     font-weight: 700;
@@ -534,11 +533,11 @@ footer a:hover {
 
 @media screen and (max-width: 1200px) {
     .game-title {
-        font-size: 50px;
+        font-size: 80px;
     }
 
     .subtitle {
-        font-size: 25px;
+        font-size: 30px;
     }
 
     .panel {
