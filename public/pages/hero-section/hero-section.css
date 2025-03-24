@@ -2,7 +2,7 @@
 
 .hero-section {
     position: relative;
-    background: url('/public/images/characters_image.jpg') no-repeat center center;
+    background: url('/images/characters_image.jpg') no-repeat center center;
     background-size: cover; /* Copri l'intera area con l'immagine */
     color: white; /* Imposta il colore del testo */
     display: flex;

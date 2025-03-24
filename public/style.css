@@ -45,8 +45,7 @@
 body {
     margin: 0;
     font-family: var(--font-family);
-    /* Applica il font Jura */
-    background-color: var(--secondary-color);
+    background-color: var(--background-dark);
     color: var(--text-color);
 }
 
