@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Reset di base */
 * {
     margin: 0;
@@ -57,11 +58,49 @@ body {
     font-size: 1px;
     color: #fff;
     margin-bottom: 15px;
+=======
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.footer {
+    background-color: #1a1a1a;
+    padding: 20px 40px;
+    border-top: 1px solid #333;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.ea-logo {
+    width: 50px;
+    margin-right: 20px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+>>>>>>> 75eb3e1a4e5f0a5fd0bde0a83149513268f1cadc
 }
 
 .footer-links a {
     color: #ccc;
     text-decoration: none;
+<<<<<<< HEAD
     font-size: 12px;
     padding-inline: 10px;
     transition: color 0.3s ease;
@@ -152,5 +191,90 @@ body {
 
     .social-icons {
         justify-content: center;
+=======
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.language-selector label {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.language-selector select {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.trust-badge img {
+    width: 100px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 20px auto 0;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+}
+
+.legal-links {
+    display: flex;
+    gap: 20px;
+}
+
+.legal-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.legal-links a:hover {
+    color: #fff;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .footer-right {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+>>>>>>> 75eb3e1a4e5f0a5fd0bde0a83149513268f1cadc
     }
 }
