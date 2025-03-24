@@ -21,13 +21,25 @@
 }
 
 :root {
-    --primary-color: #926f34;
-    --secondary-color: rgba(0, 0, 0);
-    --text-color: #ffffff;
-    --overlay-color: rgba(0, 0, 0, 0.5);
-    --tertiary-color: #202024;
+    --primary-color: #ffffff; /* Blu principale */
+    --secondary-color: #c3c3c3; /* Verde secondario */
+    --accent-color: #ff1900; /* Colore di accento (Rosso) */
+    --background-color: #1d1e20; /* Colore di sfondo chiaro */
+    --background-dark: #0b0c0c;; /* Colore di sfondo scuro */
+    --text-color: #333333; /* Colore del testo */
+    --link-color: #2980b9; /* Colore dei link */
+    --button-color: #f39c12; /* Colore dei pulsanti */
+    --border-color: #dcdcdc; /* Colore dei bordi */
+    --highlight-color: #9b59b6; /* Colore di evidenza */
+    --error-color: #e74c3c; /* Colore per errori */
+    --success-color: #27ae60; /* Colore per successi */
+    --warning-color: #f39c12; /* Colore per avvisi */
+    --neutral-light: #ecf0f1; /* Colore neutro chiaro */
+    --neutral-dark: #34495e; /* Colore neutro scuro */
+    --overlay-color: rgba(0, 0, 0, 0.5); /* Overlay trasparente */
+    --white: #ffffff; /* Bianco */
+    --black: #000000; /* Nero */
     --font-family: 'Jura', sans-serif;
-    /* Definisci la variabile font */
 }
 
 body {
@@ -36,34 +48,6 @@ body {
     /* Applica il font Jura */
     background-color: var(--secondary-color);
     color: var(--text-color);
-}
-
-.content {
-    position: relative;
-    background-color: var(--overlay-color);
-    width: 100%;
-    text-align: center;
-}
-
-.content .description {
-    width: 800px;
-    margin: auto;
-}
-
-.game-title {
-    font-family: 'PrimaryFont', sans-serif;
-    font-size: 100px;
-    margin-top: 80px;
-    margin-bottom: 0px;
-    color: white;
-}
-
-.subtitle {
-    font-family: 'PrimaryFont', sans-serif;
-    font-size: 30px;
-    margin-top: 0px;
-    margin-bottom: 50px;
-    color: rgb(255, 0, 0);
 }
 
 .container {
@@ -184,47 +168,12 @@ body {
     padding-right: 10px;
 }
 
-.info-section {
-    border-radius: 8px;
-    width: 400px;
-    margin: 0px auto;
-}
-
-.info-value {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #ffffff;
-    text-align: right;
-}
-
-.info-value img {
-    height: 20px;
-}
-
-.info-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #333333;
-}
-
-.info-item:last-child {
-    border-bottom: none;
-}
-
-.info-label {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #777;
-}
-
 .card-container-1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
+    background-color: var(--background-dark);
+    color: var(--primary-color);
     width: 100%;
     margin: auto;
 }
@@ -233,8 +182,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
+    background-color: var(--background-dark);
+    color: var(--primary-color);
     width: 100%;
     margin: auto;
 }
@@ -268,7 +217,7 @@ body.popup-active {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: #000000de;
+    background: var(--black);
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -279,7 +228,7 @@ body.popup-active {
     margin: auto;
     width: 250px;
     height: auto;
-    background-color: rgb(20, 20, 20);
+    background-color: var(--background-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -489,23 +438,6 @@ body.popup-active {
     margin-bottom: 25px;
 }
 
-footer {
-    margin-top: 50px;
-    color: #777;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.9rem;
-}
-
-footer a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #71592a;
-}
-
 @media screen and (max-width: 1200px) {
     .game-title {
         font-size: 70px;
@@ -531,12 +463,6 @@ footer a:hover {
 
     .card .container .description {
         margin: 0px 0px;
-        width: auto;
-    }
-
-    .info-section {
-        border-radius: 8px;
-        margin: 0px 50px;
         width: auto;
     }
 

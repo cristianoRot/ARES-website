@@ -1,0 +1,149 @@
+
+
+.hero-section {
+    position: relative;
+    background: url('/public/images/characters_image.jpg') no-repeat center center;
+    background-size: cover; /* Copri l'intera area con l'immagine */
+    color: white; /* Imposta il colore del testo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--overlay-color); /* Usa la variabile overlay */
+    z-index: 1; /* Assicurati che l'overlay sia sopra l'immagine ma sotto il contenuto */
+}
+
+.hero-section .game-title {
+    font-family: 'PrimaryFont', sans-serif;
+    font-size: 100px;
+    margin-top: 80px;
+    margin-bottom: 0px;
+    color: var(--primary-color);
+    z-index: 2;
+}
+
+.hero-section .subtitle {
+    font-family: 'PrimaryFont', sans-serif;
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    color: var(--accent-color);
+    z-index: 2;
+}
+
+.hero-section .description {
+    color: var(--secondary-color);
+    width: 800px;
+    margin: auto;
+     margin-bottom: 50px;
+    z-index: 2;
+}
+
+.cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+    z-index: 2;
+}
+
+.cta-group .button {
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 16px;
+    border: none;
+    padding: 2px;
+    background: radial-gradient(circle 80px at 80% -10%, #ffffff, #181b1b);
+    position: relative;
+    transition: background 0.4s ease;
+}
+
+.cta-group .button:hover {
+    background: radial-gradient(circle 150px at 80% -10%, #ffffff, #181b1b);
+}
+
+.cta-group .button::after {
+    content: '';
+    position: absolute;
+    width: 65%;
+    height: 60%;
+    border-radius: 120px;
+    top: 0;
+    right: 0;
+    box-shadow: 0 0 20px #ffffff38;
+    z-index: -1;
+}
+
+.blob1 {
+    position: absolute;
+    width: 70px;
+    height: 100%;
+    border-radius: 16px;
+    bottom: 0;
+    left: 0;
+    background: radial-gradient(circle 60px at 0% 100%, #3fe9ff, #0000ff80, transparent);
+    box-shadow: -10px 10px 30px #0051ff2d;
+}
+
+.cta-group .button .inner {
+    display: flex;
+    padding: 5px;
+    border-radius: 14px;
+    color: #fff;
+    position: relative;
+    background: radial-gradient(circle 80px at 80% -50%, #777777, #0f1111);
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-group .button .inner::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 14px;
+    background: radial-gradient(circle 60px at 0% 100%, #00e1ff1a, #0000ff11, transparent);
+    position: absolute;
+}
+
+.cta-group .button .inner img {
+    height: 30px;
+    padding-right: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    .hero-section .game-title {
+        font-size: 70px;
+    }
+
+    .hero-section .subtitle {
+        font-size: 20px;
+    }
+
+    .panel {
+        object-position: 35% center;
+        /* Sposta verso destra ma mantiene la parte sinistra visibile */
+    }
+
+    .hero-section .description {
+        width: auto;
+        margin-inline: 20px;
+    }
+}
