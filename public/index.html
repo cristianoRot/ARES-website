@@ -133,10 +133,6 @@
                         Learn more </button>
                 </div>
             </div>
-
-            <footer>
-                <p>© 2025 ARES. All rights reserved. <a href="#privacy">Privacy Policy</a></p>
-            </footer>
         </div>
     </div>
 
@@ -174,9 +170,23 @@
             </div>
             <div class="subtitle">You will receive an email with further instructions.</div>
         </div>
+    
     </div>
 
+    <div id="footer-container"></div>
+
     <script defer>
+        function loadFooter() {
+            fetch('pages/footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                })
+                .catch(error => console.error('Errore nel caricamento del footer:', error));
+        }
+
+        document.addEventListener('DOMContentLoaded', loadFooter);
+
         function openPopup() {
             popupReset();
             document.body.classList.add('popup-active');
