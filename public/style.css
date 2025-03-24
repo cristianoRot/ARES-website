@@ -39,7 +39,7 @@ body {
 }
 
 .content {
-    position: absolute;
+    position: relative;
     background-color: var(--overlay-color);
     width: 100%;
     text-align: center;
