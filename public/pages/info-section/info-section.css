@@ -29,15 +29,15 @@
   
   /* Testo */
   .info-section__label {
-    font-family: "PrimaryFont";
+    font-family: "Jura";
     font-size: 0.8rem;
-    color: var(--secondary-color);
+    color: var(--primary-color);
   }
   
   .info-section__text {
     font-family: "Jura";
     font-size: 0.8rem;
-    color: var(--primary-color);
+    color: var(--secondary-color);
   }
   
   .info-section__platforms {

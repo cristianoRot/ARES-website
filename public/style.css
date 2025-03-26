@@ -22,13 +22,13 @@
 
 :root {
     --primary-color: #ffffff; /* Blu principale */
-    --secondary-color: #c3c3c3; /* Verde secondario */
+    --secondary-color: #a8a8a8; /* Verde secondario */
     --accent-color: #ff1900; /* Colore di accento (Rosso) */
     --background-color: hsla(0 0% 7% / 1); /* Colore di sfondo chiaro */
     --background-dark: #0b0c0c;; /* Colore di sfondo scuro */
     --text-color: #333333; /* Colore del testo */
     --link-color: #2980b9; /* Colore dei link */
-    --button-color: hsla(0 0% 7% / 1);
+    --button-color:#ffffff;
     --button-hover-color: hsla(0 0% 8% / 1);
     --border-color: #dcdcdc; /* Colore dei bordi */
     --highlight-color: #9b59b6; /* Colore di evidenza */
@@ -50,97 +50,47 @@ body {
     color: var(--text-color);
 }
 
+/* From Uiverse.io by Madflows */ 
 .button {
-    --border_radius: 9999px;
-    --transtion: 0.3s ease-in-out;
-    color: var(--primary-color);
-  
-    cursor: pointer;
-    position: relative;
-    align-items: center;
-    margin: 5px;
-  
-    padding: 1rem 2rem;
-    background-color: transparent;
-  
-    border: none;
-    border-radius: var(--border_radius);
-    transform: scale(calc(1 + (var(--active, 0) * 0.1)));
-  
-    transition: transform var(--transtion);
-  }
-  
-  .button::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  
-    width: 100%;
-    height: 100%;
-    background-color: var(--button-color);
-  
-    border-radius: var(--border_radius);
-    box-shadow: inset 0 0.5px hsl(0, 0%, 100%), inset 0 -1px 2px 0 hsl(0, 0%, 0%),
-      0px 4px 10px -4px hsla(0 0% 0% / calc(1 - var(--active, 0))),
-      0 0 0 calc(var(--active, 0) * 0.2rem) hsla(0, 0%, 18%, 0.75);
-  
-    transition: all var(--transtion);
-    z-index: 0;
-  }
-  
-  .button::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    background-color: hsla(0, 1%, 23%, 0.75);
-    background-image: radial-gradient(
-        at 51% 89%,
-        var(--button-hover-color) 0px,
-        transparent 50%
-      ),
-      radial-gradient(at 100% 100%, var(--button-hover-color) 0px, transparent 50%),
-      radial-gradient(at 22% 91%, var(--button-hover-color) 0px, transparent 50%);
-    background-position: top;
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  background: var(--button-color);
+  background-size: 400%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
 
-    opacity: var(--active, 0);
-    border-radius: var(--border_radius);
-    transition: opacity var(--transtion);
-    z-index: 2;
-  }
-  
-  .button:is(:hover, :focus-visible) {
-    --active: 1;
-  }
-  .button:active {
-    transform: scale(1);
-  }
-  
-  .button .text_button {
-    position: relative;
-    font-family: "Jura";
-    font-size: 1rem;
-    z-index: 10;
-  
-    background-image: linear-gradient(
-      90deg,
-      hsla(0 0% 100% / 1) 0%,
-      hsla(0 0% 100% / var(--active, 0)) 150%
-    );
-    background-clip: text;
-    color: transparent;
-  }
+.button:hover::before {
+  transform: scaleX(1);
+}
 
-  .button .img_button {
-    position: relative;
-    width: 1rem;
-    z-index: 10;
-  }
+.button span {
+  position: relative;
+  color: var(--background-dark);
+  z-index: 1;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgb(255, 255, 255) 10.8%,
+    rgb(240, 240, 240) 94.3%
+  );
+  transition: all 0.475s;
+}
+
 
 .container {
     display: inline-grid;
@@ -212,7 +162,7 @@ body {
 
 .card-container-description .title {
     font-family: 'PrimaryFont', sans-serif;
-    font-size: 70px;
+    font-size: 40px;
     font-weight: 900;
     margin: 0px;
 }
@@ -504,10 +454,6 @@ body.popup-active {
         margin-inline: 5%;
         margin-bottom: 25px;
         text-align: center;
-    }
-
-    .card-container-description .title {
-        font-size: 50px;
     }
 
     .card-container-image {
