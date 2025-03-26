@@ -124,6 +124,7 @@ body {
   .button .text_button {
     position: relative;
     font-family: "Jura";
+    font-size: 1rem;
     z-index: 10;
   
     background-image: linear-gradient(
@@ -137,7 +138,7 @@ body {
 
   .button .img_button {
     position: relative;
-    width: 20px;
+    width: 1rem;
     z-index: 10;
   }
 
