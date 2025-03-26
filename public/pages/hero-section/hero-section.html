@@ -18,31 +18,40 @@
     </div>
 
     <div class="cta-group">
-        <button onclick="openPopup()" class="button">
-            <div class="blob1"></div>
-            <div class="blob2"></div>
-            <div class="inner">
-                <img src="images/apple_logo.png" alt="Apple Logo" />
-                <p>Download for MacOS</p>
-            </div>
+        <button onclick="watchTrailer()" class="button">
+            <span class="text_button">WATCH TRAILER</span>
         </button>
 
-        <button onclick="openPopup()" class="button">
-            <div class="blob1"></div>
-            <div class="blob2"></div>
-            <div class="inner">
-                <img src="images/win11_logo.png" alt="Windows Logo" />
-                <p>Download for Windows</p>
+        <div class="dropdown">
+            <button onclick="toggleDropdown()" class="button">
+                <span class="text_button">DOWNLOAD</span>
+            </button>
+            
+            <div id="download-options" class="dropdown-content">
+                <button onclick="openPopup()" class="button small">
+                    <img src="images/apple_logo.png" alt="Apple Logo" />
+                    <p>MacOS</p>
+                </button>
+                <button onclick="openPopup()" class="button small">
+                    <img src="images/win11_logo.png" alt="Windows Logo" />
+                    <p>Windows</p>
+                </button>
+                <button onclick="openPopup()" class="button small">
+                    <img src="images/steam_logo.png" alt="Steam Logo" />
+                    <p>Steam</p>
+                </button>
             </div>
-        </button>
-
-        <button onclick="openPopup()" class="button">
-            <div class="blob1"></div>
-            <div class="blob2"></div>
-            <div class="inner">
-                <img src="images/steam_logo.png" alt="Steam Logo" />
-                <p>Download on Steam</p>
-            </div>
-        </button>
+        </div>
     </div>
 </section>
+<script>
+    function toggleDropdown() {
+        const dropdown = document.getElementById('download-options');
+        dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function watchTrailer() {
+        // Inserisci qui il link del trailer o una logica per aprirlo
+        alert("Trailer coming soon!");
+    }
+</script>

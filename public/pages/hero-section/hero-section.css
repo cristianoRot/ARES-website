@@ -1,5 +1,3 @@
-
-
 .hero-section {
     position: relative;
     background: url('/images/characters_image.jpg') no-repeat center center;
@@ -51,8 +49,7 @@
 }
 
 .cta-group {
-    display: flex;
-    flex-direction: column;
+    display: block;
     gap: 10px;
     margin-bottom: 20px;
     width: 300px;
@@ -63,70 +60,6 @@
     z-index: 2;
 }
 
-.cta-group .button {
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 16px;
-    border: none;
-    padding: 2px;
-    background: radial-gradient(circle 80px at 80% -10%, #ffffff, #181b1b);
-    position: relative;
-    transition: background 0.4s ease;
-}
-
-.cta-group .button:hover {
-    background: radial-gradient(circle 150px at 80% -10%, #ffffff, #181b1b);
-}
-
-.cta-group .button::after {
-    content: '';
-    position: absolute;
-    width: 65%;
-    height: 60%;
-    border-radius: 120px;
-    top: 0;
-    right: 0;
-    box-shadow: 0 0 20px #ffffff38;
-    z-index: -1;
-}
-
-.blob1 {
-    position: absolute;
-    width: 70px;
-    height: 100%;
-    border-radius: 16px;
-    bottom: 0;
-    left: 0;
-    background: radial-gradient(circle 60px at 0% 100%, #3fe9ff, #0000ff80, transparent);
-    box-shadow: -10px 10px 30px #0051ff2d;
-}
-
-.cta-group .button .inner {
-    display: flex;
-    padding: 5px;
-    border-radius: 14px;
-    color: #fff;
-    position: relative;
-    background: radial-gradient(circle 80px at 80% -50%, #777777, #0f1111);
-    justify-content: center;
-    align-items: center;
-}
-
-.cta-group .button .inner::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    border-radius: 14px;
-    background: radial-gradient(circle 60px at 0% 100%, #00e1ff1a, #0000ff11, transparent);
-    position: absolute;
-}
-
-.cta-group .button .inner img {
-    height: 30px;
-    padding-right: 10px;
-}
 
 @media screen and (max-width: 1200px) {
     .hero-section .game-title {
@@ -146,4 +79,50 @@
         width: auto;
         margin-inline: 20px;
     }
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 5;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background-color: #0f1111;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    z-index: 6;
+}
+
+.button.small {
+    font-size: 0.9rem;
+    padding: 2px;
+    border-radius: 14px;
+    position: relative;
+    background: radial-gradient(circle 80px at 80% -10%, #ffffff, #181b1b);
+}
+
+.button.small .inner {
+    font-size: 0.9rem;
+    padding: 5px;
+    border-radius: 12px;
+    background: radial-gradient(circle 80px at 80% -50%, #555555, #0f1111);
+}
+
+.button.small img {
+    height: 24px;
+    padding-right: 8px;
 }
