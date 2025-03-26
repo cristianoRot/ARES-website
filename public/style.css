@@ -24,7 +24,7 @@
     --primary-color: #ffffff; /* Blu principale */
     --secondary-color: #c3c3c3; /* Verde secondario */
     --accent-color: #ff1900; /* Colore di accento (Rosso) */
-    --background-color: #1d1e20; /* Colore di sfondo chiaro */
+    --background-color: hsla(0 0% 7% / 1); /* Colore di sfondo chiaro */
     --background-dark: #0b0c0c;; /* Colore di sfondo scuro */
     --text-color: #333333; /* Colore del testo */
     --link-color: #2980b9; /* Colore dei link */
@@ -57,10 +57,7 @@ body {
   
     cursor: pointer;
     position: relative;
-  
-    display: block;
     align-items: center;
-    gap: 0.5rem;
   
     padding: 1rem 2rem;
     background-color: transparent;
@@ -223,6 +220,12 @@ body {
     );
     background-clip: text;
     color: transparent;
+  }
+
+  .button .img_button {
+    position: relative;
+    width: 20px;
+    z-index: 10;
   }
 
 .container {
