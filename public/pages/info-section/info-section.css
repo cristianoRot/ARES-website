@@ -1,7 +1,7 @@
 
   .info-section {
-    padding-top: 1rem; /* py-12 in Tailwind */
-    padding-bottom: 1rem;
+    padding-top: 0.5rem; /* py-12 in Tailwind */
+    padding-bottom: 0.5rem;
     background-color: var(--background-color);
   }
   
@@ -20,30 +20,28 @@
     gap: 2rem;
   }
   
-  .md\:gap-16 {
-    gap: 4rem;
-  }
-  
   .info-section__item {
     display: flex;
+    width: 120px;
     flex-direction: column;
     align-items: center;
   }
   
   /* Testo */
   .info-section__label {
+    font-family: "PrimaryFont";
     font-size: 0.8rem;
     color: var(--secondary-color);
   }
   
   .info-section__text {
+    font-family: "Jura";
     font-size: 0.8rem;
     color: var(--primary-color);
   }
   
   .info-section__platforms {
     display: block;
-    margin-top: 0.7rem;
     gap: 0.7rem;
   }
   
