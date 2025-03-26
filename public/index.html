@@ -6,6 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ARES - Official Website</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Card container - inizialmente nascosto */
+        .card-container-image {
+            opacity: 0;
+            transform: translateX(0); /* Posizione iniziale al centro */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Aggiungi transizioni per l'animazione */
+        }
+
+        /* Animazione quando il blocco è visibile, fai comparire l'immagine da sinistra o da destra */
+        .card-container-1 .card-container-image {
+            transform: translateX(-100%); /* Posizione iniziale a sinistra */
+        }
+
+        .card-container-2 .card-container-image {
+            transform: translateX(100%); /* Posizione iniziale a destra */
+        }
+
+        /* Quando il blocco è visibile, fai comparire l'immagine da sinistra o da destra */
+        .card-container-image.visible-from-left {
+            opacity: 1;
+            transform: translateX(0); /* Viene alla posizione normale */
+        }
+
+        .card-container-image.visible-from-right {
+            opacity: 1;
+            transform: translateX(0); /* Viene alla posizione normale */
+        }
+
+        /* Animazione per il lato destro */
+        .card-container-image.right-side {
+            transform: translateX(100%); /* Posizione iniziale a destra */
+        }
+    </style>
 </head>
 
 <body>
@@ -141,6 +174,29 @@
         }
 
         document.addEventListener('DOMContentLoaded', loadComponent);
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Funzione per osservare quando i blocchi entrano nel viewport
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    // Se l'elemento è visibile
+                    if (entry.isIntersecting) {
+                        // Aggiungi la classe appropriata in base alla posizione del blocco
+                        if (entry.target.classList.contains('card-container-1')) {
+                            entry.target.querySelector('.card-container-image').classList.add('visible-from-left');
+                        } else {
+                            entry.target.querySelector('.card-container-image').classList.add('visible-from-right');
+                        }
+                        observer.unobserve(entry.target); // Non osservare più l'elemento dopo che è visibile
+                    }
+                });
+            }, { threshold: 0.3 }); // Quando il 30% dell'elemento è visibile
+
+            // Osserviamo tutte le card-container
+            document.querySelectorAll('.card-container-1, .card-container-2').forEach(container => {
+                observer.observe(container); // Iniziamo a osservare ciascun container
+            });
+        });
 
         function openPopup() {
             popupReset();
