@@ -29,13 +29,13 @@
   
   /* Testo */
   .info-section__label {
-    font-family: "Jura";
+    font-family: "BodyFont";
     font-size: 0.8rem;
     color: var(--primary-color);
   }
   
   .info-section__text {
-    font-family: "Jura";
+    font-family: "BodyFont";
     font-size: 0.8rem;
     color: var(--secondary-color);
   }

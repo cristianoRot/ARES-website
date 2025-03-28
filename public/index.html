@@ -110,44 +110,11 @@
         </div>
     </div>
 
+    <div id="dev-section"></div>
+
     <div id="footer-container"></div>
 
-    <div class="popup-view">
-        <form class="popup" id="popup">
-            <button type="button" class="exitBtn" onclick="closePopup()">×</button>
-            <div class="popup-heading">BETA ACCESS.</div>
-            <p class="popup-subheading">By entering your email, you will be added to the queue for the Ares test. We will send you an email with instructions on how to try the game.</p>
-            <div class="inputContainer">
-                <input placeholder="Enter your name" type="text" name="name" id="name" />
-                <input placeholder="Enter your email" type="email" name="email" id="email" />
-                <button type="submit" class="submitButton" id="submitButton" onclick="submitEmail(event)">SIGN UP</button>
-            </div>
-            <!-- Area di caricamento -->
-            <div id="loader-bar" class="loader" style="display: none;">
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="shadow"></div>
-                <div class="shadow"></div>
-                <div class="shadow"></div>
-            </div>
-        </form>
-        <div id="popup-success" class="popup-message" style="display: none;">
-            <button type="button" class="exitBtn" onclick="closePopup()">×</button>
-            <div class="title" style="color: hsl(163, 87%, 44%);">
-                SUCCESS
-            </div>
-            <div class="subtitle">You will receive an email with further instructions.</div>
-        </div>
-        <div id="popup-failed" class="popup-message" style="display: none;">
-            <button type="button" class="exitBtn" onclick="closePopup()">×</button>
-            <div class="title" style="color: hsl(0, 87%, 44%);">
-                ERROR
-            </div>
-            <div class="subtitle">You will receive an email with further instructions.</div>
-        </div>
-    
-    </div>
+    <div id="popup-view"></div>
 
     <script defer>
         function loadComponent() {
@@ -164,6 +131,20 @@
                     document.getElementById('info-section').innerHTML = data;
                 })
                 .catch(error => console.error('Error while loading info-section:', error));
+
+            fetch('pages/development-section/dev-secton.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('dev-section').innerHTML = data;
+                })
+                .catch(error => console.error('Error while loading dev-section:', error));
+            
+            fetch('pages/popup/popup.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('popup-view').innerHTML = data;
+                })
+                .catch(error => console.error('Error while loading popup:', error));
 
             fetch('pages/footer/footer.html')
                 .then(response => response.text())

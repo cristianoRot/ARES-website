@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="pages/popup/popup.css">
+</head>
+<div class="popup-view">
+    <form class="popup" id="popup">
+        <button type="button" class="exitBtn" onclick="closePopup()">×</button>
+        <div class="popup-heading">BETA ACCESS.</div>
+        <p class="popup-subheading">By entering your email, you will be added to the queue for the Ares test. We will send you an email with instructions on how to try the game.</p>
+        <div class="inputContainer">
+            <input class="popup-input" placeholder="Enter your name" type="text" name="name" id="name" />
+            <input class="popup-input" placeholder="Enter your email" type="email" name="email" id="email" />
+            <button type="submit" class="button" id="submitButton" onclick="submitEmail(event)">
+                <span class="text_button">
+                    SIGN UP
+                </span>
+            </button>
+        </div>
+        <!-- Area di caricamento -->
+        <div id="loader-bar" class="loader" style="display: none;">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+        </div>
+    </form>
+    <div id="popup-success" class="popup-message" style="display: none;">
+        <button type="button" class="exitBtn" onclick="closePopup()">×</button>
+        <div class="title" style="color: hsl(163, 87%, 44%);">
+            SUCCESS
+        </div>
+        <div class="subtitle">You will receive an email with further instructions.</div>
+    </div>
+    <div id="popup-failed" class="popup-message" style="display: none;">
+        <button type="button" class="exitBtn" onclick="closePopup()">×</button>
+        <div class="title" style="color: hsl(0, 87%, 44%);">
+            ERROR
+        </div>
+        <div class="subtitle">You will receive an email with further instructions.</div>
+    </div>
+
+</div>
