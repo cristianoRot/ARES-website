@@ -6,14 +6,14 @@
 </head>
 <body>
 <div class="popup-view">
-    <form class="popup" id="popup">
+    <form class="popup" id="popup" onsubmit="submitEmail(event)">
         <button type="button" class="exitBtn" onclick="closePopup()">×</button>
         <div class="popup-heading">BETA ACCESS.</div>
         <p class="popup-subheading">By entering your email, you will be added to the queue for the Ares test. We will send you an email with instructions on how to try the game.</p>
         <div class="inputContainer">
             <input class="textfield" placeholder="Enter your name" type="text" name="name" id="popup-name" />
             <input class="textfield" placeholder="Enter your email" type="email" name="email" id="popup-email" />
-            <button type="submit" class="button-light" id="submitButton" onclick="submitEmail(event)">
+            <button type="submit" class="button-light" id="submitButton">
                 <span class="button_text">
                     SIGN UP
                 </span>
