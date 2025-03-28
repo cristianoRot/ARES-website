@@ -49,12 +49,17 @@
         function submitEmail(event) {
             event.preventDefault();
 
+            console.log('submitEmail function called');
+
             let emailInput = document.getElementById('popup-email');
             let nameInput = document.getElementById('popup-name');
 
             if (emailInput instanceof HTMLInputElement && nameInput instanceof HTMLInputElement) {
                 let email = emailInput.value.trim();
                 let name = nameInput.value.trim();
+
+                console.log('Email:', email);
+                console.log('Name:', name);
 
                 if (email !== '' && name !== '') {
                     popupLoading();
