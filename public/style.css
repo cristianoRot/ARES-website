@@ -243,6 +243,33 @@ input.textfield:focus {
     flex: 1;
     width: 50%;
     text-align: right;
+    opacity: 0;
+    transform: translateX(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.card-container-1 .card-container-image {
+    transform: translateX(-100%); /* Posizione iniziale a sinistra */
+}
+
+.card-container-2 .card-container-image {
+    transform: translateX(100%); /* Posizione iniziale a destra */
+}
+
+/* Quando il blocco è visibile, fai comparire l'immagine da sinistra o da destra */
+.card-container-image.visible-from-left {
+    opacity: 1;
+    transform: translateX(0); /* Viene alla posizione normale */
+}
+
+.card-container-image.visible-from-right {
+    opacity: 1;
+    transform: translateX(0); /* Viene alla posizione normale */
+}
+
+/* Animazione per il lato destro */
+.card-container-image.right-side {
+    transform: translateX(100%); /* Posizione iniziale a destra */
 }
 
 @media screen and (max-width: 1200px) {

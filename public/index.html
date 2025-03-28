@@ -6,39 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ARES - Official Website</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Card container - inizialmente nascosto */
-        .card-container-image {
-            opacity: 0;
-            transform: translateX(0); /* Posizione iniziale al centro */
-            transition: opacity 0.5s ease, transform 0.5s ease; /* Aggiungi transizioni per l'animazione */
-        }
-
-        /* Animazione quando il blocco è visibile, fai comparire l'immagine da sinistra o da destra */
-        .card-container-1 .card-container-image {
-            transform: translateX(-100%); /* Posizione iniziale a sinistra */
-        }
-
-        .card-container-2 .card-container-image {
-            transform: translateX(100%); /* Posizione iniziale a destra */
-        }
-
-        /* Quando il blocco è visibile, fai comparire l'immagine da sinistra o da destra */
-        .card-container-image.visible-from-left {
-            opacity: 1;
-            transform: translateX(0); /* Viene alla posizione normale */
-        }
-
-        .card-container-image.visible-from-right {
-            opacity: 1;
-            transform: translateX(0); /* Viene alla posizione normale */
-        }
-
-        /* Animazione per il lato destro */
-        .card-container-image.right-side {
-            transform: translateX(100%); /* Posizione iniziale a destra */
-        }
-    </style>
 </head>
 
 <body>
