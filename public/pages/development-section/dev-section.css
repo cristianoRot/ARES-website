@@ -311,7 +311,7 @@ input {
     background-color: #1f1f1f;
     padding: 30px;
     width: 450px;
-    border-radius: 20px;
+    border-radius: 0.2rem;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
@@ -333,31 +333,13 @@ input {
   
   .inputForm {
     border: 1.5px solid #333;
-    border-radius: 10px;
+    border-radius: 0.2rem;
     height: 50px;
     display: flex;
     align-items: center;
     padding-left: 10px;
     transition: 0.2s ease-in-out;
     background-color: #2b2b2b;
-  }
-  
-  .input {
-    margin-left: 10px;
-    border-radius: 10px;
-    border: none;
-    width: 100%;
-    height: 100%;
-    background-color: #2b2b2b;
-    color: #f1f1f1;
-  }
-  
-  .input:focus {
-    outline: none;
-  }
-  
-  .inputForm:focus-within {
-    border: 1.5px solid #2d79f3;
   }
   
   .flex-row {
@@ -389,7 +371,7 @@ input {
     color: white;
     font-size: 15px;
     font-weight: 500;
-    border-radius: 10px;
+    border-radius: 0.2rem;
     height: 50px;
     width: 100%;
     cursor: pointer;
@@ -406,7 +388,7 @@ input {
     margin-top: 10px;
     width: 100%;
     height: 50px;
-    border-radius: 10px;
+    border-radius: 0.2rem;
     display: flex;
     justify-content: center;
     align-items: center;

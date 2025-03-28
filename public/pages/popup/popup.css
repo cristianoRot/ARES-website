@@ -60,24 +60,6 @@ body.popup-active {
     gap: 10px;
 }
 
-.popup-input {
-  position: relative;
-  overflow: hidden;
-  width: auto;
-  height: 3rem;
-  padding: 0 2rem;
-  background: var(--background-color);
-  background-size: 400%;
-  color: #fff;
-  border-radius: 0.2rem;
-  border: none;
-  cursor: pointer;
-}
-
-.popup-input:focus {
-  outline: var(--accent-color) solid 1px;
-}
-
 .submitButton {
     position: relative;
     width: auto;

@@ -23,13 +23,17 @@
 :root {
     --primary-color: #ffffff;
     --secondary-color: hsl(240, 5%, 64.9%);
-    --accent-color: #ff1900; /* Colore di accento (Rosso) */
-    --background-color: hsla(0 0% 7% / 1); /* Colore di sfondo chiaro */
-    --background-dark: #0b0c0c;; /* Colore di sfondo scuro */
+    --accent-color: #ff1900;
+    --background-color: #0f0f0f;
+    --background-dark: #0b0b0b;
     --text-color: #333333; /* Colore del testo */
     --link-color: #2980b9; /* Colore dei link */
-    --button-color:#ffffff;
-    --button-hover-color: hsla(0 0% 8% / 1);
+    --button-dark-color: #2b2b2b;
+    --button-dark-text: #ffffff;
+    --button-dark-hover-color: rgb(56, 56, 56);
+    --button-light-color: #d8d7d7;
+    --button-light-text: #2b2b2b;
+    --button-light-hover-color: rgb(172, 172, 172);
     --border-color: #dcdcdc; /* Colore dei bordi */
     --highlight-color: #9b59b6; /* Colore di evidenza */
     --error-color: #e74c3c; /* Colore per errori */
@@ -50,12 +54,30 @@ body {
     color: var(--text-color);
 }
 
-.button {
+input.textfield {
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    height: 3rem;
+    padding: 0 2rem;
+    background: var(--button-dark-color);
+    background-size: 400%;
+    color: #fff;
+    border-radius: 0.2rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+input.textfield:focus {
+    outline: var(--accent-color) solid 1px;
+}
+
+.button-dark {
     position: relative;
     overflow: hidden;
     height: 3rem;
     padding: 0 2rem;
-    background: var(--button-color);
+    background: var(--button-dark-color);
     background-size: 400%;
     color: #fff;
     border-radius: 0.2rem;
@@ -63,17 +85,21 @@ body {
     cursor: pointer;
 }
 
-.button:hover::before {
+.button-dark .button_text {
+    color: var(--button-dark-text);
+}
+
+.button-dark:hover::before {
   transform: scaleX(1);
 }
 
-.button span {
+.button-dark span {
   position: relative;
-  color: var(--background-dark);
+  color: var(--button-textk);
   z-index: 1;
 }
 
-.button::before {
+.button-dark::before {
   content: "";
   position: absolute;
   top: 0;
@@ -85,12 +111,58 @@ body {
   border-radius: inherit;
   background: linear-gradient(
     82.3deg,
-    rgb(255, 255, 255) 10.8%,
-    rgb(240, 240, 240) 94.3%
+    var(--button-dark-hover-color) 10.8%,
+    var(--button-dark-color) 94.3%
+
   );
   transition: all 0.475s;
 }
 
+.button-light {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    background: var(--button-light-color);
+    background-size: 400%;
+    color: #fff;
+    border-radius: 0.2rem;
+    border: none;
+    cursor: pointer;
+}
+
+.button-light .button_text {
+    color: var(--button-light-text);
+}
+
+.button-light:hover::before {
+  transform: scaleX(1);
+}
+
+.button-light span {
+  position: relative;
+  color: var(--button-textk);
+  z-index: 1;
+}
+
+.button-light::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    var(--button-light-hover-color) 10.8%,
+    var(--button-light-color) 94.3%
+
+  );
+  transition: all 0.475s;
+}
 
 .container {
     display: inline-grid;

@@ -59,8 +59,8 @@
                 battlefield. With Ares, every style choice is
                 a unique opportunity to stand out and conquer every battle with unmatched flair.
             </p>
-            <button class="button">
-                <span class="text_button">
+            <button class="button-dark">
+                <span class="button_text">
                     Learn more
                 </span>
             </button>
@@ -77,8 +77,8 @@
                 stunningly detailed environments and dynamic visuals that push the boundaries of immersion and
                 excitement.
             </p>
-            <button class="button">
-                <span class="text_button">
+            <button class="button-dark">
+                <span class="button_text">
                     Learn more
                 </span>
             </button>
@@ -102,8 +102,8 @@
                 weapons that are as powerful as
                 they are personal. Your battlefield, your rules!
             </p>
-            <button class="button">
-                <span class="text_button">
+            <button class="button-dark">
+                <span class="button_text">
                     Learn more
                 </span>
             </button>
@@ -190,49 +190,6 @@
             document.querySelector('.popup-view').classList.remove('active');
         }
 
-        function submitEmail(event) {
-            event.preventDefault(); // Previene il comportamento di default del form
-
-            let emailInput = document.getElementById('email');
-            let nameInput = document.getElementById('name');
-
-            if (emailInput instanceof HTMLInputElement && nameInput instanceof HTMLInputElement) {
-                let email = emailInput.value.trim();
-                let name = nameInput.value.trim();
-
-                if (email !== '' && name !== '') {
-                    popupLoading();
-
-                    let body = `email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`;
-
-                    fetch("https://script.google.com/macros/s/AKfycbwk2Y3NK5rzZaVB6KbOTYfcG5QUM8ir1Qk-cGv48SkjYCtVnc9WRWx2sCg3ahOu_Qbv/exec", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/x-www-form-urlencoded"
-                        },
-                        body: body
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.result === "success") {
-                            popupSuccess();
-                            emailInput.value = '';
-                            nameInput.value = '';
-                        } else {
-                            popupFailed();
-                            console.error('Error:', data.error);
-                        }
-                    })
-                    .catch(error => {
-                        popupFailed();
-                        console.error('Error:', error);
-                    });
-                } else {
-                    alert('Please enter both a valid name and email.');
-                }
-            }
-        }
-
         function popupReset() {
             let popup = document.getElementById('popup');
             let popupSuccess = document.getElementById('popup-success');
@@ -249,34 +206,6 @@
             nameInput.style.display = 'block'
             loader.style.display = 'none';
             submitButton.style.display = 'block'; 
-        }
-
-        function popupLoading() {
-            let emailInput = document.getElementById('email');
-            let nameInput = document.getElementById('name');
-            let loader = document.getElementById('loader-bar');
-            let submitButton = document.getElementById('submitButton');
-
-            emailInput.style.display = 'none'
-            nameInput.style.display = 'none'
-            loader.style.display = 'block';
-            submitButton.style.display = 'none';  
-        }
-
-        function popupSuccess() {
-            let popup = document.getElementById('popup');
-            let popupSuccess = document.getElementById('popup-success');
-
-            popup.style.display = 'none';
-            popupSuccess.style.display = 'block'
-        }
-
-        function popupFailed() {
-            let popup = document.getElementById('popup');
-            let popupFailed = document.getElementById('popup-failed');
-
-            popup.style.display = 'none';
-            popupFailed.style.display = 'block'
         }
     </script>
 </body>
