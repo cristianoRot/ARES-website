@@ -164,12 +164,6 @@ input.textfield:focus {
   transition: all 0.475s;
 }
 
-.container {
-    display: inline-grid;
-    width: 100%;
-    background: linear-gradient(to top, black 90%, transparent 100%);
-}
-
 .background-slideshow {
     position: fixed;
     top: 0;
@@ -211,7 +205,7 @@ input.textfield:focus {
     justify-content: center;
     background-color: var(--background-dark);
     color: var(--primary-color);
-    width: 100%;
+    width: 80%;
     margin: auto;
 }
 
@@ -221,7 +215,7 @@ input.textfield:focus {
     justify-content: center;
     background-color: var(--background-dark);
     color: var(--primary-color);
-    width: 100%;
+    width: 80%;
     margin: auto;
 }
 
