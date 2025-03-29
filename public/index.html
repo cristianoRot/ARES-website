@@ -153,25 +153,29 @@
             });
         });
 
-        function toggleDropdown() {
-            const dropdown = document.getElementById('download-options');
-            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
-        }
-
         function watchTrailer() {
             alert("Trailer coming soon!");
         }
 
-        function submitEmail(event) {
-            console.log('submitEmail function called');
-
+        function saveContactFromPopup(event) {
             event.preventDefault();
-
-            console.log('submitEmail function calledwws');
 
             let emailInput = document.getElementById('popup-email');
             let nameInput = document.getElementById('popup-name');
 
+            saveContact(nameInput, emailInput);
+        }
+
+        function saveContactFromForm(event) {
+            event.preventDefault();
+
+            let emailInput = document.getElementById('form-email');
+            let nameInput = document.getElementById('form-name');
+
+            saveContact(nameInput, emailInput);
+        }
+
+        function saveContact(nameInput, emailInput) {
             if (emailInput instanceof HTMLInputElement && nameInput instanceof HTMLInputElement) {
                 let email = emailInput.value.trim();
                 let name = nameInput.value.trim();
