@@ -295,12 +295,14 @@ input.textfield:focus {
     }
 
     .card-container-1 {
+        width: 90%;
         flex-direction: column;
         padding: 0px;
         gap: 20px;
     }
 
     .card-container-2 {
+        width: 90%;
         flex-direction: column-reverse;
         padding: 0px;
         gap: 20px;
