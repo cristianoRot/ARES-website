@@ -6,19 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ARES - Official Website</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Stili per la schermata di caricamento */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+
+        #loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #fff;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+        }
+
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 
 <body>
-    <div id="hero-section"></div>
+    <!-- Schermata di caricamento -->
+    <div id="loading-screen">
+        <span class="loader"></span>
+    </div>
 
+    <div id="hero-section"></div>
     <div id="info-section"></div>
 
     <div class="card-container-1">
-        <!-- Image Section -->
         <div class="card-container-image">
-            <img src="images/characters_image.jpg" alt="Map Image" style="max-width: 100%;  border-radius: 0.2rem;" />
+            <img src="images/characters_image.jpg" alt="Map Image" style="max-width: 100%; border-radius: 0.2rem;" />
         </div>
-        <!-- Information Section -->
         <div class="card-container-description">
             <div class="title">CHARACTERS</div>
             <p style="margin-bottom: 20px;">
@@ -27,15 +66,12 @@
                 a unique opportunity to stand out and conquer every battle with unmatched flair.
             </p>
             <button class="button-dark">
-                <span class="button_text">
-                    Learn more
-                </span>
+                <span class="button_text">Learn more</span>
             </button>
         </div>
     </div>
 
     <div class="card-container-2">
-        <!-- Information Section -->
         <div class="card-container-description">
             <div class="title">MAPS</div>
             <p style="margin-bottom: 20px;">
@@ -45,23 +81,18 @@
                 excitement.
             </p>
             <button class="button-dark">
-                <span class="button_text">
-                    Learn more
-                </span>
+                <span class="button_text">Learn more</span>
             </button>
         </div>
-        <!-- Image Section -->
         <div class="card-container-image">
             <img src="images/map_image0.jpg" alt="Map Image" style="max-width: 100%; border-radius: 0.2rem;" />
         </div>
     </div>
 
     <div class="card-container-1">
-        <!-- Image Section -->
         <div class="card-container-image">
             <img src="images/GunCustomization.jpg" alt="Map Image" style="max-width: 100%; border-radius: 0.2rem;" />
         </div>
-        <!-- Information Section -->
         <div class="card-container-description">
             <div class="title">CUSTOMIZE</div>
             <p style="margin-bottom: 20px;">
@@ -70,55 +101,57 @@
                 they are personal. Your battlefield, your rules!
             </p>
             <button class="button-dark">
-                <span class="button_text">
-                    Learn more
-                </span>
+                <span class="button_text">Learn more</span>
             </button>
         </div>
     </div>
 
     <div id="dev-section"></div>
-
     <div id="footer-container"></div>
-
     <div id="popup-view"></div>
 
     <script defer>
-        function loadComponent() {
-            fetch('pages/hero-section/hero-section.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('hero-section').innerHTML = data;
-                })
-                .catch(error => console.error('Error while loading hero-section:', error));
+        // Modifica della funzione loadComponent per tracciare il caricamento
+        async function loadComponent() {
+            const components = [
+                { id: 'hero-section', url: 'pages/hero-section/hero-section.html' },
+                { id: 'info-section', url: 'pages/info-section/info-section.html' },
+                { id: 'dev-section', url: 'pages/development-section/dev-secton.html' },
+                { id: 'popup-view', url: 'pages/popup/popup.html' },
+                { id: 'footer-container', url: 'pages/footer/footer.html' }
+            ];
 
-            fetch('pages/info-section/info-section.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('info-section').innerHTML = data;
-                })
-                .catch(error => console.error('Error while loading info-section:', error));
+            const loadingScreen = document.getElementById('loading-screen');
+            let loadedComponents = 0;
+            const totalComponents = components.length;
 
-            fetch('pages/development-section/dev-secton.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('dev-section').innerHTML = data;
-                })
-                .catch(error => console.error('Error while loading dev-section:', error));
-            
-            fetch('pages/popup/popup.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('popup-view').innerHTML = data;
-                })
-                .catch(error => console.error('Error while loading popup:', error));
+            const loadPromises = components.map(component => {
+                return fetch(component.url)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById(component.id).innerHTML = data;
+                        loadedComponents++;
+                        // Quando tutti i componenti sono caricati, nascondi la schermata
+                        if (loadedComponents === totalComponents) {
+                            loadingScreen.classList.add('hidden');
+                            setTimeout(() => {
+                                loadingScreen.style.display = 'none';
+                            }, 500); // Attende la fine della transizione
+                        }
+                    })
+                    .catch(error => {
+                        console.error(`Error while loading ${component.id}:`, error);
+                        loadedComponents++;
+                        if (loadedComponents === totalComponents) {
+                            loadingScreen.classList.add('hidden');
+                            setTimeout(() => {
+                                loadingScreen.style.display = 'none';
+                            }, 500);
+                        }
+                    });
+            });
 
-            fetch('pages/footer/footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-container').innerHTML = data;
-                })
-                .catch(error => console.error('Error while loading footer:', error));
+            await Promise.all(loadPromises);
         }
 
         function loadScript(src) {
@@ -129,27 +162,23 @@
         }
 
         document.addEventListener('DOMContentLoaded', loadComponent);
-        
+
         document.addEventListener('DOMContentLoaded', function() {
-            // Funzione per osservare quando i blocchi entrano nel viewport
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
-                    // Se l'elemento è visibile
                     if (entry.isIntersecting) {
-                        // Aggiungi la classe appropriata in base alla posizione del blocco
                         if (entry.target.classList.contains('card-container-1')) {
                             entry.target.querySelector('.card-container-image').classList.add('visible-from-left');
                         } else {
                             entry.target.querySelector('.card-container-image').classList.add('visible-from-right');
                         }
-                        observer.unobserve(entry.target); // Non osservare più l'elemento dopo che è visibile
+                        observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.3 }); // Quando il 30% dell'elemento è visibile
+            }, { threshold: 0.3 });
 
-            // Osserviamo tutte le card-container
             document.querySelectorAll('.card-container-1, .card-container-2').forEach(container => {
-                observer.observe(container); // Iniziamo a osservare ciascun container
+                observer.observe(container);
             });
         });
 
@@ -159,19 +188,15 @@
 
         function saveContactFromPopup(event) {
             event.preventDefault();
-
             let emailInput = document.getElementById('popup-email');
             let nameInput = document.getElementById('popup-name');
-
             saveContact(nameInput, emailInput);
         }
 
         function saveContactFromForm(event) {
             event.preventDefault();
-
             let emailInput = document.getElementById('form-email');
             let nameInput = document.getElementById('form-name');
-
             saveContact(nameInput, emailInput);
         }
 
@@ -222,26 +247,24 @@
             let loader = document.getElementById('loader-bar');
             let submitButton = document.getElementById('submitButton');
 
-            emailInput.style.display = 'none'
-            nameInput.style.display = 'none'
+            emailInput.style.display = 'none';
+            nameInput.style.display = 'none';
             loader.style.display = 'block';
-            submitButton.style.display = 'none';  
+            submitButton.style.display = 'none';
         }
 
         function popupSuccess() {
             let popup = document.getElementById('popup');
             let popupSuccess = document.getElementById('popup-success');
-
             popup.style.display = 'none';
-            popupSuccess.style.display = 'block'
+            popupSuccess.style.display = 'block';
         }
 
         function popupFailed() {
             let popup = document.getElementById('popup');
             let popupFailed = document.getElementById('popup-failed');
-
             popup.style.display = 'none';
-            popupFailed.style.display = 'block'
+            popupFailed.style.display = 'block';
         }
 
         function openPopup() {
@@ -264,13 +287,13 @@
             let loader = document.getElementById('loader-bar');
             let submitButton = document.getElementById('submitButton');
 
-            popup.style.display = 'block'
-            popupSuccess.style.display = 'none'
-            popupFailed.style.display = 'none'
-            emailInput.style.display = 'block'
-            nameInput.style.display = 'block'
+            popup.style.display = 'block';
+            popupSuccess.style.display = 'none';
+            popupFailed.style.display = 'none';
+            emailInput.style.display = 'block';
+            nameInput.style.display = 'block';
             loader.style.display = 'none';
-            submitButton.style.display = 'block'; 
+            submitButton.style.display = 'block';
         }
     </script>
 </body>
