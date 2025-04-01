@@ -48,10 +48,48 @@
 }
 
 body {
+    opacity: 0;
+    overflow: hidden;
     margin: 0;
     font-family: var(--font-family);
     background-color: var(--background-dark);
     color: var(--text-color);
+}
+
+body.loaded {
+    opacity: 1;
+    overflow: auto;
+    transition: opacity 0.5s ease-in;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+}
+
+#loading-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #fff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
 }
 
 input.textfield {
@@ -264,6 +302,11 @@ input.textfield:focus {
 /* Animazione per il lato destro */
 .card-container-image.right-side {
     transform: translateX(100%); /* Posizione iniziale a destra */
+}
+
+@keyframes rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 @media screen and (max-width: 1200px) {
