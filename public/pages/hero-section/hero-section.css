@@ -60,12 +60,12 @@
 
 .info-group {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .item-group {
     color: var(--secondary-color);
-    z-index: 2;
+    z-index: 1;
     padding: 0.5rem;
     background: var(--background-color);
     border: var(--text-color) 1px solid;
