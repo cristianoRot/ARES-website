@@ -181,79 +181,105 @@
             event.preventDefault();
             let emailInput = document.getElementById('popup-email');
             let nameInput = document.getElementById('popup-name');
-            saveContact(nameInput, emailInput);
+            
+            popupLoading();
+            
+            saveContact(nameInput, emailInput)
+                .then(data => {
+                    if (data.result === "success") {
+                        popupSuccess();
+                        emailInput.value = '';
+                        nameInput.value = '';
+                    } else {
+                        popupFailed();
+                        console.error('Error:', data.error);
+                    }
+                })
+                .catch(error => {
+                    popupFailed();
+                    console.error('Error:', error);
+                });
         }
 
         function saveContactFromForm(event) {
             event.preventDefault();
             let emailInput = document.getElementById('form-email');
             let nameInput = document.getElementById('form-name');
-            saveContact(nameInput, emailInput);
+            
+            formLoading(); 
+            
+            saveContact(nameInput, emailInput)
+                .then(data => {
+                    if (data.result === "success") {
+                        formSuccess();
+                        emailInput.value = '';
+                        nameInput.value = '';
+                    } else {
+                        formFailed();
+                        console.error('Error:', data.error);
+                    }
+                })
+                .catch(error => {
+                    formFailed();
+                    console.error('Error:', error);
+                });
         }
 
         function saveContact(nameInput, emailInput) {
-            if (emailInput instanceof HTMLInputElement && nameInput instanceof HTMLInputElement) {
-                let email = emailInput.value.trim();
-                let name = nameInput.value.trim();
+            return new Promise((resolve, reject) => {
+                if (emailInput instanceof HTMLInputElement && nameInput instanceof HTMLInputElement) {
+                    let email = emailInput.value.trim();
+                    let name = nameInput.value.trim();
 
-                console.log('Email:', email);
-                console.log('Name:', name);
+                    console.log('Email:', email);
+                    console.log('Name:', name);
 
-                if (email !== '' && name !== '') {
-                    popupLoading();
+                    if (email !== '' && name !== '') {
+                        let body = `email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`;
 
-                    let body = `email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`;
-
-                    fetch("https://script.google.com/macros/s/AKfycbwk2Y3NK5rzZaVB6KbOTYfcG5QUM8ir1Qk-cGv48SkjYCtVnc9WRWx2sCg3ahOu_Qbv/exec", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/x-www-form-urlencoded"
-                        },
-                        body: body
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.result === "success") {
-                            popupSuccess();
-                            emailInput.value = '';
-                            nameInput.value = '';
-                        } else {
-                            popupFailed();
-                            console.error('Error:', data.error);
-                        }
-                    })
-                    .catch(error => {
-                        popupFailed();
-                        console.error('Error:', error);
-                    });
+                        fetch("https://script.google.com/macros/s/AKfycbwk2Y3NK5rzZaVB6KbOTYfcG5QUM8ir1Qk-cGv48SkjYCtVnc9WRWx2sCg3ahOu_Qbv/exec", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/x-www-form-urlencoded"
+                            },
+                            body: body
+                        })
+                        .then(response => response.json())
+                        .then(data => resolve(data))
+                        .catch(error => reject(error));
+                    } else {
+                        reject(new Error('Please enter both a valid name and email.'));
+                    }
                 } else {
-                    alert('Please enter both a valid name and email.');
+                    reject(new Error('Invalid input elements'));
                 }
-            }
+            });
         }
-
+        
         function popupLoading() {
-            let emailInput = document.getElementById('popup-email');
-            let nameInput = document.getElementById('popup-name');
-            let loader = document.getElementById('loader-bar');
-            let submitButton = document.getElementById('submitButton');
+            let popupCta = document.getElementById('popup-cta');
+            let loader = document.getElementById('loader-popup');
 
-            emailInput.style.display = 'none';
-            nameInput.style.display = 'none';
+            popupCta.style.display = 'none';
             loader.style.display = 'block';
-            submitButton.style.display = 'none';
         }
 
         function popupSuccess() {
             let popup = document.getElementById('popup');
+            let loader = document.getElementById('loader-popup');
             let popupSuccess = document.getElementById('popup-success');
+
+            loader.style.display = 'none';
             popup.style.display = 'none';
             popupSuccess.style.display = 'block';
         }
 
         function popupFailed() {
             let popup = document.getElementById('popup');
+            let loader = document.getElementById('loader-popup');
             let popupFailed = document.getElementById('popup-failed');
+
+            loader.style.display = 'none';
             popup.style.display = 'none';
             popupFailed.style.display = 'block';
         }
@@ -273,18 +299,44 @@
             let popup = document.getElementById('popup');
             let popupSuccess = document.getElementById('popup-success');
             let popupFailed = document.getElementById('popup-failed');
-            let emailInput = document.getElementById('popup-email');
-            let nameInput = document.getElementById('popup-name');
             let loader = document.getElementById('loader-bar');
-            let submitButton = document.getElementById('submitButton');
 
             popup.style.display = 'block';
             popupSuccess.style.display = 'none';
             popupFailed.style.display = 'none';
-            emailInput.style.display = 'block';
-            nameInput.style.display = 'block';
             loader.style.display = 'none';
-            submitButton.style.display = 'block';
+        }
+    
+        function formLoading() {
+            const formContent = document.getElementById('form-content');
+            const formLoading = document.getElementById('form-loading');
+            const formSuccess = document.getElementById('form-success');
+            
+            formContent.style.display = 'none';
+            formLoading.style.display = 'block';
+            formSuccess.style.display = 'none';
+        }
+
+        function formSuccess() {
+            const formContent = document.querySelector('.form-content');
+            const formLoading = document.querySelector('.form-loading');
+            const formSuccess = document.querySelector('.form-success');
+            
+            formContent.style.display = 'none';
+            formLoading.style.display = 'none';
+            formSuccess.style.display = 'block';
+        }
+
+        function formFailed() {
+            const formContent = document.querySelector('.form-content');
+            const formLoading = document.querySelector('.form-loading');
+            const formSuccess = document.querySelector('.form-success');
+            
+            // Ripristina il form in caso di errore
+            formContent.style.display = 'block';
+            formLoading.style.display = 'none';
+            formSuccess.style.display = 'none';
+            alert('Something went wrong. Please try again.');
         }
     </script>
 </body>

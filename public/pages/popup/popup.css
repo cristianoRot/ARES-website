@@ -90,7 +90,7 @@ body.popup-active {
 
 /* Loaders */
 
-.loader {
+.loader-popup {
     position: relative;
     width: 200px;
     height: 60px;
@@ -99,7 +99,7 @@ body.popup-active {
     z-index: 1;
   }
   
-  .loader .circle {
+  .loader-popup .circle {
     width: 20px;
     height: 20px;
     position: absolute;
@@ -129,18 +129,18 @@ body.popup-active {
     }
   }
   
-  .loader .circle:nth-child(2) {
+  .loader-popup .circle:nth-child(2) {
     left: 45%;
     animation-delay: .2s;
   }
   
-  .loader .circle:nth-child(3) {
+  .loader-popup .circle:nth-child(3) {
     left: auto;
     right: 15%;
     animation-delay: .3s;
   }
   
-  .loader .shadow {
+  .loader-popup .shadow {
     width: 20px;
     height: 4px;
     border-radius: 50%;
@@ -170,12 +170,12 @@ body.popup-active {
     }
   }
   
-  .loader .shadow:nth-child(4) {
+  .loader-popup .shadow:nth-child(4) {
     left: 45%;
     animation-delay: .2s
   }
   
-  .loader .shadow:nth-child(5) {
+  .loader-popup .shadow:nth-child(5) {
     left: auto;
     right: 15%;
     animation-delay: .3s;

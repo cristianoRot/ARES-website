@@ -9,7 +9,7 @@
         <button type="button" class="exitBtn" onclick="closePopup()">×</button>
         <div class="popup-heading">BETA ACCESS.</div>
         <p class="popup-subheading">By entering your email, you will be added to the queue for the Ares test. We will send you an email with instructions on how to try the game.</p>
-        <div class="inputContainer">
+        <div class="inputContainer" id="popup-cta">
             <input class="textfield" placeholder="Enter your name" type="text" name="name" id="popup-name" />
             <input class="textfield" placeholder="Enter your email" type="email" name="email" id="popup-email" />
             <button type="submit" class="button-light" id="submitButton">
@@ -19,7 +19,7 @@
             </button>
         </div>
         <!-- Area di caricamento -->
-        <div id="loader-bar" class="loader" style="display: none;">
+        <div id="loader-popup" class="loader-popup" style="display: none;">
             <div class="circle"></div>
             <div class="circle"></div>
             <div class="circle"></div>
@@ -30,14 +30,14 @@
     </form>
     <div id="popup-success" class="popup-message" style="display: none;">
         <button type="button" class="exitBtn" onclick="closePopup()">×</button>
-        <div class="title" style="color: hsl(163, 87%, 44%);">
+        <div class="title" style="color: var(--success-color);">
             SUCCESS
         </div>
         <div class="subtitle">You will receive an email with further instructions.</div>
     </div>
     <div id="popup-failed" class="popup-message" style="display: none;">
         <button type="button" class="exitBtn" onclick="closePopup()">×</button>
-        <div class="title" style="color: hsl(0, 87%, 44%);">
+        <div class="title" style="color: var(--error-color);">
             ERROR
         </div>
         <div class="subtitle">You will receive an email with further instructions.</div>

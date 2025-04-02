@@ -98,28 +98,47 @@
                 </div>
 
                 <!-- Form -->
-                <form class="form">
+                <form class="form" id="form">
                     <div class="form-heading">
                         <h2>Stay Updated</h2>
                         <p class="form-subheading">
-                          Follow our journey as we build ARES from the ground up, with regular updates on our progress and upcoming features.
+                            Follow our journey as we build ARES from the ground up, with regular updates on our progress and upcoming features.
                         </p>
                     </div>
-                    <div class="flex-column">
-                      <label>Name </label>
-                    </div>  
-                    <input class="textfield" placeholder="Enter your name" type="text" name="name" id="form-name" />
-                  
-                    <div class="flex-column">
-                      <label>Email </label>
-                    </div>
-                    <input class="textfield" placeholder="Enter your email" type="text" name="email" id="form-email" />
                     
-                    <button onclick="saveContactFromForm(event)" class="button-light" style="width: 100%; margin-top: 2rem;">
-                      <span class="button_text">
-                        SIGN UP
-                      </span>
-                    </button>
+                    <!-- Contenuto del form normale -->
+                    <div class="form-content" id="form-content">
+                        <div class="flex-column">
+                            <label>Name </label>
+                        </div>  
+                        <input class="textfield" placeholder="Enter your name" type="text" name="name" id="form-name" />
+                        
+                        <div class="flex-column">
+                            <label>Email </label>
+                        </div>
+                        <input class="textfield" placeholder="Enter your email" type="text" name="email" id="form-email" />
+                        
+                        <button onclick="saveContactFromForm(event)" class="button-light" style="width: 100%; margin-top: 2rem;" id="submitButton">
+                            <span class="button_text">
+                                SIGN UP
+                            </span>
+                        </button>
+                    </div>
+                    
+                    <!-- Schermata di caricamento -->
+                    <div class="form-loading" id="form-loading" style="display: none; text-align: center; padding: 20px;">
+                        <div id="loader-bar" style="margin: 20px auto;">
+                            <!-- Puoi aggiungere qui il tuo stile di caricamento, ad esempio: -->
+                            <div style="width: 50px; height: 50px; border: 2px solid var(--text-color); border-top: 2px solid var(--accent-color); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto;"></div>
+                            <p style="color: var(--secondary-color);">Loading...</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Schermata di successo -->
+                    <div class="form-success" id="form-success" style="display: none; text-align: center; padding: 20px;">
+                        <h3 style="color: var(--success-color);">Registration Successful!</h3>
+                        <p style="color: var(--secondary-color);">Thank you for signing up. You'll receive updates about ARES soon!</p>
+                    </div>
                 </form>
             </div>
         </div>
