@@ -44,7 +44,7 @@
     color: var(--secondary-color);
     width: 800px;
     margin: auto;
-     margin-bottom: 50px;
+    margin-bottom: 50px;
     z-index: 2;
 }
 
@@ -54,10 +54,29 @@
     margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
     z-index: 2;
 }
 
+.info-group {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.item-group {
+    color: var(--secondary-color);
+    z-index: 2;
+    padding: 0.5rem;
+    background: var(--background-color);
+    border: var(--text-color) 1px solid;
+    border-radius: 0.3rem;
+    margin: 0.2rem;
+    font-family: 'bodyFont', sans-serif;
+}
+
+.item-group span {
+    color: var(--secondary-color);
+}
 
 @media screen and (max-width: 1200px) {
     .hero-section .game-title {
@@ -76,6 +95,15 @@
     .hero-section .description {
         width: auto;
         margin-inline: 20px;
+    }
+
+    .info-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .item-group {
+        display: block;
     }
 }
 
