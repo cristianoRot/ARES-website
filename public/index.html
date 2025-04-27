@@ -78,7 +78,7 @@
             const components = [
                 { id: 'hero-section', url: 'pages/hero-section/hero-section.html' },
                 { id: 'info-section', url: 'pages/info-section/info-section.html' },
-                { id: 'dev-section', url: 'pages/development-section/dev-section.html' }, // Corretto il typo
+                { id: 'dev-section', url: 'pages/development-section/dev-section.html' },
                 { id: 'popup-view', url: 'pages/popup/popup.html' },
                 { id: 'footer-container', url: 'pages/footer/footer.html' }
             ];
@@ -93,31 +93,28 @@
                     .then(data => {
                         document.getElementById(component.id).innerHTML = data;
                         loadedComponents++;
-                        if (loadedComponents === totalComponents) {
-                            // Nascondi la schermata di caricamento e mostra il contenuto
-                            loadingScreen.classList.add('hidden');
-                            setTimeout(() => {
-                                loadingScreen.style.display = 'none';
-                                document.body.classList.add('loaded');
-                                initializeAnimations(); // Inizializza le animazioni dopo il caricamento
-                            }, 500); // Attende la fine della transizione
-                        }
                     })
                     .catch(error => {
                         console.error(`Error while loading ${component.id}:`, error);
                         loadedComponents++;
-                        if (loadedComponents === totalComponents) {
-                            loadingScreen.classList.add('hidden');
-                            setTimeout(() => {
-                                loadingScreen.style.display = 'none';
-                                document.body.classList.add('loaded');
-                                initializeAnimations();
-                            }, 500);
-                        }
                     });
             });
 
-            await Promise.all(loadPromises);
+            await Promise.all(loadPromises.map(p => p.catch(e => console.error("Error in Promise.all:", e))));
+
+            if (loadingScreen) {
+                loadingScreen.classList.add('hidden');
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                    document.body.classList.add('loaded');
+                    initializeAnimations();
+                    trackVisit();
+                }, 500);
+            } else {
+                document.body.classList.add('loaded');
+                initializeAnimations();
+                trackVisit();
+            }
         }
 
         function initializeAnimations() {
@@ -175,6 +172,34 @@
 
         function watchTrailer() {
             alert("Trailer coming soon!");
+        }
+
+        function trackVisit() {
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbz9xoXyjKQkZ9JII9QN9FsexqzIvTPDA_CIUjYR9Ye6fPA1F21QJ0y6cie0Cl6HsIE9/exec';
+
+            const clientTimestamp = new Date().toISOString();
+            const userAgent = navigator.userAgent;
+            const referrer = document.referrer;
+
+            const body = new URLSearchParams();
+            body.append('clientTimestamp', clientTimestamp);
+            body.append('userAgent', userAgent);
+            body.append('referrer', referrer);
+
+            fetch(scriptUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: body
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Visit tracked:', data);
+            })
+            .catch(error => {
+                console.error('Error tracking visit:', error);
+            });
         }
 
         function saveContactFromPopup(event) {
