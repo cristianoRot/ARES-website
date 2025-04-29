@@ -41,7 +41,7 @@
     --warning-color: #f39c12; /* Colore per avvisi */
     --neutral-light: #ecf0f1; /* Colore neutro chiaro */
     --neutral-dark: #34495e; /* Colore neutro scuro */
-    --overlay-color: rgba(0, 0, 0, 0.5); /* Overlay trasparente */
+    --overlay-color: rgba(0, 0, 0, 0.2); /* Overlay trasparente */
     --white: #ffffff; /* Bianco */
     --black: #000000; /* Nero */
     --font-family: 'BodyFont', sans-serif;

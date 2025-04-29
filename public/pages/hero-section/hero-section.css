@@ -1,7 +1,7 @@
 .hero-section {
     position: relative;
     background: url('../../images/image0.png');
-    background-size: cover; /* Copri l'intera area con l'immagine */
+    background-size: cover;
     color: white; /* Imposta il colore del testo */
     display: flex;
     flex-direction: column;
@@ -18,8 +18,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--overlay-color); /* Usa la variabile overlay */
-    z-index: 1; /* Assicurati che l'overlay sia sopra l'immagine ma sotto il contenuto */
+    background-color: var(--overlay-color);
+    z-index: 1;
 }
 
 .hero-section .game-title {
