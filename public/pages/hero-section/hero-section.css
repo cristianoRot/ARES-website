@@ -1,6 +1,7 @@
 .hero-section {
     position: relative;
     background: url('../../images/image0.png');
+    background-position: 70% -150px;
     background-size: cover;
     color: white; /* Imposta il colore del testo */
     display: flex;
@@ -79,6 +80,10 @@
 }
 
 @media screen and (max-width: 1200px) {
+    .hero-section {
+        background-position: 70% top;
+    }
+
     .hero-section .game-title {
         font-size: 70px;
     }
