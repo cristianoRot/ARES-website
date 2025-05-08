@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pages/game-modes/game-modes.css">
+</head>
+<body>
+    <section class="game-modes-section">
+        <h1>GAME MODES</h1>
+        <p class="description">
+            Combatti online in modalità multiplayer con giocatori da tutto il mondo. Scegli il tuo stile di gioco e domina il campo di battaglia.
+        </p>
+        <div class="modes-container">
+            <button class="button-mode active" onclick="showMode('deathmatch')">
+                <a href="#">
+                <span>DEATHMATCH</span>
+                </a>
+            </button>
+            <button class="button-mode" onclick="showMode('domain')">
+                <a href="#">
+                <span>DOMAIN</span>
+                </a>
+            </button>
+            <button class="button-mode" onclick="showMode('arena')">
+                <a href="#">
+                <span>ARENA</span>
+                </a>
+            </button>
+        </div>
+        <div class="mode-details" id="mode-details">
+            <div class="mode-image deathmatch-image"></div>
+            <div class="mode-text">
+                <p>
+                    Tutti contro tutti, un’intensa battaglia dove solo il più forte sopravvive. Elimina gli avversari, accumula punti e imponi la tua supremazia sul campo di battaglia.
+                </p>
+                <ul>
+                    <li>Partite competitive con classifica globale</li>
+                    <li>Mappe dinamiche con ambientazioni uniche</li>
+                    <li>Eventi speciali e ricompense esclusive</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

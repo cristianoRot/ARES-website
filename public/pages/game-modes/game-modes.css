@@ -1,0 +1,212 @@
+/* Reset default margins and paddings for this section */
+.game-modes-section * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main section styling */
+.game-modes-section {
+    background-color: var(--background-color);
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* Heading */
+.game-modes-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Description paragraph */
+.game-modes-section .description {
+    font-size: 1rem;
+    color: #b0b0b0;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Modes container */
+.modes-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.button-mode a {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid #fefefe;
+    text-transform: uppercase;
+    color: #fefefe;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  
+  .button-mode a::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - 12px);
+    background-color: var(--button-dark-color);
+    transition: 0.3s ease-in-out;
+    transform: scaleY(1);
+  }
+
+  .button-mode.active a::before {
+    background-color: var(--button-select-color);
+  }
+  
+  .button-mode a:hover::before {
+    transform: scaleY(0);
+  }
+  
+  .button-mode a::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    height: calc(100% + 4px);
+    width: calc(100% - 12px);
+    background-color: var(--button-dark-color);
+    transition: 0.3s ease-in-out;
+    transform: scaleX(1);
+    transition-delay: 0.5s;
+  }
+
+  .button-mode.active a::after {
+    background-color: var(--button-select-color);
+  }
+  
+  .button-mode a:hover::after {
+    transform: scaleX(0);
+  }
+  
+.button-mode a span {
+    position: relative;
+    z-index: 3;
+  }
+  
+.button-mode {
+    display: block;
+    width: 100%;
+    margin: 1px;
+    text-decoration: none;
+    background-color: var(--button-dark-color);
+    border: none;
+  }
+
+/* Active mode styling */
+.button-mode.active {
+    background-color: var(--button-select-color);
+}
+
+.deathmatch-icon {
+    background-image: url('deathmatch-icon.png'); /* Replace with actual path */
+}
+
+.domination-icon {
+    background-image: url('domination-icon.png'); /* Replace with actual path */
+}
+
+.arena-icon {
+    background-image: url('arena-icon.png'); /* Replace with actual path */
+}
+
+/* Mode text */
+.mode span {
+    font-size: 1rem;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+/* Mode details section */
+.mode-details {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    height: 450px;
+    margin: 0 auto;
+}
+
+/* Mode image */
+.mode-image {
+    width: 100%; /* Coprire tutta la larghezza disponibile */
+    height: auto; /* Adattare l'altezza proporzionalmente */
+    background-size: cover; /* Assicurarsi che l'immagine copra l'intero contenitore */
+    background-position: center; /* Centrare l'immagine */
+    border: 1px solid #333;
+}
+
+.deathmatch-image {
+    background-image: url('../../images/image0.png'); /* Percorso immagine */
+}
+
+.domination-image {
+    background-image: url('domination-image.jpg');
+}
+
+.arena-image {
+    background-image: url('arena-image.jpg');
+}
+
+/* Mode text */
+.mode-text {
+    width: 50%;
+    text-align: left;
+    padding: 20px;
+}
+
+.mode-text p {
+    font-size: 1rem;
+    color: var(primary-color);
+    margin-bottom: 20px;
+}
+
+.mode-text ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.mode-text li {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.mode-text li::before {
+    content: "—";
+    color: #ff4444;
+    position: absolute;
+    left: 0;
+}
+
+/* Modalità responsive per dispositivi mobili */
+@media screen and (max-width: 768px) {
+    .modes-container {
+        flex-direction: column;
+        gap: 20px; /* Spaziatura tra gli oggetti */
+        align-items: center; /* Centrare gli oggetti */
+    }
+
+    .mode {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+    }
+}
