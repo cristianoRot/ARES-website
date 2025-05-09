@@ -41,21 +41,25 @@
     margin-bottom: 40px;
 }
 
-.button-mode a {
+.button-mode {
     position: relative;
     width: 100%;
     height: 100%;
     display: inline-block;
     padding: 15px 30px;
+    margin: 1px;
     border: 2px solid #fefefe;
     text-transform: uppercase;
     color: #fefefe;
     text-decoration: none;
     font-weight: 600;
     font-size: 20px;
-  }
-  
-  .button-mode a::before {
+    background-color: var(--button-dark-color);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.button-mode::before {
     content: '';
     position: absolute;
     top: 6px;
@@ -65,17 +69,17 @@
     background-color: var(--button-dark-color);
     transition: 0.3s ease-in-out;
     transform: scaleY(1);
-  }
+}
 
-  .button-mode.active a::before {
+.button-mode.active::before {
     background-color: var(--button-select-color);
-  }
-  
-  .button-mode a:hover::before {
+}
+
+.button-mode:hover::before {
     transform: scaleY(0);
-  }
-  
-  .button-mode a::after {
+}
+
+.button-mode::after {
     content: '';
     position: absolute;
     left: 6px;
@@ -86,30 +90,20 @@
     transition: 0.3s ease-in-out;
     transform: scaleX(1);
     transition-delay: 0.5s;
-  }
+}
 
-  .button-mode.active a::after {
+.button-mode.active::after {
     background-color: var(--button-select-color);
-  }
-  
-  .button-mode a:hover::after {
+}
+
+.button-mode:hover::after {
     transform: scaleX(0);
-  }
-  
-.button-mode a span {
+}
+
+.button-mode span {
     position: relative;
     z-index: 3;
-  }
-  
-.button-mode {
-    display: block;
-    width: 100%;
-    height: 50px;
-    margin: 1px;
-    text-decoration: none;
-    background-color: var(--button-dark-color);
-    border: none;
-  }
+}
 
 /* Active mode styling */
 .button-mode.active {

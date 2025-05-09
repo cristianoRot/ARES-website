@@ -12,20 +12,14 @@
             Combatti online in modalità multiplayer con giocatori da tutto il mondo. Scegli il tuo stile di gioco e domina il campo di battaglia.
         </p>
         <div class="modes-container">
-            <button class="button-mode active" onclick="showMode('deathmatch')">
-                <a href="#">
+            <button class="button-mode active" onclick="showMode('deathmatch', event)">
                 <span>DEATHMATCH</span>
-                </a>
             </button>
-            <button class="button-mode" onclick="showMode('domain')">
-                <a href="#">
+            <button class="button-mode" onclick="showMode('domain', event)">
                 <span>DOMAIN</span>
-                </a>
             </button>
-            <button class="button-mode" onclick="showMode('arena')">
-                <a href="#">
+            <button class="button-mode" onclick="showMode('arena', event)">
                 <span>ARENA</span>
-                </a>
             </button>
         </div>
         <div class="mode-details" id="mode-details">
