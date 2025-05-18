@@ -34,17 +34,17 @@
     --button-light-color: #d8d7d7;
     --button-light-text: #2b2b2b;
     --button-light-hover-color: rgb(172, 172, 172);
-    --button-select-color: #ff1900;
-    --border-color: #dcdcdc; /* Colore dei bordi */
-    --highlight-color: #9b59b6; /* Colore di evidenza */
-    --error-color: #e74c3c; /* Colore per errori */
-    --success-color: #27ae60; /* Colore per successi */
-    --warning-color: #f39c12; /* Colore per avvisi */
-    --neutral-light: #ecf0f1; /* Colore neutro chiaro */
-    --neutral-dark: #34495e; /* Colore neutro scuro */
-    --overlay-color: rgba(0, 0, 0, 0.2); /* Overlay trasparente */
-    --white: #ffffff; /* Bianco */
-    --black: #000000; /* Nero */
+    --button-select-color: #2b2b2b;
+    --border-color: #dcdcdc;
+    --highlight-color: #9b59b6;
+    --error-color: #e74c3c;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --neutral-light: #ecf0f1;
+    --neutral-dark: #34495e;
+    --overlay-color: rgba(0, 0, 0, 0.2);
+    --white: #ffffff;
+    --black: #000000;
     --font-family: 'BodyFont', sans-serif;
 }
 

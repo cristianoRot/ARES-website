@@ -113,18 +113,6 @@
     background-color: var(--button-select-color);
 }
 
-.deathmatch-icon {
-    background-image: url('deathmatch-icon.png'); /* Replace with actual path */
-}
-
-.domination-icon {
-    background-image: url('domination-icon.png'); /* Replace with actual path */
-}
-
-.arena-icon {
-    background-image: url('arena-icon.png'); /* Replace with actual path */
-}
-
 /* Mode text */
 .mode span {
     font-size: 1rem;
@@ -144,23 +132,23 @@
 
 /* Mode image */
 .mode-image {
-    width: 100%; /* Coprire tutta la larghezza disponibile */
-    height: auto; /* Adattare l'altezza proporzionalmente */
-    background-size: cover; /* Assicurarsi che l'immagine copra l'intero contenitore */
-    background-position: center; /* Centrare l'immagine */
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
     border: 1px solid #333;
 }
 
 .deathmatch-image {
-    background-image: url('../../images/image0.png'); /* Percorso immagine */
+    background-image: url('../../images/image0.png');
 }
 
 .domination-image {
-    background-image: url('domination-image.jpg');
+    background-image: url('../../images/image01.png');
 }
 
 .arena-image {
-    background-image: url('arena-image.jpg');
+    background-image: url('../../images/image02.png');
 }
 
 /* Mode text */

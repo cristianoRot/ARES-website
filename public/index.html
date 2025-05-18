@@ -197,7 +197,7 @@
                         <div class="mode-image deathmatch-image"></div>
                         <div class="mode-text">
                             <p>
-                                Tutti contro tutti, un’intensa battaglia dove solo il più forte sopravvive. Elimina gli avversari, accumula punti e imponi la tua supremazia sul campo di battaglia.
+                                Tutti contro tutti, un'intensa battaglia dove solo il più forte sopravvive. Elimina gli avversari, accumula punti e imponi la tua supremazia sul campo di battaglia.
                             </p>
                             <ul>
                                 <li>Partite competitive con classifica globale</li>
@@ -243,6 +243,9 @@
         }
 
         function trackVisit() {
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+                return;
+
             const scriptUrl = 'https://script.google.com/macros/s/AKfycbz9xoXyjKQkZ9JII9QN9FsexqzIvTPDA_CIUjYR9Ye6fPA1F21QJ0y6cie0Cl6HsIE9/exec';
 
             const clientTimestamp = new Date().toISOString();
