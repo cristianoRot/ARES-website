@@ -48,6 +48,14 @@
     --font-family: 'BodyFont', sans-serif;
 }
 
+h1 {
+    font-family: 'TitleFont', sans-serif;
+}
+
+p {
+    font-family: 'BodyFont', sans-serif;
+}
+
 body {
     opacity: 0;
     overflow: hidden;

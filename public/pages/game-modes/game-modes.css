@@ -5,11 +5,9 @@
     box-sizing: border-box;
 }
 
-/* Main section styling */
 .game-modes-section {
     background-color: var(--background-color);
     color: #ffffff;
-    font-family: Arial, sans-serif;
     text-align: center;
     padding: 40px 20px;
 }
@@ -23,6 +21,7 @@
 
 /* Description paragraph */
 .game-modes-section .description {
+    font-family: 'BodyFont';
     font-size: 1rem;
     color: #b0b0b0;
     margin-bottom: 40px;
@@ -153,6 +152,7 @@
 
 /* Mode text */
 .mode-text {
+    font-family: 'BodyFont';
     width: 50%;
     text-align: left;
     padding: 20px;
