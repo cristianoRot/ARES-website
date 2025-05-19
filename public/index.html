@@ -96,6 +96,11 @@
                     .then(data => {
                         document.getElementById(component.id).innerHTML = data;
                         loadedComponents++;
+                        
+                        // Load patches after dev-section is loaded
+                        if (component.id === 'dev-section') {
+                            return loadPatches();
+                        }
                     })
                     .catch(error => {
                         console.error(`Error while loading ${component.id}:`, error);
@@ -117,6 +122,37 @@
                 document.body.classList.add('loaded');
                 initializeAnimations();
                 trackVisit();
+            }
+        }
+
+        async function loadPatches() {
+            try {
+                const response = await fetch('pages/development-section/patches.json');
+                const data = await response.json();
+                const timeline = document.getElementById('timeline');
+                
+                data.forEach(patch => {
+                    const patchBlock = document.createElement('div');
+                    patchBlock.className = 'patch-block';
+                    patchBlock.innerHTML = `
+                        <div class="absolute left-4 transform -translate-x-1/2 mt-1.5 w-2 h-2 rounded-full bg-ares-red"></div>
+                        <div class="pl-10">
+                            <div class="flex items-center gap-2 text-gray-400 text-sm mb-1">
+                                <svg class="note-svg" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>${patch.date}</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">${patch.name}</h3>
+                            <p class="text-gray-400">${patch.description}</p>
+                        </div>
+                    `;
+                    timeline.appendChild(patchBlock);
+                });
+            } catch (err) {
+                const timeline = document.getElementById('timeline');
+                timeline.innerHTML += '<p style="color:red;">Failed to load updates.</p>';
+                console.error('Error loading patches:', err);
             }
         }
 

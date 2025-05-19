@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="pages/development-section/dev-section.css">
 </head>
+<body>
     <section id="development" class="relative py-24 overflow-hidden">
         <!-- Background glow -->
         <div class="bg-glow bg-glow-red"></div>
@@ -21,79 +22,9 @@
             <div class="dev-container">
                 <!-- Development Timeline -->
                 <div class="w-full lg:w-3/5">
-                    <div class="relative">
+                    <div class="relative" id="timeline">
                         <div class="timeline-bar"></div>
-
-                        <!-- Update 1 -->
-                        <div class="patch-block">
-                            <div class="absolute left-4 transform -translate-x-1/2 mt-1.5 w-2 h-2 rounded-full bg-ares-red"></div>
-                            <div class="pl-10">
-                                <div class="flex items-center gap-2 text-gray-400 text-sm mb-1">
-                                    <svg class="note-svg" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                    </svg>
-                                    <span>June 15, 2023</span>
-                                    <span class="bg-white/10 text-white px-2 py-0.5 rounded text-xs">Development</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2">Alpha Testing Begins</h3>
-                                <p class="text-gray-400">The first closed alpha test is now live with select players testing core combat systems and providing valuable feedback.</p>
-                            </div>
-                        </div>
-
-                        <!-- Update 2 -->
-                        <div class="patch-block">
-                            <div class="absolute left-4 transform -translate-x-1/2 mt-1.5 w-2 h-2 rounded-full bg-ares-red"></div>
-                            <div class="pl-10">
-                                <div class="flex items-center gap-2 text-gray-400 text-sm mb-1">
-                                    <svg class="note-svg" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                    </svg>
-                                    <span>August 3, 2023</span>
-                                    <span class="bg-white/10 text-white px-2 py-0.5 rounded text-xs">Maps</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2">New Map Revealed: Citadel</h3>
-                                <p class="text-gray-400">Explore our latest urban combat environment featuring vertical gameplay and destructible architecture.</p>
-                            </div>
-                        </div>
-
-                        <!-- Update 3 -->
-                        <div class="patch-block">
-                            <div class="absolute left-4 transform -translate-x-1/2 mt-1.5 w-2 h-2 rounded-full bg-ares-red"></div>
-                            <div class="pl-10">
-                                <div class="flex items-center gap-2 text-gray-400 text-sm mb-1">
-                                    <svg class="note-svg" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                    </svg>
-                                    <span>October 22, 2023</span>
-                                    <span class="bg-white/10 text-white px-2 py-0.5 rounded text-xs">Gameplay</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2">Weapon Balancing Update</h3>
-                                <p class="text-gray-400">Major rebalancing of primary weapons based on alpha testing data, improving gunplay feel and time-to-kill.</p>
-                            </div>
-                        </div>
-
-                        <!-- Update 4 -->
-                        <div class="patch-block">
-                            <div class="absolute left-4 transform -translate-x-1/2 mt-1.5 w-2 h-2 rounded-full bg-ares-red"></div>
-                            <div class="pl-10">
-                                <div class="flex items-center gap-2 text-gray-400 text-sm mb-1">
-                                    <svg class="note-svg" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                    </svg>
-                                    <span>December 10, 2023</span>
-                                    <span class="bg-white/10 text-white px-2 py-0.5 rounded text-xs">Announcement</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2">Beta Roadmap Announced</h3>
-                                <p class="text-gray-400">Our comprehensive beta testing schedule is now available, with multiple testing phases planned for 2024.</p>
-                            </div>
-                        </div>
-
-                        <a href="#" class="ml-10">
-                            View all
-                            <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
+                        <!-- Gli update verranno caricati qui -->
                     </div>
                 </div>
 
@@ -143,4 +74,5 @@
             </div>
         </div>
     </section>
+</body>
 </html>
