@@ -1,5 +1,7 @@
 
   .info-section {
+    margin-top: 5px;
+    margin-bottom: 5px;
     padding-top: 0.5rem; /* py-12 in Tailwind */
     padding-bottom: 0.5rem;
     background-color: var(--background-color);

@@ -6,6 +6,8 @@
 }
 
 .game-modes-section {
+    margin-top: 5px;
+    margin-bottom: 5px;
     background-color: var(--background-color);
     color: #ffffff;
     text-align: center;
