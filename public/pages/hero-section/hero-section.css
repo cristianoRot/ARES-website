@@ -71,8 +71,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 50px;
+    margin: 50px;
     z-index: 2;
 }
 
@@ -80,7 +79,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 150px;
+    margin: 0 auto;
+    width: 120px;
+}
+
+.item-group h1 {
+    margin: 0;
 }
 
 .item-group span {
