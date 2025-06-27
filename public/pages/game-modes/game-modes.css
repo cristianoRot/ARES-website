@@ -6,9 +6,7 @@
 }
 
 .game-modes-section {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    background-color: var(--background-color);
+    background-color: var(--background-dark);
     color: #ffffff;
     text-align: center;
     padding: 40px 20px;
