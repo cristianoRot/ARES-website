@@ -4,21 +4,40 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="pages/info-section/info-section.css">
 </head>
+<body>
 <section class="info-section">
     <div class="info-section__container">
-      <div class="info-section__content flex flex-wrap justify-center gap-8 md:gap-16">
+      <div class="info-section__content">
         <div class="info-section__item">
-          <h3 class="info-section__label text-sm font-medium text-zinc-400 mb-1">DEVELOPER</h3>
-          <span class="info-section__text text-base font-medium">Cristiano Rotunno</span>
+          <h3 class="info-section__label">Developed by</h3>
+          <span class="info-section__text">Cristiano Rotunno</span>
+          <span class="info-section__subtext">Game Developer &amp; Designer</span>
         </div>
-        
         <div class="info-section__item">
-          <h3 class="info-section__label text-sm font-medium text-zinc-400 mb-1">PLATFORMS</h3>
-          <div class="info-section__platforms flex space-x-3">
-            <img src="images/win11_logo.png" alt="Windows" class="info-section__platform-logo w-6 h-6" />
-            <img src="images/apple_logo.png" alt="MacOS" class="info-section__platform-logo w-6 h-6" />
+          <h3 class="info-section__label">Available on</h3>
+          <div class="info-section__platforms">
+            <div class="platform-item">
+              <div class="platform-circle">
+                <img src="images/win11_logo.png" alt="Windows" class="info-section__platform-logo" />
+              </div>
+              <span class="platform-name">Windows</span>
+            </div>
+            <div class="platform-item">
+              <div class="platform-circle">
+                <img src="images/apple_logo.png" alt="MacOS" class="info-section__platform-logo" />
+              </div>
+              <span class="platform-name">MacOS</span>
+            </div>
+            <div class="platform-item">
+              <div class="platform-circle">
+                <img src="images/steam_logo.png" alt="Steam" class="info-section__platform-logo" />
+              </div>
+              <span class="platform-name">Steam</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+</section>
+</body>
+</html>
