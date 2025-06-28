@@ -7,32 +7,52 @@
 </head>
 <body>
     <section class="game-modes-section">
-        <h1>GAME MODES</h1>
-        <p class="description">
-            Fight online in multiplayer mode with players from all over the world. Choose your play style and dominate the battlefield.
-        </p>
-        <div class="modes-container">
-            <button class="button-mode active" onclick="showMode('deathmatch', event)">
-                <span>DEATHMATCH</span>
-            </button>
-            <button class="button-mode" onclick="showMode('domain', event)">
-                <span>DOMAIN</span>
-            </button>
-            <button class="button-mode" onclick="showMode('arena', event)">
-                <span>ARENA</span>
-            </button>
-        </div>
-        <div class="mode-details" id="mode-details">
-            <div class="mode-image deathmatch-image"></div>
-            <div class="mode-text">
-                <p>
-                    Free-for-all, an intense battle where only the strongest survives. Eliminate opponents, earn points, and impose your supremacy on the battlefield.
+        <div class="modes-main-row">
+            <div class="modes-info-col">
+                <h1>GAME MODES</h1>
+                <p class="description">
+                    Fight online in multiplayer mode with players from all over the world. Choose your play style and dominate the battlefield.
                 </p>
-                <ul>
-                    <li>Competitive matches with global ranking</li>
-                    <li>Dynamic maps with unique environments</li>
-                    <li>Special events and exclusive rewards</li>
+                <ul class="features-list">
+                    <li class="point1"><span>Smart skill-based matchmaking</span></li>
+                    <li class="point2"><span>Dedicated servers for zero lag</span></li>
+                    <li class="point3"><span>Exclusive rewards for each mode</span></li>
                 </ul>
+            </div>
+            <div class="modes-boxes">
+                <div class="mode-box">
+                    <div class="mode-image" style="background-image: url('images/image0.png');"></div>
+                    <div class="mode-info">
+                        <h2 class="mode-title">Deathmatch 5vs5</h2>
+                        <p class="mode-desc">Intense battles between two teams of five players.</p>
+                        <div class="mode-meta">
+                            <span class="mode-type">5vs5 players</span>
+                            <span class="mode-time">10 min</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mode-box">
+                    <div class="mode-image" style="background-image: url('images/panel.png');"></div>
+                    <div class="mode-info">
+                        <h2 class="mode-title">Domain</h2>
+                        <p class="mode-desc">Control and defend strategic territories.</p>
+                        <div class="mode-meta">
+                            <span class="mode-type">5vs5 players</span>
+                            <span class="mode-time">12 min</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mode-box">
+                    <div class="mode-image" style="background-image: url('images/image02.png');"></div>
+                    <div class="mode-info">
+                        <h2 class="mode-title">Arena</h2>
+                        <p class="mode-desc">Fast-paced combat in confined battlegrounds.</p>
+                        <div class="mode-meta">
+                            <span class="mode-type">5vs5 players</span>
+                            <span class="mode-time">8 min</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

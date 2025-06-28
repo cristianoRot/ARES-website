@@ -21,6 +21,7 @@
 
     <div id="game-modes"></div>
 
+    <!--
     <div class="card-container-1">
         <div class="card-container-image">
             <img src="images/characters_image.jpg" alt="Map Image" style="max-width: 100%; border-radius: 0.2rem;" />
@@ -71,13 +72,15 @@
                 <span class="button_text">Learn more</span>
             </button>
         </div>
-    </div>
+    </div> -->
 
     <div id="dev-section"></div>
     <div id="footer-container"></div>
     <div id="popup-view"></div>
 
     <script defer>
+        document.addEventListener('DOMContentLoaded', loadComponent);
+
         async function loadComponent() {
             const components = [
                 { id: 'hero-section', url: 'pages/hero-section/hero-section.html' },
@@ -210,75 +213,8 @@
             document.body.appendChild(script);
         }
 
-        document.addEventListener('DOMContentLoaded', loadComponent);
-
         function watchTrailer() {
             alert("Trailer coming soon!");
-        }
-
-        function showMode(mode) {
-            const modeDetails = document.getElementById('mode-details');
-            const buttons = document.querySelectorAll('.button-mode');
-            
-            // Rimuovi la classe attiva da tutti i pulsanti
-            buttons.forEach(btn => btn.classList.remove('active'));
-
-            // Aggiungi la classe attiva al pulsante cliccato
-            const clickedButton = Array.from(buttons).find(btn => btn.onclick.toString().includes(mode));
-            if (clickedButton) {
-                clickedButton.classList.add('active');
-            }
-
-            // Aggiorna il contenuto in base alla modalità
-            switch (mode) {
-                case 'deathmatch':
-                    modeDetails.innerHTML = `
-                        <div class="mode-image deathmatch-image"></div>
-                        <div class="mode-text">
-                            <p>
-                                Tutti contro tutti, un'intensa battaglia dove solo il più forte sopravvive. Elimina gli avversari, accumula punti e imponi la tua supremazia sul campo di battaglia.
-                            </p>
-                            <ul>
-                                <li>Partite competitive con classifica globale</li>
-                                <li>Mappe dinamiche con ambientazioni uniche</li>
-                                <li>Eventi speciali e ricompense esclusive</li>
-                            </ul>
-                        </div>
-                    `;
-                    break;
-                case 'domain':
-                    modeDetails.innerHTML = `
-                        <div class="mode-image domination-image"></div>
-                        <div class="mode-text">
-                            <p>
-                                Conquista e mantieni il controllo delle zone strategiche. Collabora con la tua squadra per dominare il campo di battaglia e ottenere la vittoria.
-                            </p>
-                            <ul>
-                                <li>Obiettivi dinamici per un gameplay intenso</li>
-                                <li>Mappe progettate per strategie di squadra</li>
-                                <li>Ricompense esclusive per i migliori team</li>
-                            </ul>
-                        </div>
-                    `;
-                    break;
-                case 'arena':
-                    modeDetails.innerHTML = `
-                        <div class="mode-image arena-image"></div>
-                        <div class="mode-text">
-                            <p>
-                                Affronta sfide in arene ristrette, dove ogni mossa conta. Dimostra le tue abilità in combattimenti ravvicinati e sopravvivi fino alla fine.
-                            </p>
-                            <ul>
-                                <li>Combattimenti rapidi e adrenalinici</li>
-                                <li>Arene con layout unici</li>
-                                <li>Premi speciali per i sopravvissuti</li>
-                            </ul>
-                        </div>
-                    `;
-                    break;
-                default:
-                    console.error('Modalità non riconosciuta:', mode);
-            }
         }
 
         function trackVisit() {

@@ -14,7 +14,8 @@
 
 :root {
     --primary-color: #ffffff;
-    --secondary-color: rgb(138, 145, 158);
+    --secondary-color: rgb(127, 127, 127);
+    --tertiary-color: rgb(32, 32, 32);
     --accent-color: rgb(252, 83, 41);
     --accent2-color: rgb(35, 255, 117);
     --accent3-color: rgb(130, 79, 241);
