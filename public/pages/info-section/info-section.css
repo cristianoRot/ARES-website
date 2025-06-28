@@ -29,13 +29,13 @@
   
   /* Testo */
   .info-section__label {
-    font-family: "BodyFont";
+    font-family: "body";
     font-size: 0.8rem;
     color: var(--primary-color);
   }
   
   .info-section__text {
-    font-family: "BodyFont";
+    font-family: "body";
     font-size: 0.8rem;
     color: var(--secondary-color);
   }

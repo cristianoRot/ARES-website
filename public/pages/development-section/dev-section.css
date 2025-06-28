@@ -84,7 +84,7 @@
 .section-heading {
     color: var(--primary-color);
     font-size: 2.25rem;
-    font-family: "TitleFont", sans-serif;
+    font-family: "title", sans-serif;
     font-weight: bold;
     margin-bottom: 1rem;
     letter-spacing: -0.025em;
@@ -327,14 +327,14 @@ input {
 .form-heading {
     color: var(--primary-color);
     font-size: 1rem;
-    font-family: "TitleFont", sans-serif;
+    font-family: "title", sans-serif;
     font-weight: bold;
     margin-bottom: 1rem;
     letter-spacing: -0.025em;
 }
 
 .form-subheading {
-    font-family: "bodyFont", sans-serif;
+    font-family: "body", sans-serif;
     font-size: 1rem;
     color: var(--secondary-color);
     max-width: 32rem;

@@ -40,7 +40,7 @@ body.popup-active {
 }
 
 .popup-heading {
-    font-family: 'TitleFont';
+    font-family: 'title';
     font-size: 1.5em;
     text-align: center;
     color: hsl(40, 18%, 97%, 1);
@@ -199,14 +199,14 @@ body.popup-active {
 }
 
 .popup-message .title {
-    font-family: 'TitleFont';
+    font-family: 'title';
     font-size: 1.5em;
     text-align: center;
     font-weight: 700;
 }
 
 .popup-message .subtitle {
-    font-family: 'BodyFont';
+    font-family: 'body';
     font-size: 0.8em;
     color: hsl(40, 18%, 97%, 1);
     text-align: center;

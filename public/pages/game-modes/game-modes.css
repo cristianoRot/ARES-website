@@ -21,7 +21,7 @@
 
 /* Description paragraph */
 .game-modes-section .description {
-    font-family: 'BodyFont';
+    font-family: 'body';
     font-size: 1rem;
     color: #b0b0b0;
     margin-bottom: 40px;
@@ -152,7 +152,7 @@
 
 /* Mode text */
 .mode-text {
-    font-family: 'BodyFont';
+    font-family: 'body';
     width: 50%;
     text-align: left;
     padding: 20px;

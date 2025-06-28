@@ -1,12 +1,12 @@
 @font-face {
-    font-family: 'TitleFont';
+    font-family: 'title';
     src: url('font/geoform/Geoform-Bold.otf');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'BodyFont';
+    font-family: 'body';
     src: url('font/geoform/Geoform.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -39,19 +39,19 @@
     --overlay-color: rgba(130, 79, 241, 0.3);
     --white: #ffffff;
     --black: #000000;
-    --font-family: 'BodyFont', sans-serif;
+    --font-family: 'body', sans-serif;
 }
 
 h1 {
-    font-family: 'TitleFont', sans-serif;
+    font-family: 'title', sans-serif;
 }
 
 p {
-    font-family: 'BodyFont', sans-serif;
+    font-family: 'body', sans-serif;
 }
 
 span {
-    font-family: 'BodyFont', sans-serif;
+    font-family: 'body', sans-serif;
 }
 
 body {
@@ -142,7 +142,7 @@ input.textfield:focus {
 }
 
 .button-primary .button_text {
-    font-family: 'TitleFont', sans-serif;
+    font-family: 'title', sans-serif;
     font-size: 0.88rem;
     text-transform: uppercase;
 }
@@ -202,7 +202,7 @@ input.textfield:focus {
 }
 
 .button-secondary .button_text {
-    font-family: 'TitleFont', sans-serif;
+    font-family: 'title', sans-serif;
     font-size: 0.88rem;
     text-transform: uppercase;
 }
@@ -300,7 +300,7 @@ input.textfield:focus {
 }
 
 .card-container-description .title {
-    font-family: 'TitleFont', sans-serif;
+    font-family: 'title', sans-serif;
     font-size: 40px;
     font-weight: 900;
     margin: 0px;
