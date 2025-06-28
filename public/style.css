@@ -194,7 +194,7 @@ input.textfield:focus {
   background: radial-gradient(
     ellipse at bottom,
     rgb(42, 42, 42) 0%,
-    rgb(0, 0, 0) 45%
+    var(--background-color) 45%
   );
 
   color: var(--accent2-color);
