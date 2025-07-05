@@ -1,3 +1,7 @@
+let patchesData = [];
+let patchesShown = 0;
+const PATCHES_STEP = 3;
+
 document.addEventListener('DOMContentLoaded', loadComponent);
 
 async function loadComponent() {
@@ -22,9 +26,12 @@ async function loadComponent() {
             .then(data => {
                 document.getElementById(component.id).innerHTML = data;
                 loadedComponents++;
-                
+
                 if (component.id === 'dev-section') {
                     return loadPatches();
+                }
+                if (component.id === 'support-section') {
+                    loadSupportPackages();
                 }
             })
             .catch(error => {
@@ -49,10 +56,6 @@ async function loadComponent() {
         trackVisit();
     }
 }
-
-let patchesData = [];
-let patchesShown = 0;
-const PATCHES_STEP = 3;
 
 async function loadPatches() {
     try {
@@ -361,4 +364,28 @@ function formFailed() {
     formLoading.style.display = 'none';
     formSuccess.style.display = 'none';
     alert('Something went wrong. Please try again.');
+}
+
+function loadSupportPackages() {
+    fetch('pages/support/packages.json')
+        .then(res => res.json())
+        .then(packages => {
+            const container = document.getElementById('support-packages');
+            if (!container) return;
+            container.innerHTML = '';
+            packages.forEach(pkg => {
+                const card = document.createElement('div');
+                card.className = 'package-card';
+                card.innerHTML = `
+                    <h2 class="package-price">${pkg.price}</h2>
+                    <ul class="package-content">
+                        ${pkg.content.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                    <button type="button" class="button-primary">
+                        <span class="button_text">Support</span>
+                    </button>
+                `;
+                container.appendChild(card);
+            });
+        });
 }

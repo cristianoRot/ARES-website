@@ -35,7 +35,7 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
     padding: 32px 24px 28px 24px;
     margin: 0 auto 48px auto;
-    max-width: 98vw;
+    max-width: 1500px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -100,11 +100,11 @@
 .support-packages {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 1rem;
-    align-items: stretch;
     margin-top: 32px;
-    overflow-x: auto;
+    justify-content: center;
+    align-items: stretch;
 }
 
 .package-card {
@@ -162,7 +162,6 @@
 
 @media (max-width: 900px) {
     .support-packages {
-        flex-direction: column;
         align-items: center;
     }
     .support-stats-row {

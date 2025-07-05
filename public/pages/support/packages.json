@@ -1,0 +1,42 @@
+[
+{
+    "price": "$5",
+    "content": [
+      "Thank You Email"
+    ]
+  },
+  {
+    "price": "$10",
+    "content": [
+      "ARES Game (Digital Copy)",
+      "Beta Access"
+    ]
+  },
+  {
+    "price": "$25",
+    "content": [
+      "ARES Game (Digital Copy)",
+      "Beta Access",
+      "Exclusive Weapon Pack"
+    ]
+  },
+  {
+    "price": "$50",
+    "content": [
+      "ARES Game (Digital Copy)",
+      "Beta Access",
+      "All Weapon Packs",
+      "Your Name in Credits"
+    ]
+  },
+  {
+    "price": "$500",
+    "content": [
+      "ARES Game (Digital Copy)",
+      "Beta Access",
+      "All Weapon Packs",
+      "Your Name in Credits",
+      "Your Skin in Game"
+    ]
+  }
+]
