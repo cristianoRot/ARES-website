@@ -2,7 +2,9 @@ let patchesData = [];
 let patchesShown = 0;
 const PATCHES_STEP = 3;
 
-document.addEventListener('DOMContentLoaded', loadComponent);
+document.addEventListener('DOMContentLoaded', () => {
+    loadComponent();
+});
 
 async function loadComponent() {
     const components = [
@@ -32,6 +34,7 @@ async function loadComponent() {
                 }
                 if (component.id === 'support-section') {
                     loadSupportPackages();
+                    updateSupportProgressBar();
                 }
             })
             .catch(error => {
@@ -366,6 +369,42 @@ function formFailed() {
     alert('Something went wrong. Please try again.');
 }
 
+function setupPayPalDonationButton(card) {
+    const supportBtn = card.querySelector('button');
+    supportBtn.addEventListener('click', () => {
+        let existing = document.getElementById('paypal-donate-wrapper');
+        if (!existing) {
+            const wrapper = document.createElement('div');
+            wrapper.id = 'paypal-donate-wrapper';
+            wrapper.style.display = 'none';
+            document.body.appendChild(wrapper);
+
+            const donateDiv = document.createElement('div');
+            donateDiv.id = 'donate-button';
+            wrapper.appendChild(donateDiv);
+
+            const script = document.createElement('script');
+            script.src = 'https://www.paypalobjects.com/donate/sdk/donate-sdk.js';
+            script.charset = 'UTF-8';
+            script.onload = () => {
+                PayPal.Donation.Button({
+                    env: 'production',
+                    hosted_button_id: 'RB4QWTEXCBHT4',
+                    image: {
+                        src: 'https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif',
+                        alt: 'Donate with PayPal button',
+                        title: 'PayPal - The safer, easier way to pay online!',
+                    }
+                }).render('#donate-button');
+            };
+            document.body.appendChild(script);
+        } else {
+            existing.style.display = 'block';
+            existing.querySelector('img')?.click();
+        }
+    });
+}
+
 function loadSupportPackages() {
     fetch('pages/support/packages.json')
         .then(res => res.json())
@@ -386,6 +425,23 @@ function loadSupportPackages() {
                     </button>
                 `;
                 container.appendChild(card);
+                setupPayPalDonationButton(card);
             });
         });
+}
+
+function updateSupportProgressBar() {
+    const raisedEl = document.getElementById('funds-raised');
+    const goalEl = document.getElementById('funds-goal');
+    const barFill = document.querySelector('.progress-bar-fill');
+    if (!raisedEl || !goalEl || !barFill) return;
+
+    // Rimuove simboli e virgole, poi converte in numero
+    const raised = parseFloat(raisedEl.textContent.replace(/[^0-9.]/g, ''));
+    const goal = parseFloat(goalEl.textContent.replace(/[^0-9.]/g, ''));
+    let percent = 0;
+    if (goal > 0) {
+        percent = Math.min((raised / goal) * 100, 100);
+    }
+    barFill.style.width = percent + "%";
 }
