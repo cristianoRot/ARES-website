@@ -1,11 +1,13 @@
 [
 {
+    "title": "Starter Pack",
     "price": "$5",
     "content": [
       "Thank You Email"
     ]
   },
   {
+    "title": "Game Pack",
     "price": "$10",
     "content": [
       "ARES Game (Digital Copy)",
@@ -13,6 +15,7 @@
     ]
   },
   {
+    "title": "Game + Weapon Pack",
     "price": "$25",
     "content": [
       "ARES Game (Digital Copy)",
@@ -21,6 +24,7 @@
     ]
   },
   {
+    "title": "Ultimate Pack",
     "price": "$50",
     "content": [
       "ARES Game (Digital Copy)",
@@ -30,6 +34,7 @@
     ]
   },
   {
+    "title": "Love You Pack",
     "price": "$500",
     "content": [
       "ARES Game (Digital Copy)",

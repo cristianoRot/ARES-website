@@ -120,8 +120,6 @@ function renderPatches() {
     }
 }
 
-// Assicurati che loadPatches venga chiamata dopo il caricamento della dev-section
-
 function initializeAnimations() {
     // Inizializza gli observer per le animazioni delle card
     const cardObserver = new IntersectionObserver((entries, observer) => {
@@ -370,10 +368,12 @@ function formFailed() {
 }
 
 function setupPayPalDonationButton(card) {
-    const supportBtn = card.querySelector('button');
-    supportBtn.addEventListener('click', () => {
-        let existing = document.getElementById('paypal-donate-wrapper');
-        if (!existing) {
+    const supportButton = card.querySelector('button');
+
+    supportButton.addEventListener('click', () => {
+        const existingWrapper = document.getElementById('paypal-donate-wrapper');
+
+        if (!existingWrapper) {
             const wrapper = document.createElement('div');
             wrapper.id = 'paypal-donate-wrapper';
             wrapper.style.display = 'none';
@@ -399,8 +399,8 @@ function setupPayPalDonationButton(card) {
             };
             document.body.appendChild(script);
         } else {
-            existing.style.display = 'block';
-            existing.querySelector('img')?.click();
+            existingWrapper.style.display = 'block';
+            existingWrapper.querySelector('img')?.click();
         }
     });
 }
@@ -416,13 +416,18 @@ function loadSupportPackages() {
                 const card = document.createElement('div');
                 card.className = 'package-card';
                 card.innerHTML = `
-                    <h2 class="package-price">${pkg.price}</h2>
-                    <ul class="package-content">
-                        ${pkg.content.map(item => `<li>${item}</li>`).join('')}
-                    </ul>
-                    <button type="button" class="button-primary">
-                        <span class="button_text">Support</span>
-                    </button>
+                    <div class="package-info">
+                        <div class="package-title">${pkg.title}</div>
+                        <ul class="package-content">
+                            ${pkg.content.map(item => `<li>${item}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="package-side">
+                        <div class="package-price">${pkg.price}</div>
+                        <button type="button" class="button-primary">
+                            <span class="button_text">Support</span>
+                        </button>
+                    </div>
                 `;
                 container.appendChild(card);
                 setupPayPalDonationButton(card);

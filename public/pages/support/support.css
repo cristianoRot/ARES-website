@@ -111,53 +111,75 @@
     background: var(--background-color);
     border-radius: 14px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    padding: 18px;
-    min-width: 220px;
-    max-width: 260px;
-    height: 340px; /* Altezza fissa */
+    padding: 18px 24px;
+    min-width: 340px;
+    max-width: 520px;
+    height: 140px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex: 0 1 480px;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.package-card .package-info {
+    flex: 2 1 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    flex: 0 0 240px;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
-.package-price {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 18px;
+.package-card .package-title {
+    font-size: 1.2rem;
     font-family: "title", Arial, sans-serif;
+    font-weight: bold;
+    color: var(--accent2-color);
+    margin-bottom: 4px;
 }
 
-.package-content {
+.package-card .package-content {
     list-style: none;
     padding: 0;
-    margin: 0 0 24px 0;
+    margin: 0 0 8px 0;
     color: var(--secondary-color);
-    font-size: 0.88rem;
+    font-size: 0.95rem;
     text-align: left;
-    flex: 1 1 auto; /* Permette alla lista di occupare lo spazio disponibile */
-    width: 100%;
 }
 
-.package-content li {
-    margin-bottom: 8px;
+.package-card .package-content li {
+    margin-bottom: 6px;
     padding-left: 18px;
     position: relative;
 }
-
-.package-content li::before {
+.package-card .package-content li::before {
     content: "•";
     color: var(--accent-color, #e63946);
     position: absolute;
     left: 0;
 }
 
+.package-card .package-side {
+    flex: 0 0 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.package-card .package-price {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    font-family: "title", Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 18px;
+    margin-top: 10px;
+}
 
 .package-card .button-primary,
 .package-card .support-btn {
-    margin-top: auto;
     width: 100%;
+    margin-top: 8px; /* Meno spazio tra contenuto e bottone */
 }
 
 @media (max-width: 900px) {
@@ -168,5 +190,24 @@
         flex-direction: column;
         align-items: center;
         gap: 8px;
+    }
+}
+@media (max-width: 700px) {
+    .package-card {
+        flex-direction: column;
+        align-items: stretch;
+        min-width: 220px;
+        max-width: 98vw;
+        height: auto;
+        gap: 12px;
+    }
+    .package-card .package-side {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 12px;
+    }
+    .package-card .package-price {
+        margin: 0 12px 0 0;
     }
 }
